@@ -66,4 +66,45 @@ document.addEventListener('DOMContentLoaded', () => {
             atualizarPosicoes();
         }
     }
+
+    // ==========================================================================
+    // EFEITO PARALLAX 3D (Home)
+    // ==========================================================================
+    const imagensParallax = document.querySelectorAll('.sobre__imagem, .cartao-solucao__imagem, .quem-somos__imagem, .solucao-detalhe__imagem');
+
+    if (imagensParallax.length > 0) {
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            // Normalizando posicoes entre -1 e 1
+            const normalizedX = (mouseX / windowWidth) * 2 - 1;
+            const normalizedY = (mouseY / windowHeight) * 2 - 1;
+
+            imagensParallax.forEach(img => {
+                // Obter a posição da imagem na tela para calcular se está visível/próxima
+                const rect = img.getBoundingClientRect();
+                
+                // Aplicar efeito apenas se a imagem estiver minimamente na tela
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                    const moveX = normalizedX * 10; // graus de rotação maxima
+                    const moveY = normalizedY * -10;
+                    
+                    // Aplicar transform smooth
+                    img.style.transition = 'transform 0.1s ease-out';
+                    img.style.transform = `perspective(1000px) rotateX(${moveY}deg) rotateY(${moveX}deg) scale(1.02)`;
+                }
+            });
+        });
+
+        // Resetar ao sair da janela
+        document.addEventListener('mouseleave', () => {
+            imagensParallax.forEach(img => {
+                img.style.transition = 'transform 0.5s ease-out';
+                img.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+            });
+        });
+    }
 });

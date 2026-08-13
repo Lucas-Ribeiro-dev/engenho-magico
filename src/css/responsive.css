@@ -1,0 +1,165 @@
+/* ==========================================================================
+   RESPONSIVIDADE - ENGENHO MÁGICO
+   ========================================================================== */
+
+/* TABLETS (Até 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --espaco-secao: clamp(3rem, 6vw, 5rem);
+    --padding-container-desktop: 2rem;
+  }
+
+  .grid-cards, .solucoes-resumo__grade, .diferenciais-detalhados__grade, .catalogo__grade {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .sobre, .quem-somos, .solucao-detalhe, .contato-container__grade, .rodape__container {
+    gap: var(--espaco-xl);
+  }
+
+  /* Reduzir tamanho dos ícones/pilares */
+  .pilar {
+    padding: var(--espaco-md);
+  }
+}
+
+/* SMARTPHONES E TELAS MENORES (Até 768px) */
+@media (max-width: 768px) {
+  :root {
+    --padding-container-desktop: 1.25rem; /* Ajuste para o mobile */
+    --espaco-secao: 3rem;
+  }
+
+  /* Cabeçalho */
+  .cabecalho {
+    padding: var(--espaco-xs) 0;
+  }
+
+  .cabecalho__container {
+    flex-direction: column;
+    gap: var(--espaco-sm);
+  }
+
+  .cabecalho__navegacao {
+    width: 100%;
+    overflow-x: auto; /* Permite scroll horizontal no menu se os itens não couberem */
+    padding-bottom: 5px;
+  }
+  
+  /* Esconde a barra de rolagem no menu horizontal */
+  .cabecalho__navegacao::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .cabecalho__menu {
+    justify-content: center;
+    min-width: max-content;
+    gap: var(--espaco-md);
+  }
+
+  /* Botão de ação do cabeçalho vira bloco total */
+  .cabecalho__botao-acao {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: var(--tamanho-fonte-sm);
+  }
+
+  /* Ajuste no padding do conteúdo interno por causa do cabeçalho maior no mobile */
+  .cabecalho-interno {
+    padding-top: calc(var(--espaco-secao) + 120px);
+  }
+
+  /* Seções de Grid Split (1fr 1fr -> 1fr) */
+  .sobre, .quem-somos, .solucao-detalhe, .contato-container__grade, .rodape__container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Imagens dessas seções */
+  .sobre__imagem, .quem-somos__imagem, .solucao-detalhe__imagem {
+    min-height: 250px;
+    height: 300px;
+    order: -1; /* Joga a imagem para cima do texto no mobile */
+  }
+
+  /* Heroi / Carrossel em Mobile */
+  /* Comportamento estilo Slider Normal (Accordion ocupa muito espaço) */
+  .cartao-slide[data-pos="0"] {
+    width: 100%;
+  }
+
+  .cartao-slide:not([data-pos="0"]) {
+    width: 0%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .cartao-slide__conteudo {
+    padding: 0 var(--padding-container-desktop) var(--espaco-lg);
+  }
+  
+  .cartao-slide__rodape {
+    padding: 0 var(--padding-container-desktop) var(--espaco-xl);
+  }
+
+  .cartao-slide__texto {
+    font-size: var(--tamanho-fonte-lg);
+  }
+  
+  .cartao-slide__botao {
+    width: 100%;
+  }
+
+  /* Etapas */
+  .etapas__lista::before {
+    left: 20px; /* Ajuste da linha no mobile */
+  }
+
+  .etapa {
+    gap: var(--espaco-md);
+  }
+
+  .etapa__numero {
+    width: 40px;
+    height: 40px;
+    font-size: var(--tamanho-fonte-md);
+  }
+
+  .etapa:hover .etapa__conteudo {
+    transform: none; /* Desativa hover complexo no mobile */
+  }
+
+  /* Rodapé */
+  .rodape__container {
+    text-align: center;
+  }
+  
+  .rodape__menu {
+    align-items: center;
+  }
+
+  .rodape__legal {
+    flex-direction: column;
+    gap: var(--espaco-md);
+  }
+  
+  .rodape__termos-menu {
+    justify-content: center;
+  }
+  
+  .rodape__marca {
+    margin: 0 auto var(--espaco-md);
+  }
+}
+
+/* SMARTPHONES PEQUENOS (Até 480px) */
+@media (max-width: 480px) {
+  .cartao-slide__titulo, .cartao-slide__subtitulo {
+    font-size: var(--tamanho-fonte-3xl);
+  }
+
+  .cartao-slide__controles {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
