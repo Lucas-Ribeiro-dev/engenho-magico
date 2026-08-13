@@ -394,3 +394,183 @@ input:focus, textarea:focus, select:focus {
   font-size: var(--tamanho-fonte-sm);
   color: var(--cor-texto-suave);
 }
+
+/* ==========================================================================
+   SEÇÃO HEROI (CARROSSEL ACORDEÃO)
+   ========================================================================== */
+.heroi {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor-fundo-escuridao);
+  overflow: hidden;
+  padding: 0;
+}
+
+.heroi__carrossel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.cartao-slide {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: left var(--transicao-suave), width var(--transicao-suave);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Controle de posições absoluto */
+.cartao-slide[data-pos="0"] {
+  left: 0;
+  width: 85%;
+  z-index: 10;
+  cursor: default;
+}
+
+.cartao-slide[data-pos="1"] {
+  left: 85%;
+  width: 5%;
+  z-index: 9;
+}
+
+.cartao-slide[data-pos="2"] {
+  left: 90%;
+  width: 5%;
+  z-index: 8;
+}
+
+.cartao-slide[data-pos="3"] {
+  left: 95%;
+  width: 5%;
+  z-index: 7;
+}
+
+.cartao-slide__imagem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform var(--transicao-suave), opacity var(--transicao-suave);
+  opacity: 0.6;
+}
+
+.cartao-slide[data-pos="0"] .cartao-slide__imagem {
+  opacity: 1;
+}
+
+.cartao-slide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(30, 37, 48, 0.95) 0%, rgba(30, 37, 48, 0.4) 50%, rgba(30, 37, 48, 0.1) 100%);
+  z-index: 2;
+}
+
+.cartao-slide__conteudo,
+.cartao-slide__rodape {
+  position: relative;
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.5s ease;
+  transform: translateY(20px);
+}
+
+.cartao-slide[data-pos="0"] .cartao-slide__conteudo,
+.cartao-slide[data-pos="0"] .cartao-slide__rodape {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.cartao-slide__conteudo {
+  margin-top: auto;
+  padding: var(--espaco-xl);
+  max-width: 800px;
+}
+
+.cartao-slide__titulo,
+.cartao-slide__subtitulo {
+  font-family: var(--fonte-segunda);
+  font-size: var(--tamanho-fonte-heroi);
+  color: var(--cor-fogo-principal);
+  margin-bottom: var(--espaco-sm);
+  line-height: var(--altura-linha-curta);
+}
+
+.cartao-slide__texto {
+  font-family: var(--fonte-terceira);
+  font-size: var(--tamanho-fonte-xl);
+  color: var(--cor-texto-claro);
+  margin-bottom: var(--espaco-lg);
+  line-height: var(--altura-linha-padrao);
+}
+
+.cartao-slide__botao {
+  padding: var(--espaco-md) var(--espaco-xl);
+  font-size: var(--tamanho-fonte-lg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fonte-terceira);
+  font-weight: var(--peso-fonte-negrito);
+  border-radius: var(--raio-medio);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transicao-rapida), box-shadow var(--transicao-rapida), background-color var(--transicao-rapida);
+}
+
+.cartao-slide__rodape {
+  padding: 0 var(--espaco-xl) var(--espaco-2xl);
+  display: flex;
+  align-items: center;
+}
+
+.cartao-slide__controles {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-lg);
+}
+
+.cartao-slide__controle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--cor-texto-claro);
+  font-size: var(--tamanho-fonte-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: background-color var(--transicao-rapida), border-color var(--transicao-rapida);
+  backdrop-filter: blur(4px);
+}
+
+.cartao-slide__controle:hover {
+  background-color: var(--cor-fogo-principal);
+  border-color: var(--cor-fogo-principal);
+}
+
+.cartao-slide__numerador {
+  font-family: var(--fonte-segunda);
+  color: var(--cor-texto-claro);
+  font-size: var(--tamanho-fonte-xl);
+  font-weight: var(--peso-fonte-medio);
+  letter-spacing: 1px;
+}
