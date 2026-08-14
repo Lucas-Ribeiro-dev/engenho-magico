@@ -107,4 +107,30 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ==========================================================================
+    // EFEITO PARALLAX SCROLL (Seção Público Formatos)
+    // ==========================================================================
+    const imgEsqCima = document.querySelector('.publico-formatos__imagem-parallax--esq-cima');
+    const imgDirBaixo = document.querySelector('.publico-formatos__imagem-parallax--dir-baixo');
+
+    if (imgEsqCima || imgDirBaixo) {
+        window.addEventListener('scroll', () => {
+            // Usa requestAnimationFrame para performance
+            requestAnimationFrame(() => {
+                const scrollY = window.scrollY;
+                
+                // Movimento leve:
+                // Imagem cima desce (translateY positivo)
+                if (imgEsqCima) {
+                    imgEsqCima.style.transform = `translateY(${scrollY * 0.15}px)`;
+                }
+                
+                // Imagem baixo sobe (translateY negativo)
+                if (imgDirBaixo) {
+                    imgDirBaixo.style.transform = `translateY(${scrollY * -0.15}px)`;
+                }
+            });
+        });
+    }
 });

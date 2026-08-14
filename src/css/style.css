@@ -523,6 +523,59 @@ input:focus, textarea:focus, select:focus {
   min-height: 400px;
 }
 
+/* Seções Duplas Genéricas (Texto e Imagem) */
+.secao-dupla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaco-2xl);
+  align-items: center;
+}
+
+.secao-dupla--inversa {
+  direction: rtl;
+}
+
+.secao-dupla--inversa > * {
+  direction: ltr;
+}
+
+.secao-dupla__imagem-container {
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: var(--raio-grande);
+  box-shadow: var(--sombra-forte);
+}
+
+.secao-dupla__imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transicao-suave);
+}
+
+.secao-dupla:hover .secao-dupla__imagem {
+  transform: scale(1.03);
+}
+
+.secao-dupla__botao {
+  margin-top: var(--espaco-sm);
+}
+
+@media (max-width: 768px) {
+  .secao-dupla {
+    grid-template-columns: 1fr;
+    gap: var(--espaco-lg);
+  }
+  .secao-dupla--inversa {
+    direction: ltr;
+  }
+  .secao-dupla__imagem-container {
+    min-height: 300px;
+    grid-row: 1; /* Coloca a imagem no topo no mobile */
+  }
+}
+
 /* Solucoes Detalhe */
 .solucao-detalhe {
   display: grid;
@@ -896,4 +949,67 @@ input:focus, textarea:focus, select:focus {
   font-size: var(--tamanho-fonte-xl);
   font-weight: var(--peso-fonte-negrito);
   letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   SEÇÃO PÚBLICO E FORMATOS (FLUTUANTE E PARALLAX)
+   ========================================================================== */
+.publico-formatos {
+  background-color: var(--cor-fundo-base);
+  overflow: hidden; /* Evita que as imagens flutuantes gerem scroll horizontal se sairem da tela */
+}
+
+.publico-formatos__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 600px;
+  padding-top: var(--espaco-xl);
+  padding-bottom: var(--espaco-xl);
+}
+
+.publico-formatos__conteudo {
+  max-width: 800px;
+  z-index: 2; /* Fica acima das imagens flutuantes */
+  background: rgba(248, 249, 250, 0.7); /* Suave blur ou apenas fundo leve para garantir legibilidade se imagens passarem por baixo */
+  backdrop-filter: blur(5px);
+  padding: var(--espaco-lg);
+  border-radius: var(--raio-grande);
+}
+
+.publico-formatos__botao {
+  margin-top: var(--espaco-md);
+}
+
+/* Imagens Flutuantes */
+.publico-formatos__imagem-parallax {
+  position: absolute;
+  width: clamp(150px, 20vw, 300px);
+  height: clamp(150px, 20vw, 300px);
+  object-fit: cover;
+  border-radius: var(--raio-medio);
+  z-index: 1;
+  /* Sem box-shadow, sem hover */
+  will-change: transform;
+}
+
+.publico-formatos__imagem-parallax--esq-cima {
+  top: -15%;
+  left: 5%;
+}
+
+.publico-formatos__imagem-parallax--dir-baixo {
+  bottom: -20%;
+  right: 5%;
+}
+
+@media (max-width: 768px) {
+  .publico-formatos__imagem-parallax {
+    width: clamp(100px, 15vw, 150px);
+    height: clamp(100px, 15vw, 150px);
+    opacity: 0.3; /* No mobile reduz a opacidade para não brigar com o texto já que o espaço é menor */
+  }
 }
