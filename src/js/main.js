@@ -133,4 +133,58 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ==========================================================================
+    // EFEITO SCROLL TRIGGER NAS ETAPAS (Como Funciona)
+    // ==========================================================================
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const etapas = document.querySelectorAll('.etapa');
+        
+        etapas.forEach((etapa) => {
+            const bolinha = etapa.querySelector('.etapa__numero');
+            const conteudo = etapa.querySelector('.etapa__conteudo');
+
+            if (bolinha && conteudo) {
+                // Estado inicial
+                gsap.set(bolinha, { 
+                    scale: 0.5, 
+                    filter: 'grayscale(100%)',
+                    opacity: 0
+                });
+                gsap.set(conteudo, { 
+                    x: 40, 
+                    opacity: 0 
+                });
+
+                // Timeline para cada etapa
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: etapa,
+                        start: 'top 75%', // Ponto onde a 'linha' virtual atinge a etapa
+                        toggleActions: 'play none none reverse'
+                    }
+                });
+
+                // 1º Bolinha nasce (acende e destaca)
+                tl.to(bolinha, {
+                    scale: 1,
+                    opacity: 1,
+                    filter: 'grayscale(0%)',
+                    backgroundImage: 'var(--gradiente-fogo)',
+                    boxShadow: '0 0 20px rgba(244, 96, 10, 0.6)',
+                    duration: 0.5,
+                    ease: 'back.out(1.5)'
+                })
+                // 2º Conteúdo surge (desliza com fade-in)
+                .to(conteudo, {
+                    x: 0,
+                    opacity: 1,
+                    duration: 0.6,
+                    ease: 'power3.out'
+                }, "-=0.2");
+            }
+        });
+    }
 });

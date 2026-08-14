@@ -237,11 +237,11 @@
         </section>
 
         <section class="publico-formatos">
+            <!-- Imagens flutuantes -->
             <img src="src/assets/img/placeholder.png" alt="Público engajado"
-                class="publico-formatos__imagem-parallax publico-formatos__imagem-parallax--esq-cima">
-
+            class="publico-formatos__imagem-parallax publico-formatos__imagem-parallax--esq-cima">
             <img src="src/assets/img/placeholder.png" alt="Participantes da experiência" class="publico-formatos__imagem-parallax publico-formatos__imagem-parallax--dir-baixo">
-            
+
             <div class="publico-formatos__container container">
                 <div class="publico-formatos__conteudo">
                     <h2 class="publico__titulo">Para quem e como criamos</h2>
@@ -264,6 +264,7 @@
 
             </div>
         </section>
+        
 
         <section class="proposta">
             <div class="proposta__container">
@@ -271,6 +272,19 @@
                 <p class="proposta__texto">Você tem uma ideia inicial, um tema pedagógico, um evento iminente ou um
                     desafio corporativo? Nós transformamos esse ponto de partida em uma jornada estruturada, cobrindo
                     narrativa, materiais, cenografia e a operação completa.</p>
+            </div>
+            <div class="ba-slider" style="--posicao: 50%;">
+                <img src="src/assets/img/placeholder.png" alt="Ambiente antes da intervenção" class="ba-slider__imagem ba-slider__imagem--antes">
+                <img src="src/assets/img/placeholder.png" alt="Ambiente depois da intervenção da Engenho Mágico" class="ba-slider__imagem ba-slider__imagem--depois">
+                <input type="range" min="0" max="100" value="50" class="ba-slider__input" aria-label="Comparar antes e depois" oninput="this.parentNode.style.setProperty('--posicao', this.value + '%')">
+                <div class="ba-slider__linha">
+                    <div class="ba-slider__botao">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18-6-6 6-6"/>
+                            <path d="m15 6 6 6-6 6"/>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -280,8 +294,7 @@
                 <p class="chamada-final__subtitulo">Dê o primeiro passo para engajar seu público de forma autêntica e
                     inovadora.</p>
                 <div class="chamada-final__acoes">
-                    <a href="contato.html" class="chamada-final__botao--primario">Fale com nossos Especialistas</a>
-                    <a href="contato.html" class="chamada-final__botao--secundario">Solicitar Proposta de Projeto</a>
+                    <a href="contato.html" class="chamada-final__botao--primario">Entre em contato</a>
                 </div>
             </div>
         </section>

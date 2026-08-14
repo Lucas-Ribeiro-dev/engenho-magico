@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Luckiest+Guy&family=Nunito:wght@400;600;700&display=swap');
+/* 1. Fonte da Marca / Título Hero */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+/* 2. Fonte de Títulos (H2, H3, Cards, Numeradores) */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap');
+
+/* 3. Fonte de Textos Longos, UI e Botões */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
 :root {
   /* Cores Elementares */
@@ -167,6 +174,10 @@ h2, .secao__titulo, .sobre__titulo, .especialidades__titulo, .solucoes-resumo__t
   font-weight: var(--peso-fonte-negrito);
   line-height: var(--altura-linha-curta);
   margin-bottom: var(--espaco-md);
+}
+
+.solucoes-resumo__titulo {
+  text-align: center;
 }
 
 h3, .card__titulo, .cartao-solucao__titulo, .pilar__titulo, .etapa__nome {
@@ -516,8 +527,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .sobre__imagem, .quem-somos__imagem {
-  border-radius: var(--raio-grande);
-  box-shadow: var(--sombra-forte);
+  border-radius: var(--raio-pequeno);
   height: 100%;
   object-fit: cover;
   min-height: 400px;
@@ -543,8 +553,7 @@ input:focus, textarea:focus, select:focus {
   height: 100%;
   min-height: 400px;
   overflow: hidden;
-  border-radius: var(--raio-grande);
-  box-shadow: var(--sombra-forte);
+  border-radius: var(--raio-pequeno);
 }
 
 .secao-dupla__imagem {
@@ -576,6 +585,99 @@ input:focus, textarea:focus, select:focus {
   }
 }
 
+/* SEÇÃO PROPOSTA E SLIDER BEFORE/AFTER */
+.proposta {
+  width: 100%;
+  padding-bottom: var(--espaco-secao);
+}
+
+.proposta__container {
+  width: 100%;
+  max-width: var(--largura-container-max);
+  margin: 0 auto;
+  padding: 0 var(--padding-container-desktop);
+  text-align: center;
+  margin-bottom: var(--espaco-xl);
+}
+
+.ba-slider {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  aspect-ratio: 21 / 9; /* MUITO IMPORTANTE ALTERAR ALTURA AQUI */
+  max-height: 500px;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.ba-slider__imagem {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ba-slider__imagem--depois {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(0 calc(100% - var(--posicao, 50%)) 0 0);
+}
+
+.ba-slider__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 10;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.ba-slider__linha {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--posicao, 50%);
+  width: 4px;
+  background: var(--cor-fundo-superficie);
+  z-index: 5;
+  pointer-events: none;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.ba-slider__botao {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background: var(--cor-fogo-principal);
+  border: 3px solid var(--cor-fundo-superficie);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-fundo-superficie);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .ba-slider__botao {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 /* Solucoes Detalhe */
 .solucao-detalhe {
   display: grid;
@@ -597,8 +699,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .solucao-detalhe__imagem {
-  border-radius: var(--raio-grande);
-  box-shadow: var(--sombra-forte);
+  border-radius: var(--raio-pequeno);
   height: 400px;
   width: 100%;
   object-fit: cover;
@@ -1012,4 +1113,41 @@ input:focus, textarea:focus, select:focus {
     height: clamp(100px, 15vw, 150px);
     opacity: 0.3; /* No mobile reduz a opacidade para não brigar com o texto já que o espaço é menor */
   }
+}
+
+/* ==========================================================================
+   CHAMADA FINAL
+   ========================================================================== */
+.chamada-final {
+  background-image: url('../assets/img/placeholder.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  color: var(--cor-texto-claro);
+  z-index: 1;
+}
+
+.chamada-final::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 22, 33, 0.85); /* Fundo escuro com opacidade para legibilidade */
+  z-index: -1;
+}
+
+.chamada-final__titulo {
+  color: var(--cor-fundo-base);
+}
+
+.chamada-final__subtitulo {
+  color: var(--cor-texto-claro);
+  margin: 0 auto var(--espaco-xl);
+  max-width: 800px;
+}
+
+.chamada-final__acoes {
+  display: flex;
+  justify-content: center;
+  gap: var(--espaco-md);
 }
