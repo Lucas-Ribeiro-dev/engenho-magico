@@ -53,6 +53,7 @@
   
   .cabecalho__menu {
     justify-content: center;
+    align-items: center;
     min-width: max-content;
     gap: var(--espaco-md);
   }

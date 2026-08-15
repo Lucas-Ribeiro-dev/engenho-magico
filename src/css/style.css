@@ -94,9 +94,10 @@
   --espaco-secao: clamp(4rem, 8vw, 8rem);
 
   /* Arredondamentos e Sombras */
+  --raio-nulo: 0;
   --raio-pequeno: 0.5rem;
-  --raio-medio: 1rem;
-  --raio-grande: 1.5rem;
+  --raio-medio: 0.7rem;
+  --raio-grande: 1rem;
   --raio-pula: 9999px;
 
   --sombra-suave: 0 4px 12px rgba(45, 55, 74, 0.05);
@@ -110,9 +111,7 @@
   --transicao-suave: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ==========================================================================
-   RESET UNIVERSAL SIMPLES E ANIMAÇÕES GLOBAIS
-   ========================================================================== */
+/* RESET UNIVERSAL SIMPLES E ANIMAÇÕES GLOBAIS */
 *,
 *::before,
 *::after {
@@ -154,9 +153,7 @@ ul, ol {
   color: #fff;
 }
 
-/* ==========================================================================
-   HIERARQUIA TIPOGRÁFICA
-   ========================================================================== */
+/* HIERARQUIA TIPOGRÁFICA */
 h1, .heroi__titulo, .cabecalho-interno__titulo {
   font-family: var(--fonte-primeira);
   font-size: var(--tamanho-fonte-heroi);
@@ -204,9 +201,7 @@ p, li, .texto-apoio, .heroi__subtitulo, .sobre__paragrafo, .especialidades__subt
   font-weight: var(--peso-fonte-negrito);
 }
 
-/* ==========================================================================
-   ESTRUTURA, CONTAINERS E ESPAÇAMENTOS DE SEÇÃO
-   ========================================================================== */
+/* ESTRUTURA, CONTAINERS E ESPAÇAMENTOS DE SEÇÃO */
 .container, .cabecalho__container, .sobre__conteudo, .especialidades__container, .solucoes-resumo__container, .metodologia-resumo__container, .diferenciais__container, .publico__container, .formatos__container, .manifesto__container, .proposta__container, .chamada-final__container, .rodape__container, .cabecalho-interno__conteudo, .contato-container__grade, .quem-somos__conteudo, .diferenciais-detalhados__container, .manifesto-completo__container, .etapas__container, .catalogo__container, .solucao-detalhe__conteudo {
   width: 100%;
   max-width: var(--largura-container-max);
@@ -234,6 +229,7 @@ p, li, .texto-apoio, .heroi__subtitulo, .sobre__paragrafo, .especialidades__subt
 .cabecalho-interno {
   background: var(--cor-fundo-escuridao);
   text-align: center;
+  align-items: center;
   padding-top: calc(var(--espaco-secao) + 80px); /* Account for fixed header */
   padding-bottom: var(--espaco-xl);
   position: relative;
@@ -264,9 +260,7 @@ p, li, .texto-apoio, .heroi__subtitulo, .sobre__paragrafo, .especialidades__subt
   font-size: var(--tamanho-fonte-xl);
 }
 
-/* ==========================================================================
-   CABEÇALHO E NAVEGAÇÃO
-   ========================================================================== */
+/* CABEÇALHO E NAVEGAÇÃO */
 .cabecalho {
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
@@ -292,10 +286,21 @@ p, li, .texto-apoio, .heroi__subtitulo, .sobre__paragrafo, .especialidades__subt
   object-fit: contain;
 }
 
-.menu__lista, .cabecalho__menu, .rodape__menu {
+.menu__lista, .rodape__menu {
   display: flex;
   align-items: center;
   gap: var(--espaco-lg);
+}
+
+.cabecalho__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-lg);
+}
+
+.cabecalho__item {
+  margin-bottom: 0;
 }
 
 .menu__link, .cabecalho__link, .rodape__link, .rodape__termos-link, .metodologia-resumo__link, .cartao-solucao__link {
@@ -318,7 +323,7 @@ p, li, .texto-apoio, .heroi__subtitulo, .sobre__paragrafo, .especialidades__subt
   left: 0;
   background-color: var(--cor-fogo-principal);
   transition: width var(--transicao-rapida);
-  border-radius: 2px;
+  border-radius: 0;
 }
 
 .cabecalho__link:hover::after,
@@ -330,10 +335,8 @@ p, li, .texto-apoio, .heroi__subtitulo, .sobre__paragrafo, .especialidades__subt
   color: var(--cor-fogo-principal);
 }
 
-/* ==========================================================================
-   BOTÕES E FORMULÁRIOS
-   ========================================================================== */
-.botao, .cabecalho__botao-acao, .heroi__botao--primario, .heroi__botao--secundario, .chamada-final__botao--primario, .chamada-final__botao--secundario, .formulario__botao-enviar, .cartao-slide__botao {
+/* BOTÕES E FORMULÁRIOS */
+.botao, .cabecalho__botao-acao, .heroi__botao--primario, .heroi__botao--secundario, .chamada-final__botao--primario, .chamada-final__botao--secundario, .formulario__botao-enviar, .cartao-slide__botao, .secao-dupla__botao, .publico-formatos__botao {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -353,39 +356,19 @@ p, li, .texto-apoio, .heroi__subtitulo, .sobre__paragrafo, .especialidades__subt
   z-index: 1;
 }
 
-/* Hover effect */
-.botao::before, .cabecalho__botao-acao::before, .chamada-final__botao--primario::before, .formulario__botao-enviar::before, .cartao-slide__botao::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%; width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-  z-index: -1;
-}
-
-.botao:hover::before, .cabecalho__botao-acao:hover::before, .chamada-final__botao--primario:hover::before, .formulario__botao-enviar:hover::before, .cartao-slide__botao:hover::before {
-  left: 100%;
-}
-
-.botao:hover, .cabecalho__botao-acao:hover, .chamada-final__botao--primario:hover, .formulario__botao-enviar:hover, .cartao-slide__botao:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--sombra-media);
+/* Hover effect simplificado */
+.botao:hover, .cabecalho__botao-acao:hover, .chamada-final__botao--primario:hover, .formulario__botao-enviar:hover, .cartao-slide__botao:hover, .secao-dupla__botao:hover, .publico-formatos__botao:hover {
+  opacity: 0.9;
 }
 
 .botao--primario, .cabecalho__botao-acao, .heroi__botao--primario, .chamada-final__botao--primario, .formulario__botao-enviar {
   background: var(--gradiente-fogo);
   color: var(--cor-texto-claro);
-  box-shadow: var(--sombra-fogo);
 }
 
 .botao--fogo, .cartao-slide__botao {
   background: var(--gradiente-fogo);
   color: var(--cor-texto-claro);
-  box-shadow: var(--sombra-fogo);
-}
-
-.botao--fogo:hover, .cartao-slide__botao:hover {
-  box-shadow: 0 16px 32px rgba(244, 96, 10, 0.45);
 }
 
 .botao--secundario, .heroi__botao--secundario, .chamada-final__botao--secundario {
@@ -436,9 +419,7 @@ input:focus, textarea:focus, select:focus {
   min-height: 120px;
 }
 
-/* ==========================================================================
-   CARDS E GRIDS
-   ========================================================================== */
+/* CARDS E GRIDS */
 .grid-cards, .solucoes-resumo__grade, .diferenciais-detalhados__grade, .catalogo__grade {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--largura-cartao-min), 1fr));
@@ -448,7 +429,7 @@ input:focus, textarea:focus, select:focus {
 .card, .cartao-solucao, .pilar, .catalogo__item {
   background-color: var(--cor-fundo-superficie);
   border: 1px solid rgba(255,255,255,0.5);
-  border-radius: var(--raio-grande);
+  border-radius: var(--raio-pequeno);
   padding: var(--espaco-lg);
   box-shadow: var(--sombra-suave);
   display: flex;
@@ -465,7 +446,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .card__imagem, .cartao-solucao__imagem, .catalogo__imagem {
-  border-radius: var(--raio-medio);
+  border-radius: var(--raio-pequeno);
   margin-bottom: var(--espaco-md);
   object-fit: cover;
   width: 100%;
@@ -499,9 +480,7 @@ input:focus, textarea:focus, select:focus {
   margin-left: 8px;
 }
 
-/* ==========================================================================
-   SEÇÕES ESPECÍFICAS
-   ========================================================================== */
+/* SEÇÕES ESPECÍFICAS */
 
 /* Sobre / Quem Somos */
 .sobre, .quem-somos {
@@ -663,7 +642,7 @@ input:focus, textarea:focus, select:focus {
   height: 48px;
   background: var(--cor-fogo-principal);
   border: 3px solid var(--cor-fundo-superficie);
-  border-radius: 50%;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -715,7 +694,7 @@ input:focus, textarea:focus, select:focus {
 .formulario-secao {
   background: var(--cor-fundo-superficie);
   padding: var(--espaco-xl);
-  border-radius: var(--raio-grande);
+  border-radius: var(--raio-pequeno);
   box-shadow: var(--sombra-media);
 }
 
@@ -731,7 +710,7 @@ input:focus, textarea:focus, select:focus {
   gap: var(--espaco-md);
   padding: var(--espaco-md);
   background: var(--cor-fundo-superficie);
-  border-radius: var(--raio-medio);
+  border-radius: var(--raio-pequeno);
   box-shadow: var(--sombra-suave);
   transition: all var(--transicao-rapida);
 }
@@ -769,7 +748,7 @@ input:focus, textarea:focus, select:focus {
   height: 60px;
   background: var(--gradiente-agua);
   color: white;
-  border-radius: 50%;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -783,7 +762,7 @@ input:focus, textarea:focus, select:focus {
 .etapa__conteudo {
   background: var(--cor-fundo-superficie);
   padding: var(--espaco-lg);
-  border-radius: var(--raio-grande);
+  border-radius: var(--raio-pequeno);
   box-shadow: var(--sombra-suave);
   flex-grow: 1;
   transition: transform var(--transicao-rapida);
@@ -794,9 +773,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 
-/* ==========================================================================
-   RODAPÉ
-   ========================================================================== */
+/* RODAPÉ */
 .rodape {
   background-color: var(--cor-fundo-escuridao);
   color: var(--cor-texto-claro);
@@ -871,9 +848,7 @@ input:focus, textarea:focus, select:focus {
   gap: var(--espaco-md);
 }
 
-/* ==========================================================================
-   SEÇÃO HEROI (CARROSSEL ACORDEÃO)
-   ========================================================================== */
+/* SEÇÃO HEROI (CARROSSEL ACORDEÃO) */
 .heroi {
   min-height: 100vh;
   width: 100%;
@@ -1024,7 +999,7 @@ input:focus, textarea:focus, select:focus {
   justify-content: center;
   width: 56px;
   height: 56px;
-  border-radius: 50%;
+  border-radius: 0;
   transition: all var(--transicao-rapida);
   backdrop-filter: blur(8px);
 }
@@ -1043,9 +1018,7 @@ input:focus, textarea:focus, select:focus {
   letter-spacing: 2px;
 }
 
-/* ==========================================================================
-   SEÇÃO PÚBLICO E FORMATOS (FLUTUANTE E PARALLAX)
-   ========================================================================== */
+/* SEÇÃO PÚBLICO E FORMATOS (FLUTUANTE E PARALLAX) */
 .publico-formatos {
   background-color: var(--cor-fundo-base);
   overflow: hidden; /* Evita que as imagens flutuantes gerem scroll horizontal se sairem da tela */
@@ -1069,7 +1042,7 @@ input:focus, textarea:focus, select:focus {
   background: rgba(248, 249, 250, 0.7); /* Suave blur ou apenas fundo leve para garantir legibilidade se imagens passarem por baixo */
   backdrop-filter: blur(5px);
   padding: var(--espaco-lg);
-  border-radius: var(--raio-grande);
+  border-radius: var(--raio-pequeno);
 }
 
 .publico-formatos__botao {
@@ -1082,7 +1055,7 @@ input:focus, textarea:focus, select:focus {
   width: clamp(150px, 20vw, 300px);
   height: clamp(150px, 20vw, 300px);
   object-fit: cover;
-  border-radius: var(--raio-medio);
+  border-radius: var(--raio-pequeno);
   z-index: 1;
   /* Sem box-shadow, sem hover */
   will-change: transform;
@@ -1106,9 +1079,7 @@ input:focus, textarea:focus, select:focus {
   }
 }
 
-/* ==========================================================================
-   CHAMADA FINAL
-   ========================================================================== */
+/* CHAMADA FINAL */
 .chamada-final {
   background-image: url('../assets/img/placeholder.png');
   background-size: cover;
@@ -1147,9 +1118,7 @@ input:focus, textarea:focus, select:focus {
   text-align: center;
 }
 
-/* ==========================================================================
-   MANIFESTO COMPLETO
-   ========================================================================== */
+/* MANIFESTO COMPLETO */
 .manifesto-completo {
   background-image: url('../assets/img/placeholder.png');
   background-size: cover;

@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // EFEITO SCROLL TRIGGER NAS ETAPAS (Como Funciona)
+    // EFEITO SCROLL TRIGGER NAS ETAPAS (Metodologia)
     // ==========================================================================
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
