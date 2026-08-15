@@ -755,16 +755,7 @@ input:focus, textarea:focus, select:focus {
   position: relative;
 }
 
-.etapas__lista::before {
-  content: '';
-  position: absolute;
-  left: 28px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: var(--cor-borda-suave);
-  z-index: 0;
-}
+
 
 .etapa {
   display: flex;
@@ -1150,4 +1141,35 @@ input:focus, textarea:focus, select:focus {
   display: flex;
   justify-content: center;
   gap: var(--espaco-md);
+}
+
+.diferenciais-detalhados__titulo {
+  text-align: center;
+}
+
+/* ==========================================================================
+   MANIFESTO COMPLETO
+   ========================================================================== */
+.manifesto-completo {
+  background-image: url('../assets/img/placeholder.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.manifesto-completo::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 22, 33, 0.75); /* Camada escura para legibilidade */
+  z-index: -1;
+}
+
+.manifesto-completo__titulo,
+.manifesto-completo__paragrafo {
+  color: #ffffff;
 }

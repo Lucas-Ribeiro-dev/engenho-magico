@@ -35,6 +35,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 atualizarPosicoes();
             };
 
+            // timer do slide
+            let loopTimer;
+            let delayTimer;
+            
+            const iniciarLoop = () => {
+                clearInterval(loopTimer);
+                clearTimeout(delayTimer);
+                loopTimer = setInterval(() => {
+                    proximo();
+                }, 7000);
+            };
+
+            const pausarComDelayParaVoltar = () => {
+                clearInterval(loopTimer);
+                clearTimeout(delayTimer);
+                delayTimer = setTimeout(() => {
+                    iniciarLoop();
+                }, 3000);
+            };
+
             cards.forEach((card) => {
                 // Controles Internos
                 const btnAnterior = card.querySelector('.cartao-slide__controle--anterior');
@@ -42,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     btnAnterior.addEventListener('click', (e) => {
                         e.stopPropagation();
                         anterior();
+                        pausarComDelayParaVoltar();
                     });
                 }
 
@@ -50,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     btnProximo.addEventListener('click', (e) => {
                         e.stopPropagation();
                         proximo();
+                        iniciarLoop();
                     });
                 }
 
@@ -58,12 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     const slotAtual = parseInt(card.getAttribute('data-pos'));
                     if (slotAtual !== 0) {
                         irParaSlot(slotAtual);
+                        iniciarLoop();
                     }
                 });
             });
 
             // Estado inicial garantido
             atualizarPosicoes();
+            iniciarLoop();
         }
     }
 
@@ -163,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     scrollTrigger: {
                         trigger: etapa,
                         start: 'top 75%', // Ponto onde a 'linha' virtual atinge a etapa
-                        toggleActions: 'play none none reverse'
+                        once: true // Executa apenas uma vez e não retorna ao fazer scroll para cima
                     }
                 });
 
