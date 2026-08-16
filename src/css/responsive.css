@@ -164,3 +164,15 @@
     justify-content: space-between;
   }
 }
+
+@media (max-width: 768px) {
+  .especialidades {
+    min-height: 60vh;
+    padding-bottom: var(--espaco-xl);
+    padding-top: var(--espaco-xl);
+  }
+
+  .especialidades__texto {
+    font-size: var(--tamanho-fonte-md);
+  }
+}

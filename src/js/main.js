@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // EFEITO PARALLAX 3D (Home)
     // ==========================================================================
-    const imagensParallax = document.querySelectorAll('.sobre__imagem, .cartao-solucao__imagem, .quem-somos__imagem, .solucao-detalhe__imagem');
+    const imagensParallax = document.querySelectorAll('.sobre__imagem, .quem-somos__imagem, .solucao-detalhe__imagem');
 
     if (imagensParallax.length > 0) {
         document.addEventListener('mousemove', (e) => {
