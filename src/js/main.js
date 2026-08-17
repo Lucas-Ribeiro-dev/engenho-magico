@@ -1,10 +1,10 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // Lógica do Carrossel Hero (Posicionamento Absoluto)
     const carrossel = document.querySelector('.heroi__carrossel');
-    
+
     if (carrossel) {
         const cards = Array.from(carrossel.querySelectorAll('.cartao-slide'));
-        
+
         if (cards.length > 0) {
             // Arrays contendo a posição atual de cada card (0 a N-1)
             let posicoes = cards.map((_, i) => i);
@@ -38,7 +38,7 @@
             // timer do slide
             let loopTimer;
             let delayTimer;
-            
+
             const iniciarLoop = () => {
                 clearInterval(loopTimer);
                 clearTimeout(delayTimer);
@@ -94,7 +94,7 @@
     // ==========================================================================
     // EFEITO PARALLAX 3D (Home)
     // ==========================================================================
-    const imagensParallax = document.querySelectorAll('.sobre__imagem, .quem-somos__imagem, .solucao-detalhe__imagem');
+    const imagensParallax = document.querySelectorAll('.quem-somos__imagem, .solucao-detalhe__imagem');
 
     if (imagensParallax.length > 0) {
         document.addEventListener('mousemove', (e) => {
@@ -110,12 +110,12 @@
             imagensParallax.forEach(img => {
                 // Obter a posição da imagem na tela para calcular se está visível/próxima
                 const rect = img.getBoundingClientRect();
-                
+
                 // Aplicar efeito apenas se a imagem estiver minimamente na tela
                 if (rect.top < windowHeight && rect.bottom > 0) {
                     const moveX = normalizedX * 10; // graus de rotação maxima
                     const moveY = normalizedY * -10;
-                    
+
                     // Aplicar transform smooth
                     img.style.transition = 'transform 0.1s ease-out';
                     img.style.transform = `perspective(1000px) rotateX(${moveY}deg) rotateY(${moveX}deg) scale(1.02)`;
@@ -132,9 +132,35 @@
         });
     }
 
-    // ==========================================================================
+
+    // EFEITO PARALLAX CAMADAS (Seção Sobre)
+    const containerCamadas = document.querySelector('.sobre__imagem-wrapper');
+    const camadas = document.querySelectorAll('.camada-parallax');
+
+    if (containerCamadas && camadas.length > 0) {
+        window.addEventListener('scroll', () => {
+            requestAnimationFrame(() => {
+                const rect = containerCamadas.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Normaliza para -1 (topo da tela) a +1 (fundo da tela), 0 quando centrado
+                const rawOffset = (rect.top + rect.height / 2) - (windowHeight / 2);
+                const normalizedOffset = Math.max(-1, Math.min(1, rawOffset / (windowHeight / 2)));
+                
+                camadas.forEach(camada => {
+                    const factor = parseFloat(camada.getAttribute('data-factor')) || 0;
+                    if (factor > 0) {
+                        const moveY = normalizedOffset * factor;
+                        camada.style.transform = `translate3d(0px, ${moveY}px, 0px)`;
+                    }
+                });
+            });
+        });
+    }
+
+    // 
     // EFEITO PARALLAX SCROLL (Seção Público Formatos)
-    // ==========================================================================
+    // 
     const imgEsqCima = document.querySelector('.publico-formatos__imagem-parallax--esq-cima');
     const imgDirBaixo = document.querySelector('.publico-formatos__imagem-parallax--dir-baixo');
 
@@ -143,13 +169,13 @@
             // Usa requestAnimationFrame para performance
             requestAnimationFrame(() => {
                 const scrollY = window.scrollY;
-                
+
                 // Movimento leve:
                 // Imagem cima desce (translateY positivo)
                 if (imgEsqCima) {
                     imgEsqCima.style.transform = `translateY(${scrollY * 0.15}px)`;
                 }
-                
+
                 // Imagem baixo sobe (translateY negativo)
                 if (imgDirBaixo) {
                     imgDirBaixo.style.transform = `translateY(${scrollY * -0.15}px)`;
@@ -158,6 +184,7 @@
         });
     }
 
+
     // ==========================================================================
     // EFEITO SCROLL TRIGGER NAS ETAPAS (Metodologia)
     // ==========================================================================
@@ -165,20 +192,20 @@
         gsap.registerPlugin(ScrollTrigger);
 
         const etapas = document.querySelectorAll('.etapa');
-        
+
         etapas.forEach((etapa) => {
             const bolinha = etapa.querySelector('.etapa__numero');
             const conteudo = etapa.querySelector('.etapa__conteudo');
 
             if (bolinha && conteudo) {
                 // Estado inicial
-                gsap.set(bolinha, { 
-                    scale: 0.5, 
+                gsap.set(bolinha, {
+                    scale: 0.5,
                     opacity: 0
                 });
-                gsap.set(conteudo, { 
-                    x: 40, 
-                    opacity: 0 
+                gsap.set(conteudo, {
+                    x: 40,
+                    opacity: 0
                 });
 
                 // Timeline para cada etapa
@@ -197,13 +224,13 @@
                     duration: 0.5,
                     ease: 'back.out(1.5)'
                 })
-                // 2º Conteúdo surge (desliza com fade-in)
-                .to(conteudo, {
-                    x: 0,
-                    opacity: 1,
-                    duration: 0.6,
-                    ease: 'power3.out'
-                }, "-=0.2");
+                    // 2º Conteúdo surge (desliza com fade-in)
+                    .to(conteudo, {
+                        x: 0,
+                        opacity: 1,
+                        duration: 0.6,
+                        ease: 'power3.out'
+                    }, "-=0.2");
             }
         });
     }

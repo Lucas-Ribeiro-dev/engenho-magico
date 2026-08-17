@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    RESPONSIVIDADE - ENGENHO MÁGICO
    ========================================================================== */
 
@@ -9,8 +9,27 @@
     --padding-container-desktop: 2rem;
   }
 
-  .grid-cards, .solucoes-resumo__grade, .diferenciais-detalhados__grade, .catalogo__grade {
+  .grid-cards, .diferenciais-detalhados__grade, .catalogo__grade {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  /* Soluções Resumo (Tablet) */
+  .solucoes-resumo__grade {
+    gap: var(--espaco-sm);
+  }
+
+  .cartao-solucao {
+    border-width: 12px;
+    border-image-width: 12px;
+  }
+
+  .cartao-solucao__imagem {
+    margin: var(--espaco-sm);
+  }
+
+  .cartao-solucao__conteudo {
+    width: 68%;
+    padding: var(--espaco-xs) var(--espaco-sm) var(--espaco-xs) 0;
   }
 
   .sobre, .quem-somos, .solucao-detalhe, .contato-container__grade, .rodape__container {
@@ -76,7 +95,7 @@
   }
 
   /* Imagens dessas seções */
-  .sobre__imagem, .quem-somos__imagem, .solucao-detalhe__imagem {
+  .sobre__imagem-wrapper, .sobre__imagem, .quem-somos__imagem, .solucao-detalhe__imagem {
     min-height: 250px;
     height: 300px;
     order: -1; /* Joga a imagem para cima do texto no mobile */
@@ -128,6 +147,33 @@
 
   .etapa:hover .etapa__conteudo {
     transform: none; /* Desativa hover complexo no mobile */
+  }
+
+  /* Soluções Resumo (Mobile) */
+  .solucoes-resumo__grade {
+    grid-template-columns: 1fr;
+  }
+  
+  .cartao-solucao {
+    flex-direction: column;
+    align-items: center;
+    border-width: 16px;
+    border-image-width: 16px;
+  }
+  
+  .cartao-solucao__imagem {
+    width: 60%;
+    max-width: 220px;
+    margin: var(--espaco-md) auto 0;
+  }
+  
+  .cartao-solucao__conteudo {
+    width: 100%;
+    padding: var(--espaco-md);
+  }
+  
+  .cartao-solucao__linha-decorativa {
+    width: 40%;
   }
 
   /* Rodapé */
