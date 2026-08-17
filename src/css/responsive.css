@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    RESPONSIVIDADE - ENGENHO MÁGICO
    ========================================================================== */
 
@@ -121,9 +121,9 @@
   }
 
   .etapa__numero {
-    width: 40px;
-    height: 40px;
-    font-size: var(--tamanho-fonte-md);
+    width: 60px;
+    height: 60px;
+    font-size: var(--tamanho-fonte-2xl);
   }
 
   .etapa:hover .etapa__conteudo {

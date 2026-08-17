@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // Lógica do Carrossel Hero (Posicionamento Absoluto)
     const carrossel = document.querySelector('.heroi__carrossel');
     
@@ -174,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Estado inicial
                 gsap.set(bolinha, { 
                     scale: 0.5, 
-                    filter: 'grayscale(100%)',
                     opacity: 0
                 });
                 gsap.set(conteudo, { 
@@ -191,13 +190,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                // 1º Bolinha nasce (acende e destaca)
+                // 1º Bolinha nasce
                 tl.to(bolinha, {
                     scale: 1,
                     opacity: 1,
-                    filter: 'grayscale(0%)',
-                    backgroundImage: 'var(--gradiente-fogo)',
-                    boxShadow: '0 0 20px rgba(244, 96, 10, 0.6)',
                     duration: 0.5,
                     ease: 'back.out(1.5)'
                 })
