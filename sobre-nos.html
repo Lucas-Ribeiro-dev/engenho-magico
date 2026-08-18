@@ -13,102 +13,173 @@
 </head>
 
 <body>
-    <header class="cabecalho">
-        <div class="cabecalho__container">
-            <a href="index.html" class="cabecalho__logo">
-                <img src="src/assets/img/pictures/logo-4.png" alt="Logo Engenho Mágico" class="cabecalho__logo-imagem">
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">
+                <img src="src/assets/img/pictures/logo-4.png" alt="Logo Engenho Mágico" class="header__logo-img">
             </a>
-            <nav class="cabecalho__navegacao">
-                <ul class="cabecalho__menu">
-                    <li class="cabecalho__item"><a href="index.html" class="cabecalho__link">Início</a></li>
-                    <li class="cabecalho__item"><a href="sobre-nos.html" class="cabecalho__link">Sobre Nós</a></li>
-                    <li class="cabecalho__item"><a href="solucoes.html" class="cabecalho__link">Soluções</a></li>
-                    <li class="cabecalho__item"><a href="metodologia.html" class="cabecalho__link">Metodologia</a></li>
-                    <li class="cabecalho__item"><a href="contato.html" class="cabecalho__link">Contato</a></li>
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li class="header__item"><a href="index.html" class="header__link">Início</a></li>
+                    <li class="header__item"><a href="sobre-nos.html" class="header__link">Sobre Nós</a></li>
+                    <li class="header__item"><a href="solucoes.html" class="header__link">Soluções</a></li>
+                    <li class="header__item"><a href="metodologia.html" class="header__link">Metodologia</a></li>
+                    <li class="header__item"><a href="contato.html" class="header__link">Contato</a></li>
                 </ul>
             </nav>
-            <a href="contato.html" class="cabecalho__botao-acao"><span class="texto-btn">Vamos conversar</span></a>
+            <a href="contato.html" class="btn-cta header__cta"><span class="btn-text">Vamos conversar</span></a>
         </div>
     </header>
 
-    <main class="conteudo-principal">
-        <section class="cabecalho-interno">
-            <div class="cabecalho-interno__conteudo">
-                <h1 class="cabecalho-interno__titulo">A Engenho Mágico</h1>
-                <p class="cabecalho-interno__subtitulo">Transformando mensagens institucionais e objetivos pedagógicos
+    <main class="main-content">
+        <section class="page-hero">
+            <div class="page-hero__content parallax-layer-hero parallax-layer-hero--text" data-speed="0.25">
+                <h1 class="page-hero__title">A Engenho Mágico</h1>
+                <p class="page-hero__subtitle">Transformando mensagens institucionais e objetivos pedagógicos
                     em jornadas presenciais inesquecíveis.</p>
+            </div>
+            <div class="parallax-hero_content">
+                <img src="src/assets/img/parallax-hero/parallax-bg-ar.png" alt=""
+                    class="parallax-layer-hero parallax-layer-hero--bg" data-speed="0.08">
+
+                <!-- INÍCIO: Elementos Flutuantes (Balões) -->
+                <!-- Você pode ajustar as velocidades mudando o data-speed ou os tamanhos/posições no style.css usando as classes --float-1 e --float-2 -->
+                <img src="src/assets/img/parallax-hero/hero-float-ar-2.png" alt=""
+                    class="parallax-layer-hero parallax-layer-hero--float-2" data-speed="1.45">
+                <img src="src/assets/img/parallax-hero/hero-float-ar-1.png" alt=""
+                    class="parallax-layer-hero parallax-layer-hero--float-1" data-speed="1.85">
+                <!-- FIM: Elementos Flutuantes -->
+
+                <img src="src/assets/img/parallax-hero/parallax-mask-back-ar.png" alt=""
+                    class="parallax-layer-hero parallax-layer-hero--mask-back" data-speed="0.04">
+                <img src="src/assets/img/parallax-hero/parallax-mask-front-ar.png" alt=""
+                    class="parallax-layer-hero parallax-layer-hero--mask-front" data-speed="0.02">
             </div>
         </section>
 
-        <section class="quem-somos">
-            <div class="quem-somos__conteudo">
-                <h2 class="quem-somos__titulo">Quem Somos e o Que Acreditamos</h2>
-                <p class="quem-somos__paragrafo">A Engenho Mágico é um estúdio criativo focado em projetar vivências com
+        <section class="who-we-are">
+            <div class="who-we-are__content">
+                <h2 class="who-we-are__title">Quem Somos e o Que Acreditamos</h2>
+                <p class="who-we-are__text">A Engenho Mágico é um estúdio criativo focado em projetar vivências com
                     alto impacto emocional. Nossa atuação ocorre na mágica interseção entre educação, entretenimento,
                     storytelling presencial, design de jogos e cenografia. Entregamos muito mais que eventos: entregamos
                     projetos de transformação onde cada participante é o protagonista da sua própria jornada de
                     aprendizado.</p>
             </div>
             <img src="src/assets/img/placeholder.png" alt="Equipe da Engenho Mágico trabalhando em um projeto"
-                class="quem-somos__imagem">
+                class="who-we-are__image">
         </section>
 
-        <section class="diferenciais-detalhados">
-            <div class="diferenciais-detalhados__container">
-                <h2 class="diferenciais-detalhados__titulo">Os Pilares da Nossa Magia</h2>
-                <div class="diferenciais-detalhados__grade">
-                    <article class="pilar">
-                        <img src="src/assets/img/placeholder.png" alt="Ícone Criatividade" class="pilar__icone">
-                        <h3 class="pilar__titulo">Criatividade com Método</h3>
-                        <p class="pilar__descricao">A inovação precisa de alicerces. Usamos processos estruturados de
-                            design de experiência para garantir que a criatividade atinja os objetivos estratégicos do
-                            seu projeto.</p>
+        <section class="pillars">
+            <div class="pillars__container">
+                <h2 class="pillars__title">Os Pilares da Nossa Magia</h2>
+                <div class="pillars__grid">
+                    <article class="pillar">
+                        <div class="pillar__media-container">
+                            <img src="src/assets/img/placeholder.png" alt="Criatividade" class="pillar__image">
+                            <img src="src/assets/img/elements/mask-sqr-1.webp" alt="" class="pillar__mask"
+                                aria-hidden="true">
+                        </div>
+                        <div class="pillar__content">
+                            <img src="src/assets/img/elements/underline.png" alt="" class="pillar__decorator"
+                                aria-hidden="true">
+                            <h3 class="pillar__title">Criatividade com Método</h3>
+                            <p class="pillar__description">A inovação precisa de alicerces. Usamos processos
+                                estruturados de
+                                design de experiência para garantir que a criatividade atinja os objetivos estratégicos
+                                do
+                                seu projeto.</p>
+                        </div>
                     </article>
-                    <article class="pilar">
-                        <img src="src/assets/img/placeholder.png" alt="Ícone Propósito" class="pilar__icone">
-                        <h3 class="pilar__titulo">Experiência Física com Propósito</h3>
-                        <p class="pilar__descricao">Resgatamos o valor do encontro real. Criamos espaços e dinâmicas
-                            tangíveis, onde a presença importa e as memórias superam qualquer tela.</p>
+                    <article class="pillar">
+                        <div class="pillar__media-container">
+                            <img src="src/assets/img/placeholder.png" alt="Propósito" class="pillar__image">
+                            <img src="src/assets/img/elements/mask-sqr-2.webp" alt="" class="pillar__mask"
+                                aria-hidden="true">
+                        </div>
+                        <div class="pillar__content">
+                            <img src="src/assets/img/elements/underline.png" alt="" class="pillar__decorator"
+                                aria-hidden="true">
+                            <h3 class="pillar__title">Experiência Física com Propósito</h3>
+                            <p class="pillar__description">Resgatamos o valor do encontro real. Criamos espaços e
+                                dinâmicas
+                                tangíveis, onde a presença importa e as memórias superam qualquer tela.</p>
+                        </div>
                     </article>
-                    <article class="pilar">
-                        <img src="src/assets/img/placeholder.png" alt="Ícone Narrativa" class="pilar__icone">
-                        <h3 class="pilar__titulo">Narrativa como Ferramenta</h3>
-                        <p class="pilar__descricao">Construímos storytelling presencial e caixas narrativas que envolvem
-                            e transportam os participantes para dentro de um universo único e focado no seu tema.</p>
+                    <article class="pillar">
+                        <div class="pillar__media-container">
+                            <img src="src/assets/img/placeholder.png" alt="Narrativa" class="pillar__image">
+                            <img src="src/assets/img/elements/mask-sqr-1.webp" alt="" class="pillar__mask"
+                                aria-hidden="true">
+                        </div>
+                        <div class="pillar__content">
+                            <img src="src/assets/img/elements/underline.png" alt="" class="pillar__decorator"
+                                aria-hidden="true">
+                            <h3 class="pillar__title">Narrativa como Ferramenta</h3>
+                            <p class="pillar__description">Construímos storytelling presencial e caixas narrativas que
+                                envolvem
+                                e transportam os participantes para dentro de um universo único e focado no seu tema.
+                            </p>
+                        </div>
                     </article>
-                    <article class="pilar">
-                        <img src="src/assets/img/placeholder.png" alt="Ícone Gamificação" class="pilar__icone">
-                        <h3 class="pilar__titulo">Gamificação Aplicada de Verdade</h3>
-                        <p class="pilar__descricao">Desenhamos mecânicas reais de jogos para estimular a motivação
-                            intrínseca, cooperação, resolução de problemas e evolução dos jogadores.</p>
+                    <article class="pillar">
+                        <div class="pillar__media-container">
+                            <img src="src/assets/img/placeholder.png" alt="Gamificação" class="pillar__image">
+                            <img src="src/assets/img/elements/mask-sqr-2.webp" alt="" class="pillar__mask"
+                                aria-hidden="true">
+                        </div>
+                        <div class="pillar__content">
+                            <img src="src/assets/img/elements/underline.png" alt="" class="pillar__decorator"
+                                aria-hidden="true">
+                            <h3 class="pillar__title">Gamificação Aplicada de Verdade</h3>
+                            <p class="pillar__description">Desenhamos mecânicas reais de jogos para estimular a
+                                motivação
+                                intrínseca, cooperação, resolução de problemas e evolução dos jogadores.</p>
+                        </div>
                     </article>
-                    <article class="pilar">
-                        <img src="src/assets/img/placeholder.png" alt="Ícone Operação" class="pilar__icone">
-                        <h3 class="pilar__titulo">Operação Viável e Inteligente</h3>
-                        <p class="pilar__descricao">Uma ideia genial precisa funcionar na prática. Projetamos
-                            experiências escaláveis, considerando logística, segurança e otimização de recursos.</p>
+                    <article class="pillar">
+                        <div class="pillar__media-container">
+                            <img src="src/assets/img/placeholder.png" alt="Operação" class="pillar__image">
+                            <img src="src/assets/img/elements/mask-sqr-1.webp" alt="" class="pillar__mask"
+                                aria-hidden="true">
+                        </div>
+                        <div class="pillar__content">
+                            <img src="src/assets/img/elements/underline.png" alt="" class="pillar__decorator"
+                                aria-hidden="true">
+                            <h3 class="pillar__title">Operação Viável e Inteligente</h3>
+                            <p class="pillar__description">Uma ideia genial precisa funcionar na prática. Projetamos
+                                experiências escaláveis, considerando logística, segurança e otimização de recursos.</p>
+                        </div>
                     </article>
-                    <article class="pilar">
-                        <img src="src/assets/img/placeholder.png" alt="Ícone Aprendizagem" class="pilar__icone">
-                        <h3 class="pilar__titulo">Aprendizagem Ativa</h3>
-                        <p class="pilar__descricao">O público no centro da ação. Aprender fazendo, investigando e
-                            colaborando é a essência para absorver conteúdos de forma profunda e perene.</p>
+                    <article class="pillar">
+                        <div class="pillar__media-container">
+                            <img src="src/assets/img/placeholder.png" alt="Aprendizagem" class="pillar__image">
+                            <img src="src/assets/img/elements/mask-sqr-2.webp" alt="" class="pillar__mask"
+                                aria-hidden="true">
+                        </div>
+                        <div class="pillar__content">
+                            <img src="src/assets/img/elements/underline.png" alt="" class="pillar__decorator"
+                                aria-hidden="true">
+                            <h3 class="pillar__title">Aprendizagem Ativa</h3>
+                            <p class="pillar__description">O público no centro da ação. Aprender fazendo, investigando e
+                                colaborando é a essência para absorver conteúdos de forma profunda e perene.</p>
+                        </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="manifesto-completo">
-            <div class="manifesto-completo__container">
-                <h2 class="manifesto-completo__titulo">Nossa Filosofia de Conexão</h2>
-                <div class="manifesto-completo__texto">
-                    <p class="manifesto-completo__paragrafo">Em um mundo hiperconectado onde a atenção é consumida por
+        <section class="manifesto-full">
+            <div class="manifesto-full__container">
+                <h2 class="manifesto-full__title">Nossa Filosofia de Conexão</h2>
+                <div class="manifesto-full__body">
+                    <p class="manifesto-full__text">Em um mundo hiperconectado onde a atenção é consumida por
                         rolagens infinitas, a Engenho Mágico ergue a bandeira da presença, do contato real e da
                         interação humana tátil.</p>
-                    <p class="manifesto-completo__paragrafo">Nossas experiências imersivas não competem com o digital;
+                    <p class="manifesto-full__text">Nossas experiências imersivas não competem com o digital;
                         elas o complementam ao resgatar a emoção de tocar, investigar e superar desafios ao lado de
                         outras pessoas.</p>
-                    <p class="manifesto-completo__paragrafo">Para nós, a aprendizagem ativa e a gamificação corporativa
+                    <p class="manifesto-full__text">Para nós, a aprendizagem ativa e a gamificação corporativa
                         são formas de encarar o mundo. Despertamos o pensamento crítico criando ambientes onde as
                         respostas precisam ser conquistadas em equipe, gerando valor inestimável para escolas, marcas e
                         instituições.</p>
@@ -117,33 +188,39 @@
         </section>
     </main>
 
-    <footer class="rodape">
-        <div class="rodape__container">
-            <div class="rodape__informacoes">
-                <img src="src/assets/img/placeholder.png" alt="Logo Engenho Mágico" class="rodape__marca">
-                <p class="rodape__slogan">Experiências imersivas, educativas e gamificadas.</p>
-                <p class="rodape__descricao">Criamos jornadas presenciais inovadoras para escolas, empresas, parques,
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__info">
+                <img src="src/assets/img/placeholder.png" alt="Logo Engenho Mágico" class="footer__brand">
+                <p class="footer__slogan">Experiências imersivas, educativas e gamificadas.</p>
+                <p class="footer__description">Criamos jornadas presenciais inovadoras para escolas, empresas, parques,
                     resorts, eventos e instituições. Transformamos conteúdo em aventura.</p>
             </div>
-            <nav class="rodape__navegacao">
-                <ul class="rodape__menu">
-                    <li class="rodape__item"><a href="index.html" class="rodape__link">Início</a></li>
-                    <li class="rodape__item"><a href="sobre-nos.html" class="rodape__link">Sobre Nós</a></li>
-                    <li class="rodape__item"><a href="solucoes.html" class="rodape__link">Soluções</a></li>
-                    <li class="rodape__item"><a href="metodologia.html" class="rodape__link">Metodologia</a></li>
-                    <li class="rodape__item"><a href="contato.html" class="rodape__link">Contato</a></li>
+            <nav class="footer__nav">
+                <ul class="footer__menu">
+                    <li class="footer__item"><a href="index.html" class="footer__link">Início</a></li>
+                    <li class="footer__item"><a href="sobre-nos.html" class="footer__link">Sobre Nós</a></li>
+                    <li class="footer__item"><a href="solucoes.html" class="footer__link">Soluções</a></li>
+                    <li class="footer__item"><a href="metodologia.html" class="footer__link">Metodologia</a></li>
+                    <li class="footer__item"><a href="contato.html" class="footer__link">Contato</a></li>
                 </ul>
             </nav>
-            <div class="rodape__legal">
-                <p class="rodape__direitos">© 2026 Engenho Mágico. Todos os direitos reservados.</p>
-                <ul class="rodape__termos-menu">
-                    <li class="rodape__termos-item"><a href="#" class="rodape__termos-link">Termos de Uso</a></li>
-                    <li class="rodape__termos-item"><a href="#" class="rodape__termos-link">Política de Privacidade</a>
+            <div class="footer__legal">
+                <p class="footer__rights">© 2026 Engenho Mágico. Todos os direitos reservados.</p>
+                <ul class="footer__terms-menu">
+                    <li class="footer__terms-item"><a href="#" class="footer__terms-link">Termos de Uso</a></li>
+                    <li class="footer__terms-item"><a href="#" class="footer__terms-link">Política de Privacidade</a>
                     </li>
                 </ul>
             </div>
         </div>
     </footer>
+    <!-- Animation Libraries (GSAP) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="src/js/main.js"></script>
 </body>
 
 </html>

@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Lógica do Carrossel Hero (Posicionamento Absoluto)
-    const carrossel = document.querySelector('.heroi__carrossel');
+    const carrossel = document.querySelector('.hero__carousel');
 
     if (carrossel) {
-        const cards = Array.from(carrossel.querySelectorAll('.cartao-slide'));
+        const cards = Array.from(carrossel.querySelectorAll('.slide-card'));
 
         if (cards.length > 0) {
             // Arrays contendo a posição atual de cada card (0 a N-1)
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cards.forEach((card) => {
                 // Controles Internos
-                const btnAnterior = card.querySelector('.cartao-slide__controle--anterior');
+                const btnAnterior = card.querySelector('.slide-card__control--prev');
                 if (btnAnterior) {
                     btnAnterior.addEventListener('click', (e) => {
                         e.stopPropagation();
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
 
-                const btnProximo = card.querySelector('.cartao-slide__controle--proximo');
+                const btnProximo = card.querySelector('.slide-card__control--next');
                 if (btnProximo) {
                     btnProximo.addEventListener('click', (e) => {
                         e.stopPropagation();
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // EFEITO PARALLAX 3D (Home)
     // ==========================================================================
-    const imagensParallax = document.querySelectorAll('.quem-somos__imagem, .solucao-detalhe__imagem');
+    const imagensParallax = document.querySelectorAll('.who-we-are__image, .solution-detail__image');
 
     if (imagensParallax.length > 0) {
         document.addEventListener('mousemove', (e) => {
@@ -134,19 +134,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // EFEITO PARALLAX CAMADAS (Seção Sobre)
-    const containerCamadas = document.querySelector('.sobre__imagem-wrapper');
-    const camadas = document.querySelectorAll('.camada-parallax');
+    const containerCamadas = document.querySelector('.about__image-wrapper');
+    const camadas = document.querySelectorAll('.parallax-layer');
 
     if (containerCamadas && camadas.length > 0) {
         window.addEventListener('scroll', () => {
             requestAnimationFrame(() => {
                 const rect = containerCamadas.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
-                
+
                 // Normaliza para -1 (topo da tela) a +1 (fundo da tela), 0 quando centrado
                 const rawOffset = (rect.top + rect.height / 2) - (windowHeight / 2);
                 const normalizedOffset = Math.max(-1, Math.min(1, rawOffset / (windowHeight / 2)));
-                
+
                 camadas.forEach(camada => {
                     const factor = parseFloat(camada.getAttribute('data-factor')) || 0;
                     if (factor > 0) {
@@ -161,8 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 
     // EFEITO PARALLAX SCROLL (Seção Público Formatos)
     // 
-    const imgEsqCima = document.querySelector('.publico-formatos__imagem-parallax--esq-cima');
-    const imgDirBaixo = document.querySelector('.publico-formatos__imagem-parallax--dir-baixo');
+    const imgEsqCima = document.querySelector('.audience-formats__parallax-img--top-left');
+    const imgDirBaixo = document.querySelector('.audience-formats__parallax-img--bottom-right');
 
     if (imgEsqCima || imgDirBaixo) {
         window.addEventListener('scroll', () => {
@@ -191,11 +191,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
 
-        const etapas = document.querySelectorAll('.etapa');
+        const etapas = document.querySelectorAll('.step');
 
         etapas.forEach((etapa) => {
-            const bolinha = etapa.querySelector('.etapa__numero');
-            const conteudo = etapa.querySelector('.etapa__conteudo');
+            const bolinha = etapa.querySelector('.step__number');
+            const conteudo = etapa.querySelector('.step__content');
 
             if (bolinha && conteudo) {
                 // Estado inicial
@@ -234,4 +234,52 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ==========================================================================
+    // EFEITO PARALLAX HERO (Todas as páginas internas)
+    // ==========================================================================
+    const hero = document.querySelector('.page-hero');
+    const layers = hero?.querySelectorAll('[data-speed]');
+
+    let ticking = false;
+
+    function updateHeroParallax() {
+        if (!hero || !layers) return;
+
+        const heroRect = hero.getBoundingClientRect();
+        const heroHeight = hero.offsetHeight;
+
+        const progress = Math.min(
+            Math.max(-heroRect.top / heroHeight, 0),
+            1
+        );
+
+        layers.forEach((layer) => {
+            const speed = Number(layer.dataset.speed) || 0;
+            const maximumMovement = heroHeight * 0.48;
+            const movement = progress * maximumMovement * speed;
+
+            layer.style.setProperty(
+                '--parallax-y',
+                `${movement.toFixed(2)}px`
+            );
+        });
+
+        ticking = false;
+    }
+
+    function requestParallaxUpdate() {
+        if (ticking) return;
+
+        ticking = true;
+        requestAnimationFrame(updateHeroParallax);
+    }
+
+    window.addEventListener('scroll', requestParallaxUpdate, {
+        passive: true
+    });
+
+    window.addEventListener('resize', requestParallaxUpdate);
+
+    updateHeroParallax();
 });

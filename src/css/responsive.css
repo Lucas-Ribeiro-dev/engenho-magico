@@ -1,224 +1,214 @@
 /* ==========================================================================
-   RESPONSIVIDADE - ENGENHO MÁGICO
+   RESPONSIVE — ENGENHO MÁGICO
    ========================================================================== */
 
-/* TABLETS (Até 1024px) */
+/* TABLETS (Up to 1024px) */
 @media (max-width: 1024px) {
   :root {
-    --espaco-secao: clamp(3rem, 6vw, 5rem);
-    --padding-container-desktop: 2rem;
+    --space-section: clamp(3rem, 6vw, 5rem);
+    --container-padding-desktop: 2rem;
   }
 
-  .grid-cards, .diferenciais-detalhados__grade, .catalogo__grade {
+  .pillars__grid, .catalog__grid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 
-  /* Soluções Resumo (Tablet) */
-  .solucoes-resumo__grade {
-    gap: var(--espaco-sm);
+  /* Solutions Overview (Tablet) */
+  .solutions-overview__grid {
+    gap: var(--space-sm);
   }
 
-  .cartao-solucao {
+  .solution-card {
     border-width: 12px;
     border-image-width: 12px;
   }
 
-  .cartao-solucao__imagem {
-    margin: var(--espaco-sm);
+  .solution-card__image {
+    margin: var(--space-sm);
   }
 
-  .cartao-solucao__conteudo {
+  .solution-card__content {
     width: 68%;
-    padding: var(--espaco-xs) var(--espaco-sm) var(--espaco-xs) 0;
+    padding: var(--space-xs) var(--space-sm) var(--space-xs) 0;
   }
 
-  .sobre, .quem-somos, .solucao-detalhe, .contato-container__grade, .rodape__container {
-    gap: var(--espaco-xl);
+  .about, .who-we-are, .solution-detail, .contact__grid, .footer__container {
+    gap: var(--space-xl);
   }
 
-  /* Reduzir tamanho dos ícones/pilares */
-  .pilar {
-    padding: var(--espaco-md);
+  .pillar {
+    padding: var(--space-md);
   }
 }
 
-/* SMARTPHONES E TELAS MENORES (Até 768px) */
+/* SMARTPHONES (Up to 768px) */
 @media (max-width: 768px) {
   :root {
-    --padding-container-desktop: 1.25rem; /* Ajuste para o mobile */
-    --espaco-secao: 3rem;
+    --container-padding-desktop: 1.25rem;
+    --space-section: 3rem;
   }
 
-  /* Cabeçalho */
-  .cabecalho {
-    padding: var(--espaco-xs) 0;
+  /* Header */
+  .header {
+    padding: var(--space-xs) 0;
   }
 
-  .cabecalho__container {
+  .header__container {
     flex-direction: column;
-    gap: var(--espaco-sm);
+    gap: var(--space-sm);
   }
 
-  .cabecalho__navegacao {
+  .header__nav {
     width: 100%;
-    overflow-x: auto; /* Permite scroll horizontal no menu se os itens não couberem */
+    overflow-x: auto;
     padding-bottom: 5px;
   }
   
-  /* Esconde a barra de rolagem no menu horizontal */
-  .cabecalho__navegacao::-webkit-scrollbar {
+  .header__nav::-webkit-scrollbar {
     display: none;
   }
   
-  .cabecalho__menu {
+  .header__menu {
     justify-content: center;
     align-items: center;
     min-width: max-content;
-    gap: var(--espaco-md);
+    gap: var(--space-md);
   }
 
-  /* Botão de ação do cabeçalho vira bloco total */
-  .cabecalho__botao-acao {
+  .header__cta {
     width: 100%;
     padding: 0.75rem 1rem;
-    font-size: var(--tamanho-fonte-sm);
+    font-size: var(--font-size-sm);
   }
 
-  /* Ajuste no padding do conteúdo interno por causa do cabeçalho maior no mobile */
-  .cabecalho-interno {
-    padding-top: calc(var(--espaco-secao) + 120px);
+  /* Page header padding for taller mobile header */
+  .page-hero {
+    padding-top: calc(var(--space-section) + 120px);
   }
 
-  /* Seções de Grid Split (1fr 1fr -> 1fr) */
-  .sobre, .quem-somos, .solucao-detalhe, .contato-container__grade, .rodape__container {
+  /* Grid split sections → single column */
+  .about, .who-we-are, .solution-detail, .contact__grid, .footer__container {
     grid-template-columns: 1fr;
   }
 
-  /* Imagens dessas seções */
-  .sobre__imagem-wrapper, .sobre__imagem, .quem-somos__imagem, .solucao-detalhe__imagem {
+  .about__image-wrapper, .who-we-are__image, .solution-detail__image {
     min-height: 250px;
     height: 300px;
-    order: -1; /* Joga a imagem para cima do texto no mobile */
+    order: -1;
   }
 
-  /* Heroi / Carrossel em Mobile */
-  /* Comportamento estilo Slider Normal (Accordion ocupa muito espaço) */
-  .cartao-slide[data-pos="0"] {
+  /* Hero carousel — full-width slider on mobile */
+  .slide-card[data-pos="0"] {
     width: 100%;
   }
 
-  .cartao-slide:not([data-pos="0"]) {
+  .slide-card:not([data-pos="0"]) {
     width: 0%;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
   }
 
-  .cartao-slide__conteudo {
-    padding: 0 var(--padding-container-desktop) var(--espaco-lg);
+  .slide-card__content {
+    padding: 0 var(--container-padding-desktop) var(--space-lg);
   }
   
-  .cartao-slide__rodape {
-    padding: 0 var(--padding-container-desktop) var(--espaco-xl);
+  .slide-card__footer {
+    padding: 0 var(--container-padding-desktop) var(--space-xl);
   }
 
-  .cartao-slide__texto {
-    font-size: var(--tamanho-fonte-lg);
-  }
-  
-  .cartao-slide__botao {
+  .slide-card__btn {
     width: 100%;
   }
 
-  /* Etapas */
-  .etapas__lista::before {
-    left: 20px; /* Ajuste da linha no mobile */
+  /* Steps */
+  .steps__list::before {
+    left: 20px;
   }
 
-  .etapa {
-    gap: var(--espaco-md);
+  .step {
+    gap: var(--space-md);
   }
 
-  .etapa__numero {
+  .step__number {
     width: 60px;
     height: 60px;
-    font-size: var(--tamanho-fonte-2xl);
+    font-size: var(--font-size-2xl);
   }
 
-  .etapa:hover .etapa__conteudo {
-    transform: none; /* Desativa hover complexo no mobile */
+  .step:hover .step__content {
+    transform: none;
   }
 
-  /* Soluções Resumo (Mobile) */
-  .solucoes-resumo__grade {
+  /* Solutions Overview (Mobile) */
+  .solutions-overview__grid {
     grid-template-columns: 1fr;
   }
   
-  .cartao-solucao {
+  .solution-card {
     flex-direction: column;
     align-items: center;
     border-width: 16px;
     border-image-width: 16px;
   }
   
-  .cartao-solucao__imagem {
+  .solution-card__image {
     width: 60%;
     max-width: 220px;
-    margin: var(--espaco-md) auto 0;
+    margin: var(--space-md) auto 0;
   }
   
-  .cartao-solucao__conteudo {
+  .solution-card__content {
     width: 100%;
-    padding: var(--espaco-md);
+    padding: var(--space-md);
   }
   
-  .cartao-solucao__linha-decorativa {
+  .solution-card__divider {
     width: 40%;
   }
 
-  /* Rodapé */
-  .rodape__container {
+  /* Footer */
+  .footer__container {
     text-align: center;
   }
   
-  .rodape__menu {
+  .footer__menu {
     align-items: center;
   }
 
-  .rodape__legal {
+  .footer__legal {
     flex-direction: column;
-    gap: var(--espaco-md);
+    gap: var(--space-md);
   }
   
-  .rodape__termos-menu {
+  .footer__terms-menu {
     justify-content: center;
   }
   
-  .rodape__marca {
-    margin: 0 auto var(--espaco-md);
+  .footer__brand {
+    margin: 0 auto var(--space-md);
+  }
+
+  /* Expertise */
+  .expertise {
+    min-height: 60vh;
+    padding-bottom: var(--space-xl);
+    padding-top: var(--space-xl);
+  }
+
+  .expertise__text {
+    font-size: var(--font-size-md);
   }
 }
 
-/* SMARTPHONES PEQUENOS (Até 480px) */
+/* SMALL SMARTPHONES (Up to 480px) */
 @media (max-width: 480px) {
-  .cartao-slide__titulo, .cartao-slide__subtitulo {
-    font-size: var(--tamanho-fonte-3xl);
+  .slide-card__title {
+    font-size: var(--font-size-3xl);
   }
 
-  .cartao-slide__controles {
+  .slide-card__controls {
     width: 100%;
     justify-content: space-between;
-  }
-}
-
-@media (max-width: 768px) {
-  .especialidades {
-    min-height: 60vh;
-    padding-bottom: var(--espaco-xl);
-    padding-top: var(--espaco-xl);
-  }
-
-  .especialidades__texto {
-    font-size: var(--tamanho-fonte-md);
   }
 }

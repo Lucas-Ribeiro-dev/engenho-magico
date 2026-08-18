@@ -13,55 +13,66 @@
 </head>
 
 <body>
-    <header class="cabecalho">
-        <div class="cabecalho__container">
-            <a href="index.html" class="cabecalho__logo">
-                <img src="src/assets/img/pictures/logo-4.png" alt="Logo Engenho Mágico" class="cabecalho__logo-imagem">
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">
+                <img src="src/assets/img/pictures/logo-4.png" alt="Logo Engenho Mágico" class="header__logo-img">
             </a>
-            <nav class="cabecalho__navegacao">
-                <ul class="cabecalho__menu">
-                    <li class="cabecalho__item"><a href="index.html" class="cabecalho__link">Início</a></li>
-                    <li class="cabecalho__item"><a href="sobre-nos.html" class="cabecalho__link">Sobre Nós</a></li>
-                    <li class="cabecalho__item"><a href="solucoes.html" class="cabecalho__link">Soluções</a></li>
-                    <li class="cabecalho__item"><a href="metodologia.html" class="cabecalho__link">Metodologia</a></li>
-                    <li class="cabecalho__item"><a href="contato.html" class="cabecalho__link">Contato</a></li>
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li class="header__item"><a href="index.html" class="header__link">Início</a></li>
+                    <li class="header__item"><a href="sobre-nos.html" class="header__link">Sobre Nós</a></li>
+                    <li class="header__item"><a href="solucoes.html" class="header__link">Soluções</a></li>
+                    <li class="header__item"><a href="metodologia.html" class="header__link">Metodologia</a></li>
+                    <li class="header__item"><a href="contato.html" class="header__link">Contato</a></li>
                 </ul>
             </nav>
-            <a href="contato.html" class="cabecalho__botao-acao"><span class="texto-btn">Vamos conversar</span></a>
+            <a href="contato.html" class="btn-cta header__cta"><span class="btn-text">Vamos conversar</span></a>
         </div>
     </header>
 
-    <main class="conteudo-principal">
-        <section class="cabecalho-interno">
-            <div class="cabecalho-interno__conteudo">
-                <h1 class="cabecalho-interno__titulo">Inicie sua Jornada</h1>
-                <p class="cabecalho-interno__subtitulo">Vamos transformar seu desafio em uma experiência imersiva e
+    <main class="main-content">
+        <section class="page-hero">
+            <div class="page-hero__content parallax-layer-hero parallax-layer-hero--text" data-speed="0.25">
+                <h1 class="page-hero__title">Inicie sua Jornada</h1>
+                <p class="page-hero__subtitle">Vamos transformar seu desafio em uma experiência imersiva e
                     memorável.</p>
+            </div>
+            <div class="parallax-hero_content">
+                <img src="src/assets/img/parallax-hero/parallax-bg-fogo.png" alt="" class="parallax-layer-hero parallax-layer-hero--bg" data-speed="0.08">
+                
+                <!-- INÍCIO: Elementos Flutuantes (Fogo) -->
+                <img src="src/assets/img/parallax-hero/hero-float-fogo-2.png" alt="" class="parallax-layer-hero parallax-layer-hero--float-2-fogo" data-speed="1.45">
+                <img src="src/assets/img/parallax-hero/hero-float-fogo-1.png" alt="" class="parallax-layer-hero parallax-layer-hero--float-1-fogo" data-speed="1.85">
+                <!-- FIM: Elementos Flutuantes -->
+
+                <img src="src/assets/img/parallax-hero/parallax-mask-back-fogo.png" alt="" class="parallax-layer-hero parallax-layer-hero--mask-back" data-speed="0.04">
+                <img src="src/assets/img/parallax-hero/parallax-mask-front-ar.png" alt="" class="parallax-layer-hero parallax-layer-hero--mask-front" data-speed="0.02">
             </div>
         </section>
 
-        <section class="contato-container">
-            <div class="contato-container__grade">
-                <div class="formulario-secao">
-                    <form class="formulario" action="#" method="POST">
-                        <div class="formulario__grupo">
-                            <label for="nome" class="formulario__rotulo">Nome completo</label>
-                            <input type="text" id="nome" name="nome" class="formulario__campo"
+        <section class="contact">
+            <div class="contact__grid">
+                <div class="form-section">
+                    <form class="form" action="#" method="POST">
+                        <div class="form__group">
+                            <label for="nome" class="form__label">Nome completo</label>
+                            <input type="text" id="nome" name="nome" class="form__field"
                                 placeholder="Ex: João da Silva" required>
                         </div>
-                        <div class="formulario__grupo">
-                            <label for="email" class="formulario__rotulo">E-mail corporativo ou pessoal</label>
-                            <input type="email" id="email" name="email" class="formulario__campo"
+                        <div class="form__group">
+                            <label for="email" class="form__label">E-mail corporativo ou pessoal</label>
+                            <input type="email" id="email" name="email" class="form__field"
                                 placeholder="Ex: joao@empresa.com" required>
                         </div>
-                        <div class="formulario__grupo">
-                            <label for="telefone" class="formulario__rotulo">Telefone / WhatsApp</label>
-                            <input type="tel" id="telefone" name="telefone" class="formulario__campo"
+                        <div class="form__group">
+                            <label for="telefone" class="form__label">Telefone / WhatsApp</label>
+                            <input type="tel" id="telefone" name="telefone" class="form__field"
                                 placeholder="(00) 00000-0000" required>
                         </div>
-                        <div class="formulario__grupo">
-                            <label for="instituicao" class="formulario__rotulo">Tipo de instituição/empresa</label>
-                            <select id="instituicao" name="instituicao" class="formulario__campo" required>
+                        <div class="form__group">
+                            <label for="instituicao" class="form__label">Tipo de instituição/empresa</label>
+                            <select id="instituicao" name="instituicao" class="form__field" required>
                                 <option value="" disabled selected>Selecione uma opção</option>
                                 <option value="escola">Escola</option>
                                 <option value="empresa">Empresa</option>
@@ -70,9 +81,9 @@
                                 <option value="outro">Outro</option>
                             </select>
                         </div>
-                        <div class="formulario__grupo">
-                            <label for="solucao" class="formulario__rotulo">Solução de interesse</label>
-                            <select id="solucao" name="solucao" class="formulario__campo" required>
+                        <div class="form__group">
+                            <label for="solucao" class="form__label">Solução de interesse</label>
+                            <select id="solucao" name="solucao" class="form__field" required>
                                 <option value="" disabled selected>Selecione a área de interesse</option>
                                 <option value="educativa">Experiências Educativas Gamificadas</option>
                                 <option value="corporativa">Dinâmicas Corporativas Imersivas</option>
@@ -81,37 +92,37 @@
                                 <option value="duvida">Tenho apenas uma dúvida geral</option>
                             </select>
                         </div>
-                        <div class="formulario__grupo">
-                            <label for="mensagem" class="formulario__rotulo">Mensagem / Detalhes da ideia</label>
-                            <textarea id="mensagem" name="mensagem" class="formulario__campo formulario__campo--area"
+                        <div class="form__group">
+                            <label for="mensagem" class="form__label">Mensagem / Detalhes da ideia</label>
+                            <textarea id="mensagem" name="mensagem" class="form__field form__field--textarea"
                                 placeholder="Conte-nos um pouco sobre o seu desafio ou projeto..." rows="5"
                                 required></textarea>
                         </div>
-                        <button type="submit" class="formulario__botao-enviar">Solicitar Proposta</button>
+                        <button type="submit" class="form__submit">Solicitar Proposta</button>
                     </form>
                 </div>
 
-                <aside class="canais-atendimento">
-                    <h2 class="canais-atendimento__titulo">Canais de Atendimento Direto</h2>
-                    <p class="canais-atendimento__descricao">Prefere falar diretamente com nossa equipe? Utilize um dos
+                <aside class="contact-channels">
+                    <h2 class="contact-channels__title">Canais de Atendimento Direto</h2>
+                    <p class="contact-channels__description">Prefere falar diretamente com nossa equipe? Utilize um dos
                         nossos canais abaixo.</p>
-                    <div class="canais-atendimento__lista">
+                    <div class="contact-channels__list">
                         <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer"
-                            class="canais-atendimento__link canais-atendimento__link--whatsapp">
+                            class="contact-channels__link">
                             <img src="src/assets/img/placeholder.png" alt="Ícone WhatsApp"
-                                class="canais-atendimento__icone">
-                            <div class="canais-atendimento__info">
-                                <span class="canais-atendimento__rotulo">WhatsApp</span>
-                                <span class="canais-atendimento__dado">(00) 00000-0000</span>
+                                class="contact-channels__icon">
+                            <div class="contact-channels__info">
+                                <span class="contact-channels__label">WhatsApp</span>
+                                <span class="contact-channels__value">(00) 00000-0000</span>
                             </div>
                         </a>
                         <a href="mailto:contato@engenhomagico.com.br"
-                            class="canais-atendimento__link canais-atendimento__link--email">
+                            class="contact-channels__link">
                             <img src="src/assets/img/placeholder.png" alt="Ícone E-mail"
-                                class="canais-atendimento__icone">
-                            <div class="canais-atendimento__info">
-                                <span class="canais-atendimento__rotulo">E-mail Institucional</span>
-                                <span class="canais-atendimento__dado">contato@engenhomagico.com.br</span>
+                                class="contact-channels__icon">
+                            <div class="contact-channels__info">
+                                <span class="contact-channels__label">E-mail Institucional</span>
+                                <span class="contact-channels__value">contato@engenhomagico.com.br</span>
                             </div>
                         </a>
                     </div>
@@ -120,33 +131,39 @@
         </section>
     </main>
 
-    <footer class="rodape">
-        <div class="rodape__container">
-            <div class="rodape__informacoes">
-                <img src="src/assets/img/placeholder.png" alt="Logo Engenho Mágico" class="rodape__marca">
-                <p class="rodape__slogan">Experiências imersivas, educativas e gamificadas.</p>
-                <p class="rodape__descricao">Criamos jornadas presenciais inovadoras para escolas, empresas, parques,
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__info">
+                <img src="src/assets/img/placeholder.png" alt="Logo Engenho Mágico" class="footer__brand">
+                <p class="footer__slogan">Experiências imersivas, educativas e gamificadas.</p>
+                <p class="footer__description">Criamos jornadas presenciais inovadoras para escolas, empresas, parques,
                     resorts, eventos e instituições. Transformamos conteúdo em aventura.</p>
             </div>
-            <nav class="rodape__navegacao">
-                <ul class="rodape__menu">
-                    <li class="rodape__item"><a href="index.html" class="rodape__link">Início</a></li>
-                    <li class="rodape__item"><a href="sobre-nos.html" class="rodape__link">Sobre Nós</a></li>
-                    <li class="rodape__item"><a href="solucoes.html" class="rodape__link">Soluções</a></li>
-                    <li class="rodape__item"><a href="metodologia.html" class="rodape__link">Metodologia</a></li>
-                    <li class="rodape__item"><a href="contato.html" class="rodape__link">Contato</a></li>
+            <nav class="footer__nav">
+                <ul class="footer__menu">
+                    <li class="footer__item"><a href="index.html" class="footer__link">Início</a></li>
+                    <li class="footer__item"><a href="sobre-nos.html" class="footer__link">Sobre Nós</a></li>
+                    <li class="footer__item"><a href="solucoes.html" class="footer__link">Soluções</a></li>
+                    <li class="footer__item"><a href="metodologia.html" class="footer__link">Metodologia</a></li>
+                    <li class="footer__item"><a href="contato.html" class="footer__link">Contato</a></li>
                 </ul>
             </nav>
-            <div class="rodape__legal">
-                <p class="rodape__direitos">© 2026 Engenho Mágico. Todos os direitos reservados.</p>
-                <ul class="rodape__termos-menu">
-                    <li class="rodape__termos-item"><a href="#" class="rodape__termos-link">Termos de Uso</a></li>
-                    <li class="rodape__termos-item"><a href="#" class="rodape__termos-link">Política de Privacidade</a>
+            <div class="footer__legal">
+                <p class="footer__rights">© 2026 Engenho Mágico. Todos os direitos reservados.</p>
+                <ul class="footer__terms-menu">
+                    <li class="footer__terms-item"><a href="#" class="footer__terms-link">Termos de Uso</a></li>
+                    <li class="footer__terms-item"><a href="#" class="footer__terms-link">Política de Privacidade</a>
                     </li>
                 </ul>
             </div>
         </div>
     </footer>
+    <!-- Animation Libraries (GSAP) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="src/js/main.js"></script>
 </body>
 
 </html>

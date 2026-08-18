@@ -13,79 +13,90 @@
 </head>
 
 <body>
-    <header class="cabecalho">
-        <div class="cabecalho__container">
-            <a href="index.html" class="cabecalho__logo">
-                <img src="src/assets/img/pictures/logo-4.png" alt="Logo Engenho Mágico" class="cabecalho__logo-imagem">
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">
+                <img src="src/assets/img/pictures/logo-4.png" alt="Logo Engenho Mágico" class="header__logo-img">
             </a>
-            <nav class="cabecalho__navegacao">
-                <ul class="cabecalho__menu">
-                    <li class="cabecalho__item"><a href="index.html" class="cabecalho__link">Início</a></li>
-                    <li class="cabecalho__item"><a href="sobre-nos.html" class="cabecalho__link">Sobre Nós</a></li>
-                    <li class="cabecalho__item"><a href="solucoes.html" class="cabecalho__link">Soluções</a></li>
-                    <li class="cabecalho__item"><a href="metodologia.html" class="cabecalho__link">Metodologia</a>
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li class="header__item"><a href="index.html" class="header__link">Início</a></li>
+                    <li class="header__item"><a href="sobre-nos.html" class="header__link">Sobre Nós</a></li>
+                    <li class="header__item"><a href="solucoes.html" class="header__link">Soluções</a></li>
+                    <li class="header__item"><a href="metodologia.html" class="header__link">Metodologia</a>
                     </li>
-                    <li class="cabecalho__item"><a href="contato.html" class="cabecalho__link">Contato</a></li>
+                    <li class="header__item"><a href="contato.html" class="header__link">Contato</a></li>
                 </ul>
             </nav>
-            <a href="contato.html" class="cabecalho__botao-acao"><span class="texto-btn">Vamos conversar</span></a>
+            <a href="contato.html" class="btn-cta header__cta"><span class="btn-text">Vamos conversar</span></a>
         </div>
     </header>
 
-    <main class="conteudo-principal">
-        <section class="cabecalho-interno">
-            <div class="cabecalho-interno__conteudo">
-                <h1 class="cabecalho-interno__titulo">Nossa Metodologia Criativa</h1>
-                <p class="cabecalho-interno__subtitulo">Um processo rigoroso para transformar ideias em experiências
+    <main class="main-content">
+        <section class="page-hero">
+            <div class="page-hero__content parallax-layer-hero parallax-layer-hero--text" data-speed="0.25">
+                <h1 class="page-hero__title">Nossa Metodologia Criativa</h1>
+                <p class="page-hero__subtitle">Um processo rigoroso para transformar ideias em experiências
                     impecáveis e viáveis.</p>
+            </div>
+            <div class="parallax-hero_content">
+                <img src="src/assets/img/parallax-hero/parallax-bg-terra.png" alt="" class="parallax-layer-hero parallax-layer-hero--bg" data-speed="0.08">
+                
+                <!-- INÍCIO: Elementos Flutuantes (Terra) -->
+                <img src="src/assets/img/parallax-hero/hero-float-terra-2.png" alt="" class="parallax-layer-hero parallax-layer-hero--float-2-terra" data-speed="1.45">
+                <img src="src/assets/img/parallax-hero/hero-float-terra-1.png" alt="" class="parallax-layer-hero parallax-layer-hero--float-1-terra" data-speed="1.85">
+                <!-- FIM: Elementos Flutuantes -->
+
+                <img src="src/assets/img/parallax-hero/parallax-mask-back-terra.png" alt="" class="parallax-layer-hero parallax-layer-hero--mask-back" data-speed="0.04">
+                <img src="src/assets/img/parallax-hero/parallax-mask-front-ar.png" alt="" class="parallax-layer-hero parallax-layer-hero--mask-front" data-speed="0.02">
             </div>
         </section>
 
-        <section class="etapas">
-            <div class="etapas__container">
-                <h2 class="etapas__titulo">As 5 Etapas do Processo</h2>
-                <ol class="etapas__lista">
-                    <li class="etapa">
-                        <div class="etapa__numero">1</div>
-                        <div class="etapa__conteudo">
-                            <h3 class="etapa__nome"> Entendimento do Objetivo</h3>
-                            <p class="etapa__descricao">Antes de esboçar cenários, investigamos a fundo o propósito do
+        <section class="steps">
+            <div class="steps__container">
+                <h2 class="steps__title">As 5 Etapas do Processo</h2>
+                <ol class="steps__list">
+                    <li class="step">
+                        <div class="step__number">1</div>
+                        <div class="step__content">
+                            <h3 class="step__name"> Entendimento do Objetivo</h3>
+                            <p class="step__description">Antes de esboçar cenários, investigamos a fundo o propósito do
                                 projeto. Queremos ensinar um conteúdo, engajar uma equipe, atrair famílias ou fortalecer
                                 uma marca? O norte estratégico dita toda a criação.</p>
                         </div>
                     </li>
-                    <li class="etapa">
-                        <div class="etapa__numero">2</div>
-                        <div class="etapa__conteudo">
-                            <h3 class="etapa__nome"> Desenho da Jornada</h3>
-                            <p class="etapa__descricao">Estruturamos a experiência com começo, conflito, missões,
+                    <li class="step">
+                        <div class="step__number">2</div>
+                        <div class="step__content">
+                            <h3 class="step__name"> Desenho da Jornada</h3>
+                            <p class="step__description">Estruturamos a experiência com começo, conflito, missões,
                                 descobertas e resolução. Definimos o papel do participante e as mecânicas de interação.
                                 Tudo tem uma função clara; nada entra apenas por estética.</p>
                         </div>
                     </li>
-                    <li class="etapa">
-                        <div class="etapa__numero">3</div>
-                        <div class="etapa__conteudo">
-                            <h3 class="etapa__nome"> Storytelling e Universo Visual</h3>
-                            <p class="etapa__descricao">A narrativa é o motor da experiência. Desenvolvemos a identidade
+                    <li class="step">
+                        <div class="step__number">3</div>
+                        <div class="step__content">
+                            <h3 class="step__name"> Storytelling e Universo Visual</h3>
+                            <p class="step__description">A narrativa é o motor da experiência. Desenvolvemos a identidade
                                 visual, as histórias, personagens, dossiês, mapas e objetos táteis (caixas narrativas)
                                 que transportam o público para o universo do projeto.</p>
                         </div>
                     </li>
-                    <li class="etapa">
-                        <div class="etapa__numero">4</div>
-                        <div class="etapa__conteudo">
-                            <h3 class="etapa__nome"> Planejamento Operacional</h3>
-                            <p class="etapa__descricao">Uma ideia só é boa se funcionar na prática. Planejamos
+                    <li class="step">
+                        <div class="step__number">4</div>
+                        <div class="step__content">
+                            <h3 class="step__name"> Planejamento Operacional</h3>
+                            <p class="step__description">Uma ideia só é boa se funcionar na prática. Planejamos
                                 minuciosamente o fluxo de público, tempos e movimentos, necessidades de equipe,
                                 segurança, manutenção e a lógica de escalabilidade.</p>
                         </div>
                     </li>
-                    <li class="etapa">
-                        <div class="etapa__numero">5</div>
-                        <div class="etapa__conteudo">
-                            <h3 class="etapa__nome"> Implantação e Evolução Constante</h3>
-                            <p class="etapa__descricao">Projetos podem nascer como pilotos (MVPs) ou versões compactas.
+                    <li class="step">
+                        <div class="step__number">5</div>
+                        <div class="step__content">
+                            <h3 class="step__name"> Implantação e Evolução Constante</h3>
+                            <p class="step__description">Projetos podem nascer como pilotos (MVPs) ou versões compactas.
                                 A partir de testes reais, refinamos a operação, ajustamos os desafios e evoluímos a
                                 experiência para garantir máximo impacto com menor risco.</p>
                         </div>
@@ -94,90 +105,90 @@
             </div>
         </section>
 
-        <section class="catalogo">
-            <div class="catalogo__container">
-                <h2 class="catalogo__titulo">Catálogo de Formatos</h2>
-                <p class="catalogo__subtitulo">Conheça as possibilidades visuais de entregas que podemos adaptar para o
+        <section class="catalog">
+            <div class="catalog__container">
+                <h2 class="catalog__title">Catálogo de Formatos</h2>
+                <p class="catalog__subtitle">Conheça as possibilidades visuais de entregas que podemos adaptar para o
                     seu projeto.</p>
-                <div class="catalogo__grade">
-                    <figure class="catalogo__item">
+                <div class="catalog__grid">
+                    <figure class="catalog__item">
                         <img src="src/assets/img/placeholder.png" alt="Labirinto temático interativo"
-                            class="catalogo__imagem">
-                        <figcaption class="catalogo__legenda">Labirintos temáticos</figcaption>
+                            class="catalog__image">
+                        <figcaption class="catalog__caption">Labirintos temáticos</figcaption>
                     </figure>
-                    <figure class="catalogo__item">
+                    <figure class="catalog__item">
                         <img src="src/assets/img/placeholder.png" alt="Arena de missões e desafios"
-                            class="catalogo__imagem">
-                        <figcaption class="catalogo__legenda">Arenas de missão</figcaption>
+                            class="catalog__image">
+                        <figcaption class="catalog__caption">Arenas de missão</figcaption>
                     </figure>
-                    <figure class="catalogo__item">
+                    <figure class="catalog__item">
                         <img src="src/assets/img/placeholder.png" alt="Jogos de investigação de mesa"
-                            class="catalogo__imagem">
-                        <figcaption class="catalogo__legenda">Jogos investigativos</figcaption>
+                            class="catalog__image">
+                        <figcaption class="catalog__caption">Jogos investigativos</figcaption>
                     </figure>
-                    <figure class="catalogo__item">
+                    <figure class="catalog__item">
                         <img src="src/assets/img/placeholder.png" alt="Mapa de caça ao tesouro"
-                            class="catalogo__imagem">
-                        <figcaption class="catalogo__legenda">Caças ao tesouro</figcaption>
+                            class="catalog__image">
+                        <figcaption class="catalog__caption">Caças ao tesouro</figcaption>
                     </figure>
-                    <figure class="catalogo__item">
+                    <figure class="catalog__item">
                         <img src="src/assets/img/placeholder.png" alt="Salas imersivas e temáticas"
-                            class="catalogo__imagem">
-                        <figcaption class="catalogo__legenda">Salas imersivas</figcaption>
+                            class="catalog__image">
+                        <figcaption class="catalog__caption">Salas imersivas</figcaption>
                     </figure>
-                    <figure class="catalogo__item">
+                    <figure class="catalog__item">
                         <img src="src/assets/img/placeholder.png" alt="Circuitos de aventura ao ar livre"
-                            class="catalogo__imagem">
-                        <figcaption class="catalogo__legenda">Circuitos de aventura</figcaption>
+                            class="catalog__image">
+                        <figcaption class="catalog__caption">Circuitos de aventura</figcaption>
                     </figure>
-                    <figure class="catalogo__item">
+                    <figure class="catalog__item">
                         <img src="src/assets/img/placeholder.png" alt="Kits pedagógicos em caixas"
-                            class="catalogo__imagem">
-                        <figcaption class="catalogo__legenda">Kits pedagógicos narrativos</figcaption>
+                            class="catalog__image">
+                        <figcaption class="catalog__caption">Kits pedagógicos narrativos</figcaption>
                     </figure>
-                    <figure class="catalogo__item">
+                    <figure class="catalog__item">
                         <img src="src/assets/img/placeholder.png" alt="Dossiês, cartas e mapas antigos"
-                            class="catalogo__imagem">
-                        <figcaption class="catalogo__legenda">Dossiês, mapas e pistas</figcaption>
+                            class="catalog__image">
+                        <figcaption class="catalog__caption">Dossiês, mapas e pistas</figcaption>
                     </figure>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="rodape">
-        <div class="rodape__container">
-            <div class="rodape__informacoes">
-                <img src="src/assets/img/placeholder.png" alt="Logo Engenho Mágico" class="rodape__marca">
-                <p class="rodape__slogan">Experiências imersivas, educativas e gamificadas.</p>
-                <p class="rodape__descricao">Criamos jornadas presenciais inovadoras para escolas, empresas, parques,
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__info">
+                <img src="src/assets/img/placeholder.png" alt="Logo Engenho Mágico" class="footer__brand">
+                <p class="footer__slogan">Experiências imersivas, educativas e gamificadas.</p>
+                <p class="footer__description">Criamos jornadas presenciais inovadoras para escolas, empresas, parques,
                     resorts, eventos e instituições. Transformamos conteúdo em aventura.</p>
             </div>
-            <nav class="rodape__navegacao">
-                <ul class="rodape__menu">
-                    <li class="rodape__item"><a href="index.html" class="rodape__link">Início</a></li>
-                    <li class="rodape__item"><a href="sobre-nos.html" class="rodape__link">Sobre Nós</a></li>
-                    <li class="rodape__item"><a href="solucoes.html" class="rodape__link">Soluções</a></li>
-                    <li class="rodape__item"><a href="metodologia.html" class="rodape__link">Metodologia</a></li>
-                    <li class="rodape__item"><a href="contato.html" class="rodape__link">Contato</a></li>
+            <nav class="footer__nav">
+                <ul class="footer__menu">
+                    <li class="footer__item"><a href="index.html" class="footer__link">Início</a></li>
+                    <li class="footer__item"><a href="sobre-nos.html" class="footer__link">Sobre Nós</a></li>
+                    <li class="footer__item"><a href="solucoes.html" class="footer__link">Soluções</a></li>
+                    <li class="footer__item"><a href="metodologia.html" class="footer__link">Metodologia</a></li>
+                    <li class="footer__item"><a href="contato.html" class="footer__link">Contato</a></li>
                 </ul>
             </nav>
-            <div class="rodape__legal">
-                <p class="rodape__direitos">© 2026 Engenho Mágico. Todos os direitos reservados.</p>
-                <ul class="rodape__termos-menu">
-                    <li class="rodape__termos-item"><a href="#" class="rodape__termos-link">Termos de Uso</a></li>
-                    <li class="rodape__termos-item"><a href="#" class="rodape__termos-link">Política de Privacidade</a>
+            <div class="footer__legal">
+                <p class="footer__rights">© 2026 Engenho Mágico. Todos os direitos reservados.</p>
+                <ul class="footer__terms-menu">
+                    <li class="footer__terms-item"><a href="#" class="footer__terms-link">Termos de Uso</a></li>
+                    <li class="footer__terms-item"><a href="#" class="footer__terms-link">Política de Privacidade</a>
                     </li>
                 </ul>
             </div>
         </div>
     </footer>
 
-    <!-- Bibliotecas de Animação (GSAP) -->
+    <!-- Animation Libraries (GSAP) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <!-- Script Principal -->
+    <!-- Main Script -->
     <script src="src/js/main.js"></script>
 </body>
 
