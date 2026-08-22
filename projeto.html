@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engenho Mágico - Contato</title>
+    <title>Engenho Mágico - Projeto</title>
     <link rel="icon" type="image/x-icon" href="src/assets/img/icons/favicon.ico">
     <meta name="description"
-        content="Entre em contato com a Engenho Mágico. Vamos transformar sua ideia em uma jornada memorável.">
+        content="Demonstração interativa de projeto desenvolvido pela Engenho Mágico.">
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/responsive.css">
+    <link rel="stylesheet" href="src/css/projeto.css">
 </head>
 
 <body>
@@ -32,30 +33,45 @@
         </div>
     </header>
 
-    <main class="main-content">
-        <section class="page-hero">
-            <div class="page-hero__content parallax-layer-hero parallax-layer-hero--text" data-speed="0.25">
-                <h1 class="page-hero__title">Inicie sua Jornada</h1>
-                <p class="page-hero__subtitle">Vamos transformar seu desafio em uma experiência imersiva e
-                    memorável.</p>
+    <main class="main-content projeto-single-page">
+        <div class="container">
+            <div class="projeto-header">
+                <a href="projetos.html" class="projeto-header__back-link">← Voltar aos projetos</a>
+                <h1 class="projeto-header__title" id="projetoTitle">Projeto de demonstração</h1>
+                <img src="src/assets/img/elements/underline.png" alt="" class="projeto-header__underline" aria-hidden="true">
             </div>
-            <div class="parallax-hero_content">
-                <img src="src/assets/img/parallax-hero/parallax-bg-fogo.png" alt=""
-                    class="parallax-layer-hero parallax-layer-hero--bg" data-speed="0.08">
 
-                <!-- INÍCIO: Elementos Flutuantes (Fogo) -->
-                <img src="src/assets/img/parallax-hero/hero-float-fogo-2.png" alt=""
-                    class="parallax-layer-hero parallax-layer-hero--float-2-fogo" data-speed="1.45">
-                <img src="src/assets/img/parallax-hero/hero-float-fogo-1.png" alt=""
-                    class="parallax-layer-hero parallax-layer-hero--float-1-fogo" data-speed="1.85">
-                <!-- FIM: Elementos Flutuantes -->
+            <div class="projeto-content">
+                
+                <section class="projeto-visualizer">
+                    <div class="projeto-visualizer__frame">
+                        <img src="src/assets/img/placeholder.png" alt="Página do projeto" id="projetoImage" class="projeto-visualizer__image">
+                    </div>
+                    
+                    <div class="projeto-controls">
+                        <button class="projeto-controls__btn projeto-controls__btn--prev" id="btnPrev" aria-label="Página anterior">
+                            <img src="src/assets/img/icons/seta.png" alt="" aria-hidden="true" class="projeto-controls__arrow projeto-controls__arrow--prev">
+                        </button>
+                        <div class="projeto-controls__indicator" id="pageIndicator" aria-live="polite">
+                            01 / 04
+                        </div>
+                        <button class="projeto-controls__btn projeto-controls__btn--next" id="btnNext" aria-label="Próxima página">
+                            <img src="src/assets/img/icons/seta.png" alt="" aria-hidden="true" class="projeto-controls__arrow">
+                        </button>
+                    </div>
+                </section>
 
-                <img src="src/assets/img/parallax-hero/parallax-mask-back-fogo.png" alt=""
-                    class="parallax-layer-hero parallax-layer-hero--mask-back" data-speed="0.04">
-                <img src="src/assets/img/parallax-hero/parallax-mask-front-ar.png" alt=""
-                    class="parallax-layer-hero parallax-layer-hero--mask-front" data-speed="0.02">
+                <section class="projeto-context">
+                    <h2 class="projeto-context__title">Contexto do projeto</h2>
+                    <div class="projeto-context__text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>In hac habitasse platea dictumst. Curabitur vel metus dictum, faucibus eros non, iaculis erat. Aliquam non semper nisl. Aenean ullamcorper congue odio vitae commodo. Nam sed consequat nisi. Proin varius ex at pretium accumsan.</p>
+                        <p>Aliquam erat volutpat. Fusce ullamcorper interdum elit, eget posuere metus vehicula id. Proin vulputate sem vel congue pretium. Nulla facilisi. Sed non lorem eget est imperdiet placerat.</p>
+                    </div>
+                </section>
+
             </div>
-        </section>
+        </div>
 
         <section class="cta-section">
             <div class="cta-section__container">
@@ -129,12 +145,8 @@
             </div>
         </div>
     </footer>
-    <!-- Animation Libraries (GSAP) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-    <!-- Main Script -->
     <script src="src/js/main.js"></script>
+    <script src="src/js/projeto.js"></script>
 </body>
 
 </html>

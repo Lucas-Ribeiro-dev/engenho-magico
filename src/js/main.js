@@ -1,95 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Lógica do Carrossel Hero (Posicionamento Absoluto)
-    const carrossel = document.querySelector('.hero__carousel');
-
-    if (carrossel) {
-        const cards = Array.from(carrossel.querySelectorAll('.slide-card'));
-
-        if (cards.length > 0) {
-            // Arrays contendo a posição atual de cada card (0 a N-1)
-            let posicoes = cards.map((_, i) => i);
-
-            const atualizarPosicoes = () => {
-                cards.forEach((card, i) => {
-                    card.setAttribute('data-pos', posicoes[i]);
-                });
-            };
-
-            const proximo = () => {
-                posicoes = posicoes.map(p => (p === 0 ? cards.length - 1 : p - 1));
-                atualizarPosicoes();
-            };
-
-            const anterior = () => {
-                posicoes = posicoes.map(p => (p === cards.length - 1 ? 0 : p + 1));
-                atualizarPosicoes();
-            };
-
-            const irParaSlot = (slotClicado) => {
-                if (slotClicado === 0) return;
-                posicoes = posicoes.map(p => {
-                    let nova = p - slotClicado;
-                    if (nova < 0) nova += cards.length;
-                    return nova;
-                });
-                atualizarPosicoes();
-            };
-
-            // timer do slide
-            let loopTimer;
-            let delayTimer;
-
-            const iniciarLoop = () => {
-                clearInterval(loopTimer);
-                clearTimeout(delayTimer);
-                loopTimer = setInterval(() => {
-                    proximo();
-                }, 7000);
-            };
-
-            const pausarComDelayParaVoltar = () => {
-                clearInterval(loopTimer);
-                clearTimeout(delayTimer);
-                delayTimer = setTimeout(() => {
-                    iniciarLoop();
-                }, 3000);
-            };
-
-            cards.forEach((card) => {
-                // Controles Internos
-                const btnAnterior = card.querySelector('.slide-card__control--prev');
-                if (btnAnterior) {
-                    btnAnterior.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        anterior();
-                        pausarComDelayParaVoltar();
-                    });
-                }
-
-                const btnProximo = card.querySelector('.slide-card__control--next');
-                if (btnProximo) {
-                    btnProximo.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        proximo();
-                        iniciarLoop();
-                    });
-                }
-
-                // Clique na área standby
-                card.addEventListener('click', () => {
-                    const slotAtual = parseInt(card.getAttribute('data-pos'));
-                    if (slotAtual !== 0) {
-                        irParaSlot(slotAtual);
-                        iniciarLoop();
-                    }
-                });
-            });
-
-            // Estado inicial garantido
-            atualizarPosicoes();
-            iniciarLoop();
-        }
-    }
+    // Lógica do Carrossel Hero removida (agora é um Hero estático único card)
 
     // ==========================================================================
     // EFEITO PARALLAX 3D (Home)
@@ -158,30 +68,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 
-    // EFEITO PARALLAX SCROLL (Seção Público Formatos)
-    // 
-    const imgEsqCima = document.querySelector('.audience-formats__parallax-img--top-left');
-    const imgDirBaixo = document.querySelector('.audience-formats__parallax-img--bottom-right');
-
-    if (imgEsqCima || imgDirBaixo) {
-        window.addEventListener('scroll', () => {
-            // Usa requestAnimationFrame para performance
-            requestAnimationFrame(() => {
-                const scrollY = window.scrollY;
-
-                // Movimento leve:
-                // Imagem cima desce (translateY positivo)
-                if (imgEsqCima) {
-                    imgEsqCima.style.transform = `translateY(${scrollY * 0.15}px)`;
-                }
-
-                // Imagem baixo sobe (translateY negativo)
-                if (imgDirBaixo) {
-                    imgDirBaixo.style.transform = `translateY(${scrollY * -0.15}px)`;
-                }
+    // ==========================================================================
+    // EFEITO PARALLAX SCROLL (Itens flutuantes da jornada)
+    // ==========================================================================
+    const floatingElements = document.querySelectorAll('.floating-parallax-img');
+    
+    if (floatingElements.length > 0) {
+        let tickingFloating = false;
+        
+        const updateFloatingParallax = () => {
+            const scrollY = window.scrollY;
+            floatingElements.forEach(el => {
+                const speed = parseFloat(el.getAttribute('data-speed')) || 0.1;
+                // Move no eixo Y baseado no scroll global e na velocidade individual
+                el.style.transform = `translate3d(0, ${scrollY * speed}px, 0)`;
             });
-        });
+            tickingFloating = false;
+        };
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (!prefersReducedMotion.matches) {
+            window.addEventListener('scroll', () => {
+                if (!tickingFloating) {
+                    requestAnimationFrame(updateFloatingParallax);
+                    tickingFloating = true;
+                }
+            }, { passive: true });
+        }
     }
 
 
@@ -282,4 +195,50 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', requestParallaxUpdate);
 
     updateHeroParallax();
+
+    // ==========================================================================
+    // EFEITO PARALLAX MAPA DA JORNADA (Home)
+    // ==========================================================================
+    const journeyMapContainer = document.querySelector('.journey-map-container');
+    const journeyMapRota = document.getElementById('journeyMapRota');
+
+    if (journeyMapContainer && journeyMapRota) {
+        let tickingJourney = false;
+
+        const updateJourneyParallax = () => {
+            const rect = journeyMapContainer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                const totalScrollDistance = windowHeight + rect.height;
+                const scrolled = windowHeight - rect.top;
+                const progress = Math.max(0, Math.min(1, scrolled / totalScrollDistance));
+
+                const isMobile = window.innerWidth <= 768;
+                
+                const speedRota = isMobile ? 0.01 : 0.02; // Rota está no fundo, ancorada e move-se mais lentamente
+
+                const maxMoveRota = journeyMapContainer.offsetHeight * speedRota;
+                
+                const movementRota = (maxMoveRota / 2) - (progress * maxMoveRota);
+
+                journeyMapRota.style.transform = `translate3d(0, ${movementRota.toFixed(2)}px, 0)`;
+            }
+            tickingJourney = false;
+        };
+
+        const requestJourneyParallaxUpdate = () => {
+            if (!tickingJourney) {
+                requestAnimationFrame(updateJourneyParallax);
+                tickingJourney = true;
+            }
+        };
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (!prefersReducedMotion.matches) {
+            window.addEventListener('scroll', requestJourneyParallaxUpdate, { passive: true });
+            window.addEventListener('resize', requestJourneyParallaxUpdate, { passive: true });
+            updateJourneyParallax();
+        }
+    }
 });

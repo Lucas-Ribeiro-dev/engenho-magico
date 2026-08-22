@@ -23,8 +23,8 @@
                     <li class="header__item"><a href="index.html" class="header__link">Início</a></li>
                     <li class="header__item"><a href="sobre-nos.html" class="header__link">Sobre Nós</a></li>
                     <li class="header__item"><a href="solucoes.html" class="header__link">Soluções</a></li>
-                    <li class="header__item"><a href="metodologia.html" class="header__link">Metodologia</a>
-                    </li>
+                    <li class="header__item"><a href="metodologia.html" class="header__link">Metodologia</a></li>
+                    <li class="header__item"><a href="projetos.html" class="header__link">Projetos</a></li>
                     <li class="header__item"><a href="contato.html" class="header__link">Contato</a></li>
                 </ul>
             </nav>
@@ -35,85 +35,23 @@
 
     <main class="main-content">
         <section class="hero">
-            <div class="hero__carousel">
-                <!-- Card 1 (Active) -->
-                <article class="slide-card slide-card--active">
-                    <img src="src/assets/img/placeholder.png" alt="Experiência Imersiva" class="slide-card__image">
-                    <div class="slide-card__content">
-                        <h1 class="slide-card__title">Experiências Imersivas que Transformam Conteúdo em Aventura
-                        </h1>
-                        <a href="contato.html" class="btn-cta slide-card__btn"><span class="btn-text">Quero criar
-                                uma experiência</span></a>
-                    </div>
-                    <footer class="slide-card__footer">
-                        <div class="slide-card__controls">
-                            <button class="slide-card__control slide-card__control--prev"
-                                aria-label="Slide anterior">&#10094;</button>
-                            <span class="slide-card__counter">01/04</span>
-                            <button class="slide-card__control slide-card__control--next"
-                                aria-label="Próximo slide">&#10095;</button>
-                        </div>
-                    </footer>
-                </article>
-
-                <!-- Card 2 -->
-                <article class="slide-card">
-                    <img src="src/assets/img/placeholder.png" alt="Dinâmicas Corporativas" class="slide-card__image">
-                    <div class="slide-card__content">
-                        <h2 class="slide-card__title">Dinâmicas Corporativas e Team Building</h2>
-                        <a href="solucoes.html" class="btn-cta slide-card__btn"><span class="btn-text">Conheça as
-                                Soluções</span></a>
-                    </div>
-                    <footer class="slide-card__footer">
-                        <div class="slide-card__controls">
-                            <button class="slide-card__control slide-card__control--prev"
-                                aria-label="Slide anterior">&#10094;</button>
-                            <span class="slide-card__counter">02/04</span>
-                            <button class="slide-card__control slide-card__control--next"
-                                aria-label="Próximo slide">&#10095;</button>
-                        </div>
-                    </footer>
-                </article>
-
-                <!-- Card 3 -->
-                <article class="slide-card">
-                    <img src="src/assets/img/placeholder.png" alt="Atrações para Parques" class="slide-card__image">
-                    <div class="slide-card__content">
-                        <h2 class="slide-card__title">Atrações Narrativas para Parques e Eventos</h2>
-                        <a href="solucoes.html" class="btn-cta slide-card__btn"><span class="btn-text">Ver Nossos
-                                Projetos</span></a>
-                    </div>
-                    <footer class="slide-card__footer">
-                        <div class="slide-card__controls">
-                            <button class="slide-card__control slide-card__control--prev"
-                                aria-label="Slide anterior">&#10094;</button>
-                            <span class="slide-card__counter">03/04</span>
-                            <button class="slide-card__control slide-card__control--next"
-                                aria-label="Próximo slide">&#10095;</button>
-                        </div>
-                    </footer>
-                </article>
-
-                <!-- Card 4 -->
-                <article class="slide-card">
-                    <img src="src/assets/img/placeholder.png" alt="Aprendizagem Ativa" class="slide-card__image">
-                    <div class="slide-card__content">
-                        <h2 class="slide-card__title">Aprender Através de Tentativa e Superação</h2>
-                        <a href="metodologia.html" class="btn-cta slide-card__btn"><span class="btn-text">Entenda
-                                o Método</span></a>
-                    </div>
-                    <footer class="slide-card__footer">
-                        <div class="slide-card__controls">
-                            <button class="slide-card__control slide-card__control--prev"
-                                aria-label="Slide anterior">&#10094;</button>
-                            <span class="slide-card__counter">04/04</span>
-                            <button class="slide-card__control slide-card__control--next"
-                                aria-label="Próximo slide">&#10095;</button>
-                        </div>
-                    </footer>
-                </article>
-            </div>
+            <article class="hero__card">
+                <img src="src/assets/img/pictures/hero-home-desktop.webp" alt="Experiência Imersiva"
+                    class="hero__image">
+                <div class="hero__content">
+                    <h1 class="hero__title">Experiências que transformam conteúdo em aventura</h1>
+                    <p class="hero__subtitle">Criamos jornadas presenciais, educativas e gamificadas que colocam o
+                        público dentro da história.</p>
+                    <a href="contato.html" class="btn-cta hero__btn"><span class="btn-text">Quero criar uma
+                            experiência</span></a>
+                </div>
+            </article>
         </section>
+
+        <div class="hero-divider">
+            <img src="src/assets/img/elements/hero-divider-mask.webp" alt="" aria-hidden="true"
+                class="hero-divider__image">
+        </div>
 
         <section class="about">
             <div class="about__content">
@@ -139,12 +77,18 @@
                     uma experiência com começo, meio e fim.
                 </p>
             </div>
-            <div class="about__image-wrapper" aria-label="Composição interativa de mesa de jogo da Engenho Mágico" role="img">
-                <img src="src/assets/img/pictures/sobre__img/mesa.webp" alt="" class="parallax-layer parallax-layer--table" loading="lazy" data-factor="0">
-                <img src="src/assets/img/pictures/sobre__img/mapa-fisico.webp" alt="" class="parallax-layer parallax-layer--map" loading="lazy" data-factor="4">
-                <img src="src/assets/img/pictures/sobre__img/jornada-ilustrada.webp" alt="" class="parallax-layer parallax-layer--journey" loading="lazy" data-factor="6">
-                <img src="src/assets/img/pictures/sobre__img/pecas-e-cartas.webp" alt="" class="parallax-layer parallax-layer--pieces" loading="lazy" data-factor="12">
-                <img src="src/assets/img/pictures/sobre__img/maos.webp" alt="" class="parallax-layer parallax-layer--hands" loading="lazy" data-factor="0">
+            <div class="about__image-wrapper" aria-label="Composição interativa de mesa de jogo da Engenho Mágico"
+                role="img">
+                <img src="src/assets/img/pictures/sobre__img/mesa.webp" alt=""
+                    class="parallax-layer parallax-layer--table" loading="lazy" data-factor="0">
+                <img src="src/assets/img/pictures/sobre__img/mapa-fisico.webp" alt=""
+                    class="parallax-layer parallax-layer--map" loading="lazy" data-factor="4">
+                <img src="src/assets/img/pictures/sobre__img/jornada-ilustrada.webp" alt=""
+                    class="parallax-layer parallax-layer--journey" loading="lazy" data-factor="6">
+                <img src="src/assets/img/pictures/sobre__img/pecas-e-cartas.webp" alt=""
+                    class="parallax-layer parallax-layer--pieces" loading="lazy" data-factor="12">
+                <img src="src/assets/img/pictures/sobre__img/maos.webp" alt=""
+                    class="parallax-layer parallax-layer--hands" loading="lazy" data-factor="0">
             </div>
         </section>
 
@@ -181,8 +125,7 @@
                             <h3 class="solution-card__title">Experiências Educativas Gamificadas</h3>
                             <p class="solution-card__description">Jornadas pedagógicas, missões e caixas narrativas que
                                 transformam o aprendizado em uma experiência ativa e significativa.</p>
-                            <img src="src/assets/img/icons/linha-elemento.png" alt=""
-                                class="solution-card__divider">
+                            <img src="src/assets/img/icons/linha-elemento.png" alt="" class="solution-card__divider">
                             <a href="solucoes.html#educativas" class="solution-card__link">
                                 <span class="solution-card__link-text">Saiba mais</span>
                                 <img src="src/assets/img/icons/seta.png" alt="" class="solution-card__link-arrow">
@@ -199,8 +142,7 @@
                             <p class="solution-card__description">Experiências que fortalecem colaboração, liderança e
                                 tomada de decisão por meio de desafios imersivos e narrativas que geram impacto real.
                             </p>
-                            <img src="src/assets/img/icons/linha-elemento.png" alt=""
-                                class="solution-card__divider">
+                            <img src="src/assets/img/icons/linha-elemento.png" alt="" class="solution-card__divider">
                             <a href="solucoes.html#corporativas" class="solution-card__link">
                                 <span class="solution-card__link-text">Saiba mais</span>
                                 <img src="src/assets/img/icons/seta.png" alt="" class="solution-card__link-arrow">
@@ -216,8 +158,7 @@
                             <h3 class="solution-card__title">Experiências para Parques, Resorts e Eventos</h3>
                             <p class="solution-card__description">Criação de espaços imersivos e atrações que conectam
                                 pessoas a histórias e ambeintes fisico, gerando experiências memoráveis.</p>
-                            <img src="src/assets/img/icons/linha-elemento.png" alt=""
-                                class="solution-card__divider">
+                            <img src="src/assets/img/icons/linha-elemento.png" alt="" class="solution-card__divider">
                             <a href="solucoes.html#eventos" class="solution-card__link">
                                 <span class="solution-card__link-text">Saiba mais</span>
                                 <img src="src/assets/img/icons/seta.png" alt="" class="solution-card__link-arrow">
@@ -231,11 +172,11 @@
                             class="solution-card__image">
                         <div class="solution-card__content">
                             <h3 class="solution-card__title">Produtos e IPs Originais</h3>
-                            <p class="solution-card__description">Desevolvimento de mundos, personagens e jogos originais
+                            <p class="solution-card__description">Desevolvimento de mundos, personagens e jogos
+                                originais
                                 que unem criatividade, propósito e design para criar produtos escaláveis e relevantes.
                             </p>
-                            <img src="src/assets/img/icons/linha-elemento.png" alt=""
-                                class="solution-card__divider">
+                            <img src="src/assets/img/icons/linha-elemento.png" alt="" class="solution-card__divider">
                             <a href="solucoes.html#produtos" class="solution-card__link">
                                 <span class="solution-card__link-text">Saiba mais</span>
                                 <img src="src/assets/img/icons/seta.png" alt="" class="solution-card__link-arrow">
@@ -248,73 +189,102 @@
             </div>
         </section>
 
-        <section class="methodology-preview">
-            <div class="split-section container split-section--reversed">
-                <div class="split-section__content">
-                    <h2 class="methodology-preview__title">Como criamos uma experiência</h2>
-                    <p class="supporting-text">Nosso processo criativo é prático e focado no encantamento. Tudo começa pelo
-                        entendimento profundo do objetivo e o desenho da jornada, até a estruturação do universo
-                        narrativo, planejamento operacional e implantação.</p>
-                    <a href="metodologia.html" class="btn-cta split-section__btn"><span class="btn-text">Entenda o
-                            nosso método</span></a>
-                </div>
-                <div class="split-section__image-container">
-                    <img src="src/assets/img/placeholder.png" alt="Equipe planejando em um quadro"
-                        class="split-section__image">
-                </div>
-            </div>
-        </section>
+        <div class="journey-map-container">
 
-        <section class="differentials">
-            <div class="split-section container">
-                <div class="split-section__content">
-                    <h2 class="differentials__title">O que torna a Engenho Mágico diferente</h2>
-                    <p class="supporting-text">Nós unimos criatividade a um método focado em resultados tangíveis.
-                        Desenvolvemos experiências físicas com propósito genuíno, usando dinâmicas e gamificação
-                        autênticas que engajam muito além de pontos e badges.</p>
-                    <p class="supporting-text">Priorizamos uma operação viável, promovendo o engajamento e a aprendizagem
-                        ativa pela tentativa, erro e superação.</p>
-                    <a href="sobre-nos.html" class="btn-cta split-section__btn"><span class="btn-text">Saiba mais
-                            sobre nós</span></a>
+
+            <!-- Rota: layer mais próximo -->
+            <picture class="journey-map-bg journey-map-bg--rota" aria-hidden="true">
+                <source media="(max-width: 768px)"
+                    srcset="src/assets/img/elements/section-map-bg/section-bg-map-mobile.webp">
+                <img src="src/assets/img/elements/section-map-bg/section-bg-map-desktop.webp" alt=""
+                    class="journey-map-img journey-map-img--rota" id="journeyMapRota">
+            </picture>
+
+            <section class="methodology-preview">
+                <!-- Floating image -->
+                <img src="src/assets/img/pictures/flutuante-3.webp" alt=""
+                    class="floating-parallax-img floating-parallax-img--3" aria-hidden="true" data-speed="0.08">
+
+                <div class="split-section container split-section--reversed">
+                    <div class="split-section__content">
+                        <h2 class="methodology-preview__title">Como criamos uma experiência</h2>
+                        <p class="supporting-text">Nosso processo criativo é prático e focado no encantamento. Tudo
+                            começa pelo
+                            entendimento profundo do objetivo e o desenho da jornada, até a estruturação do universo
+                            narrativo, planejamento operacional e implantação.</p>
+                        <a href="metodologia.html" class="btn-cta split-section__btn"><span class="btn-text">Entenda o
+                                nosso método</span></a>
+                    </div>
+                    <div class="split-section__image-container">
+                        <img src="src/assets/img/placeholder.png" alt="Equipe planejando em um quadro"
+                            class="split-section__image">
+                    </div>
                 </div>
-                <div class="split-section__image-container">
-                    <img src="src/assets/img/placeholder.png" alt="Participantes engajados em uma dinâmica"
-                        class="split-section__image">
+            </section>
+
+            <section class="differentials">
+                <!-- Floating image -->
+                <img src="src/assets/img/pictures/flutuante-4.webp" alt=""
+                    class="floating-parallax-img floating-parallax-img--4" aria-hidden="true" data-speed="-0.12">
+
+                <div class="split-section container">
+                    <div class="split-section__content">
+                        <h2 class="differentials__title">O que torna a Engenho Mágico diferente</h2>
+                        <p class="supporting-text">Nós unimos criatividade a um método focado em resultados tangíveis.
+                            Desenvolvemos experiências físicas com propósito genuíno, usando dinâmicas e gamificação
+                            autênticas que engajam muito além de pontos e badges.</p>
+                        <p class="supporting-text">Priorizamos uma operação viável, promovendo o engajamento e a
+                            aprendizagem
+                            ativa pela tentativa, erro e superação.</p>
+                        <a href="sobre-nos.html" class="btn-cta split-section__btn"><span class="btn-text">Saiba mais
+                                sobre nós</span></a>
+                    </div>
+                    <div class="split-section__image-container">
+                        <img src="src/assets/img/placeholder.png" alt="Participantes engajados em uma dinâmica"
+                            class="split-section__image">
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="audience-formats">
-            <!-- Floating images -->
-            <img src="src/assets/img/pictures/flutuante-1.png" alt="Público engajado"
-                class="audience-formats__parallax-img audience-formats__parallax-img--top-left">
-            <img src="src/assets/img/pictures/flutuante-2.png" alt="Participantes da experiência"
-                class="audience-formats__parallax-img audience-formats__parallax-img--bottom-right">
+            <section class="audience-formats">
+                <!-- Floating images -->
+                <img src="src/assets/img/pictures/flutuante-1.webp" alt=""
+                    class="floating-parallax-img floating-parallax-img--1" aria-hidden="true" data-speed="0.15">
+                <img src="src/assets/img/pictures/flutuante-2.webp" alt=""
+                    class="floating-parallax-img floating-parallax-img--2" aria-hidden="true" data-speed="-0.15">
 
-            <div class="audience-formats__container container">
-                <div class="audience-formats__content">
-                    <h2 class="audience__title">Para quem e como criamos</h2>
-                    <p class="supporting-text">Ajudamos escolas, empresas, parques e eventos a transformar suas mensagens
-                        através de nossas ferramentas de encantamento.</p>
-                    <p class="supporting-text">Projetamos desde labirintos temáticos, caças ao tesouro e salas imersivas até
-                        dinâmicas corporativas e jornadas escolares gamificadas, sempre focando em criar universos
-                        envolventes para ativações de marcas e instituições.</p>
-                    <a href="solucoes.html" class="btn-cta audience-formats__btn"><span class="btn-text">Ver todas
-                            as soluções</span></a>
+                <div class="audience-formats__container container">
+                    <div class="audience-formats__content">
+                        <h2 class="audience__title">Para quem e como criamos</h2>
+                        <p class="supporting-text">Ajudamos escolas, empresas, parques e eventos a transformar suas
+                            mensagens
+                            através de nossas ferramentas de encantamento.</p>
+                        <p class="supporting-text">Projetamos desde labirintos temáticos, caças ao tesouro e salas
+                            imersivas até
+                            dinâmicas corporativas e jornadas escolares gamificadas, sempre focando em criar universos
+                            envolventes para ativações de marcas e instituições.</p>
+                        <a href="solucoes.html" class="btn-cta audience-formats__btn"><span class="btn-text">Ver todas
+                                as soluções</span></a>
+                    </div>
+
+                    <div class="manifesto audience-formats__content" style="margin-top: var(--space-2xl);">
+                        <h2 class="manifesto__title">Nossa Visão Educativa e Lúdica</h2>
+                        <p class="manifesto__text">A Engenho Mágico acredita que as pessoas aprendem, se conectam e
+                            lembram
+                            muito mais quando participam ativamente de uma experiência significativa. Em um cenário
+                            digital
+                            dispersivo, criamos momentos presenciais que exigem colaboração, curiosidade e protagonismo.
+                            Nosso objetivo final é transformar espaços comuns em territórios de descoberta e grupos em
+                            equipes unidas.</p>
+                    </div>
+
                 </div>
 
-                <div class="manifesto audience-formats__content" style="margin-top: var(--space-2xl);">
-                    <h2 class="manifesto__title">Nossa Visão Educativa e Lúdica</h2>
-                    <p class="manifesto__text">A Engenho Mágico acredita que as pessoas aprendem, se conectam e lembram
-                        muito mais quando participam ativamente de uma experiência significativa. Em um cenário digital
-                        dispersivo, criamos momentos presenciais que exigem colaboração, curiosidade e protagonismo.
-                        Nosso objetivo final é transformar espaços comuns em territórios de descoberta e grupos em
-                        equipes unidas.</p>
-                </div>
-
-            </div>
-        </section>
-
+                <!-- Floating image final -->
+                <img src="src/assets/img/pictures/flutuante-5.webp" alt=""
+                    class="floating-parallax-img floating-parallax-img--5" aria-hidden="true" data-speed="0.1">
+            </section>
+        </div>
 
         <section class="proposal">
             <div class="proposal__container">
@@ -323,33 +293,54 @@
                     desafio corporativo? Nós transformamos esse ponto de partida em uma jornada estruturada, cobrindo
                     narrativa, materiais, cenografia e a operação completa.</p>
             </div>
-            <div class="ba-slider" style="--posicao: 50%;">
-                <!-- img before -->
-                <img src="src/assets/img/placeholder.png" alt="Ambiente antes da intervenção"
-                    class="ba-slider__image ba-slider__image--before">
-                <!-- img after -->
-                <img src="src/assets/img/pictures/conceito de marca.png"
-                    alt="Ambiente depois da intervenção da Engenho Mágico"
-                    class="ba-slider__image ba-slider__image--after">
-                <input type="range" min="0" max="100" value="50" class="ba-slider__input"
-                    aria-label="Comparar antes e depois"
-                    oninput="this.parentNode.style.setProperty('--posicao', this.value + '%')">
-                <!-- handle -->
-                <div class="ba-slider__line">
-                    <img src="src/assets/img/elements/controle-comparador.png" alt="Controlador Comparador"
-                        class="ba-slider__handle-img">
-                </div>
+            <div class="proposal__image-wrapper">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="src/assets/img/pictures/before-after-mobile.webp">
+                    <img src="src/assets/img/pictures/before-after-desktop.webp"
+                        alt="Ambiente com intervenção da Engenho Mágico" class="proposal__image">
+                </picture>
             </div>
         </section>
 
-        <section class="final-cta">
-            <div class="final-cta__container">
-                <h2 class="final-cta__title">Quer transformar seu conteúdo em uma experiência memorável?</h2>
-                <p class="final-cta__subtitle">Dê o primeiro passo para engajar seu público de forma autêntica e
-                    inovadora.</p>
-                <div class="final-cta__actions">
-                    <a href="contato.html" class="btn-cta final-cta__btn--primary"><span
-                            class="btn-text">Entre em contato</span></a>
+        <section class="cta-section">
+            <div class="cta-section__container">
+                <div class="cta-section__header">
+                    <h2 class="cta-section__title">Pronto para iniciar sua jornada mágica?</h2>
+                    <p class="cta-section__subtitle">Fale com nossa equipe e descubra como podemos transformar sua ideia
+                        em uma experiência memorável.</p>
+                </div>
+
+                <div class="cta-section__content">
+                    <div class="contact-channels cta-section__channels">
+                        <div class="contact-channels__list cta-section__channels-list">
+                            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer"
+                                class="contact-channels__link">
+                                <img src="src/assets/img/icons/wpp-icon.webp" alt="Ícone WhatsApp"
+                                    class="contact-channels__icon">
+                                <div class="contact-channels__info">
+                                    <span class="contact-channels__label">WhatsApp</span>
+                                </div>
+                            </a>
+                            <a href="mailto:contato@engenhomagico.com.br" class="contact-channels__link">
+                                <img src="src/assets/img/icons/mail-icon.webp" alt="Ícone E-mail"
+                                    class="contact-channels__icon">
+                                <div class="contact-channels__info">
+                                    <span class="contact-channels__label">Enviar Email!</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-details cta-section__details">
+                        <div class="contact-details__item">
+                            <span class="contact-details__label">WhatsApp</span>
+                            <span class="contact-details__value">(00) 00000-0000</span>
+                        </div>
+                        <div class="contact-details__item">
+                            <span class="contact-details__label">E-mail Institucional</span>
+                            <span class="contact-details__value">contato@engenhomagico.com.br</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -358,7 +349,7 @@
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__info">
-                <img src="src/assets/img/placeholder.png" alt="Logo Engenho Mágico" class="footer__brand">
+                <img src="src/assets/img/pictures/logo-4.png" alt="Logo Engenho Mágico" class="footer__brand">
                 <p class="footer__slogan">Experiências imersivas, educativas e gamificadas.</p>
                 <p class="footer__description">Criamos jornadas presenciais inovadoras para escolas, empresas, parques,
                     resorts, eventos e instituições. Transformamos conteúdo em aventura.</p>
@@ -369,6 +360,7 @@
                     <li class="footer__item"><a href="sobre-nos.html" class="footer__link">Sobre Nós</a></li>
                     <li class="footer__item"><a href="solucoes.html" class="footer__link">Soluções</a></li>
                     <li class="footer__item"><a href="metodologia.html" class="footer__link">Metodologia</a></li>
+                    <li class="footer__item"><a href="projetos.html" class="footer__link">Projetos</a></li>
                     <li class="footer__item"><a href="contato.html" class="footer__link">Contato</a></li>
                 </ul>
             </nav>

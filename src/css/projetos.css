@@ -1,0 +1,125 @@
+/* projetos.css */
+
+.projetos-page {
+    background-color: #F4EDE0;
+}
+
+/* Hero */
+.projetos-hero {
+    padding: 120px 20px 60px;
+    text-align: center;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.projetos-hero__title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #1a1a1a;
+    font-family: var(--font-primary, serif); /* Fallback, usually style.css sets fonts but just in case */
+    margin-bottom: 20px;
+}
+
+.projetos-hero__text {
+    font-size: 1.125rem;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* Grid Section */
+.projetos-grid-section {
+    padding: 60px 20px 120px;
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card */
+.projeto-card {
+    display: block;
+    position: relative;
+    aspect-ratio: 3 / 4;
+    text-decoration: none;
+    border: solid 16px transparent;
+    border-image: url('../assets/img/elements/border-img-2.png') 85 stretch;
+    background-color: #000;
+    background-clip: padding-box;
+}
+
+.projeto-card:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 4px;
+}
+
+.projeto-card__image-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.projeto-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.6s ease;
+    display: block;
+}
+
+.projeto-card:hover .projeto-card__image {
+    transform: scale(1.05);
+    filter: brightness(0.9);
+}
+
+/* Respect motion */
+@media (prefers-reduced-motion: reduce) {
+    .projeto-card:hover .projeto-card__image {
+        transform: none;
+    }
+}
+
+.projeto-card__title-wrapper {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    padding: 8px 12px;
+    background-color: #1a1a1a;
+    background-clip: padding-box;
+    border: solid 8px transparent;
+    border-image-source: url('../assets/img/elements/border-img-4.webp');
+    border-image-slice: 40;
+    border-image-width: 8px;
+    border-image-repeat: round;
+    /* Prevent wrapper from hiding if image scales */
+    z-index: 2;
+}
+
+.projeto-card__title {
+    color: #F4EDE0;
+    font-size: 1.25rem;
+    font-family: var(--font-primary, serif);
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+    .projetos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .projetos-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: 40px;
+    }
+}
