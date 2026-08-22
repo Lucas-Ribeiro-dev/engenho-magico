@@ -1,13 +1,20 @@
 /* src/css/projeto.css */
 
+html {
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 120px;
+    scroll-behavior: smooth;
+}
+
 .projeto-single-page {
     background-color: #F4EDE0;
+    padding-top: 120px;
 }
 
 /* Header do Projeto */
 .projeto-header {
-    padding: 60px 20px 40px;
-    max-width: 1200px;
+    padding: 60px 0 40px;
+    max-width: 1440px;
     margin: 0 auto;
     text-align: center;
 }
@@ -47,12 +54,13 @@
 /* Layout Principal */
 .projeto-content {
     display: grid;
-    grid-template-columns: 60% calc(40% - 60px);
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0 20px 80px;
-    align-items: start;
+    padding: 0;
+    height: calc(100vh - 120px);
+    scroll-snap-align: start;
 }
 
 /* Quadros base */
@@ -69,6 +77,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 0;
+    height: 100%;
 }
 
 .projeto-visualizer__frame {
@@ -76,17 +86,18 @@
     /* Fundo neutro pra caso a imagem tenha transparência */
     background: #F4EDE0;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 400px;
+    position: relative;
+    flex: 1;
 }
 
 .projeto-visualizer__image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-    object-fit: contain;
+    object-fit: cover;
     transition: opacity 0.3s ease;
 }
 
@@ -151,6 +162,8 @@
 /* Contexto (Quadro Direito) */
 .projeto-context {
     padding: 40px 30px;
+    overflow-y: auto;
+    height: 100%;
 }
 
 .projeto-context__title {
@@ -182,15 +195,29 @@
     .projeto-content {
         grid-template-columns: 1fr;
         gap: 40px;
+        height: auto;
+    }
+    .projeto-visualizer__frame {
+        min-height: 60vh;
     }
 }
 
 @media (max-width: 600px) {
     .projeto-header {
-        padding: 40px 20px 30px;
+        padding: 40px 0 30px;
     }
     
     .projeto-context {
         padding: 30px 20px;
     }
 }
+
+/* (Efeito de ancoragem sticky substituído por scroll-snap) */
+
+/* Pontos de fuga para o scroll snap (permite que o usu�rio saia do efeito) */
+.projeto-single-page > .container,
+.cta-section,
+.footer {
+    scroll-snap-align: start;
+}
+

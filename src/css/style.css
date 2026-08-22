@@ -1957,3 +1957,24 @@ select {
     will-change: auto;
   }
 }
+/* ==========================================================================
+   STICKY HERO REVEAL EFFECT (Desktop & Tablet)
+   ========================================================================== */
+@media (min-width: 993px) {
+  .hero, .page-hero {
+    position: sticky;
+    top: 80px;
+    z-index: 1;
+  }
+  
+  main > section, .hero-divider {
+    background-color: var(--color-bg-base);
+    position: relative;
+    z-index: 2;
+  }
+  
+  main > .hero, main > .page-hero {
+    z-index: 1;
+  }
+}
+

@@ -123,3 +123,12 @@
         gap: 40px;
     }
 }
+
+@media (min-width: 993px) {
+  .projetos-hero {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+}
+
