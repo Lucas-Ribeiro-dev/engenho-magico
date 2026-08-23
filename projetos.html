@@ -28,7 +28,12 @@
                     <li class="header__item"><a href="contato.html" class="header__link">Contato</a></li>
                 </ul>
             </nav>
-            <a href="contato.html" class="btn-cta header__cta"><span class="btn-text">Vamos conversar</span></a>
+            <div class="header__actions">
+                <a href="contato.html" class="btn-cta header__cta"><span class="btn-text">Vamos conversar</span></a>
+                <button class="header__menu-btn" aria-label="Abrir menu" id="mobileMenuOpen">
+                    <img src="src/assets/img/icons/menu-hamburguerl.webp" alt="Menu" class="header__menu-icon">
+                </button>
+            </div>
         </div>
     </header>
 
@@ -60,6 +65,8 @@
                     class="page-hero-mask page-hero-mask--front">
             </div>
             <div class="container">
+                <h2 class="projetos-grid__title">Veja Nosso Portfólio</h2>
+                <img src="src/assets/img/icons/linha-terra.webp" alt="Divisória" class="section-title-divider center" aria-hidden="true">
                 <div class="projetos-grid">
                     
                     <a href="projeto.html?id=projeto-01" class="projeto-card">
@@ -181,7 +188,8 @@
                     <li class="footer__item"><a href="contato.html" class="footer__link">Contato</a></li>
                 </ul>
             </nav>
-            <div class="footer__legal">
+        </div>
+        <div class="footer__legal">
                 <p class="footer__rights">© 2026 Engenho Mágico. Todos os direitos reservados.</p>
                 <ul class="footer__terms-menu">
                     <li class="footer__terms-item"><a href="#" class="footer__terms-link">Termos de Uso</a></li>
@@ -189,7 +197,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
     </footer>
     <script src="src/js/main.js"></script>
 </body>

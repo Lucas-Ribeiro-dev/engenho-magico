@@ -1,4 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ==========================================================================
+    // MOBILE MENU
+    // ==========================================================================
+    const mobileMenuOpen = document.getElementById('mobileMenuOpen');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+    if (mobileMenuOpen && mobileMenuClose && mobileMenu && mobileMenuOverlay) {
+        const toggleMenu = (show) => {
+            if (show) {
+                mobileMenu.classList.add('active');
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        };
+
+        mobileMenuOpen.addEventListener('click', () => toggleMenu(true));
+        mobileMenuClose.addEventListener('click', () => toggleMenu(false));
+        mobileMenuOverlay.addEventListener('click', () => toggleMenu(false));
+    }
+
     // Lógica do Carrossel Hero removida (agora é um Hero estático único card)
 
     // ==========================================================================

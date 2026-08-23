@@ -27,7 +27,12 @@
                     <li class="header__item"><a href="contato.html" class="header__link">Contato</a></li>
                 </ul>
             </nav>
-            <a href="contato.html" class="btn-cta header__cta"><span class="btn-text">Vamos conversar</span></a>
+            <div class="header__actions">
+                <a href="contato.html" class="btn-cta header__cta"><span class="btn-text">Vamos conversar</span></a>
+                <button class="header__menu-btn" aria-label="Abrir menu" id="mobileMenuOpen">
+                    <img src="src/assets/img/icons/menu-hamburguerl.webp" alt="Menu" class="header__menu-icon">
+                </button>
+            </div>
         </div>
     </header>
 
@@ -63,7 +68,7 @@
             <div class="container split-section">
                 <div class="who-we-are__content">
                     <h2 class="who-we-are__title">Quem Somos e o Que Acreditamos</h2>
-                    <img src="src/assets/img/icons/linha-ar.webp" alt="" class="section-title-divider" aria-hidden="true">
+                    <img src="src/assets/img/icons/linha-terra.webp" alt="" class="section-title-divider">
                     <p class="who-we-are__text">A Engenho Mágico é um estúdio criativo focado em projetar vivências com
                         alto impacto emocional. Nossa atuação ocorre na mágica interseção entre educação, entretenimento,
                         storytelling presencial, design de jogos e cenografia. Entregamos muito mais que eventos: entregamos
@@ -80,7 +85,7 @@
         <section class="pillars">
             <div class="pillars__container">
                 <h2 class="pillars__title">Os Pilares da Nossa Magia</h2>
-                <img src="src/assets/img/icons/linha-ar.webp" alt="" class="section-title-divider" aria-hidden="true">
+                <img src="src/assets/img/icons/linha-ar.webp" alt="" class="section-title-divider center">
                 <div class="pillars__grid">
                     <article class="pillar">
                         <div class="pillar__media-container">
@@ -180,7 +185,7 @@
         <section class="manifesto-full">
             <div class="manifesto-full__container">
                 <h2 class="manifesto-full__title">Nossa Filosofia de Conexão</h2>
-                <img src="src/assets/img/icons/linha-ar.webp" alt="" class="section-title-divider" aria-hidden="true">
+                <img src="src/assets/img/icons/linha-agua.webp" alt="" class="section-title-divider center">
                 <div class="manifesto-full__body">
                     <p class="manifesto-full__text">Em um mundo hiperconectado onde a atenção é consumida por
                         rolagens infinitas, a Engenho Mágico ergue a bandeira da presença, do contato real e da
@@ -199,7 +204,6 @@
             <div class="cta-section__container">
                 <div class="cta-section__header">
                     <h2 class="cta-section__title">Pronto para iniciar sua jornada mágica?</h2>
-                    <img src="src/assets/img/icons/linha-ar.webp" alt="" class="section-title-divider center" aria-hidden="true">
                     <p class="cta-section__subtitle">Fale com nossa equipe e descubra como podemos transformar sua ideia
                         em uma experiência memorável.</p>
                 </div>
@@ -257,7 +261,8 @@
                     <li class="footer__item"><a href="contato.html" class="footer__link">Contato</a></li>
                 </ul>
             </nav>
-            <div class="footer__legal">
+        </div>
+        <div class="footer__legal">
                 <p class="footer__rights">© 2026 Engenho Mágico. Todos os direitos reservados.</p>
                 <ul class="footer__terms-menu">
                     <li class="footer__terms-item"><a href="#" class="footer__terms-link">Termos de Uso</a></li>
@@ -265,9 +270,52 @@
                     </li>
                 </ul>
             </div>
-        </div>
     </footer>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__border">
+            <img src="src/assets/img/elements/mobile-menu-border-left.webp" alt="" aria-hidden="true">
+        </div>
+        <div class="mobile-menu__content">
+            <button class="mobile-menu__close" aria-label="Fechar menu" id="mobileMenuClose">
+                <img src="src/assets/img/icons/menu-fechar.webp" alt="Fechar">
+            </button>
+            <nav class="mobile-menu__nav">
+                <ul class="mobile-menu__list">
+                    <li class="mobile-menu__item"><a href="index.html" class="mobile-menu__link">Início</a></li>
+                    <li class="mobile-menu__item"><a href="sobre-nos.html" class="mobile-menu__link">Sobre Nós</a></li>
+                    <li class="mobile-menu__item"><a href="solucoes.html" class="mobile-menu__link">Soluções</a></li>
+                    <li class="mobile-menu__item"><a href="projetos.html" class="mobile-menu__link">Projetos</a></li>
+                    <li class="mobile-menu__item"><a href="contato.html" class="mobile-menu__link">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="contato.html" class="btn-cta mobile-menu__cta"><span class="btn-text">Vamos conversar</span></a>
+        </div>
+    </div>
+
     <!-- Animation Libraries (GSAP) -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__border">
+            <img src="src/assets/img/elements/mobile-menu-border-left.webp" alt="" aria-hidden="true">
+        </div>
+        <div class="mobile-menu__content">
+            <button class="mobile-menu__close" aria-label="Fechar menu" id="mobileMenuClose">
+                <img src="src/assets/img/icons/menu-fechar.webp" alt="Fechar">
+            </button>
+            <nav class="mobile-menu__nav">
+                <ul class="mobile-menu__list">
+                    <li class="mobile-menu__item"><a href="index.html" class="mobile-menu__link">Início</a></li>
+                    <li class="mobile-menu__item"><a href="sobre-nos.html" class="mobile-menu__link">Sobre Nós</a></li>
+                    <li class="mobile-menu__item"><a href="solucoes.html" class="mobile-menu__link">Soluções</a></li>
+                    <li class="mobile-menu__item"><a href="projetos.html" class="mobile-menu__link">Projetos</a></li>
+                    <li class="mobile-menu__item"><a href="contato.html" class="mobile-menu__link">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="contato.html" class="btn-cta mobile-menu__cta"><span class="btn-text">Vamos conversar</span></a>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 

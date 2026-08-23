@@ -27,15 +27,22 @@
                     <li class="header__item"><a href="contato.html" class="header__link">Contato</a></li>
                 </ul>
             </nav>
-            <a href="contato.html" class="btn-cta header__cta"><span class="btn-text">Vamos
-                    conversar</span></a>
+            <div class="header__actions">
+                <a href="contato.html" class="btn-cta header__cta"><span class="btn-text">Vamos
+                        conversar</span></a>
+                <button class="header__menu-btn" aria-label="Abrir menu" id="mobileMenuOpen">
+                    <img src="src/assets/img/icons/menu-hamburguerl.webp" alt="Menu" class="header__menu-icon">
+                </button>
+            </div>
         </div>
     </header>
 
     <section class="hero">
         <article class="hero__card">
-            <img src="src/assets/img/pictures/hero-home-desktop.webp" alt="Experiência Imersiva"
-                class="hero__image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="src/assets/img/pictures/hero-home-mobile.webp">
+                <img src="src/assets/img/pictures/hero-home-desktop.webp" alt="Experiência Imersiva" class="hero__image">
+            </picture>
             <div class="hero__content">
                 <h1 class="hero__title">Experiências que transformam conteúdo em aventura</h1>
                 <p class="hero__subtitle">Criamos jornadas presenciais, educativas e gamificadas que colocam o
@@ -49,6 +56,7 @@
     <main class="main-content">
 
         <section class="hero-divider">
+            <img src="src/assets/img/elements/top-border-black.webp" alt="" aria-hidden="true" class="hero-divider__border-top">
             <img src="src/assets/img/elements/hero-divider-mask.webp" alt="" aria-hidden="true"
                 class="hero-divider__image">
         </section>
@@ -56,6 +64,7 @@
         <section class="about">
             <div class="about__content">
                 <h2 class="about__title">Estúdio Criativo de Experiências Presenciais</h2>
+                <img src="src/assets/img/icons/linha-ar.webp" alt="" class="section-title-divider">
 
                 <p class="about__text">
                     Toda experiência começa com uma transformação: algo que queremos ensinar, despertar, comunicar ou
@@ -99,6 +108,7 @@
             <div class="container">
                 <div class="expertise__content">
                     <h2 class="expertise__title">Nossa Especialidade</h2>
+                    <img src="src/assets/img/icons/linha-agua.webp" alt="" class="section-title-divider">
                     <p class="expertise__text">Somos especialistas em transformar ideias abstratas e complexas em
                         experiências concretas e memoráveis. Transformamos conteúdos escolares em missões
                         investigativas, valores corporativos em travessias colaborativas e espaços físicos em universos
@@ -117,6 +127,7 @@
         <section class="solutions-overview">
             <div class="container solutions-overview__container">
                 <h2 class="solutions-overview__title">Soluções</h2>
+                <img src="src/assets/img/icons/linha-fogo.webp" alt="" class="section-title-divider">
                 <div class="solutions-overview__grid">
                     <article class="solution-card" id="card-water">
                         <img src="src/assets/img/itens-solucoes/medalhao-agua.webp" alt="Experiência Educativa"
@@ -208,11 +219,11 @@
                 <div class="split-section container split-section--reversed">
                     <div class="split-section__content">
                         <h2 class="methodology-preview__title">Como criamos uma experiência</h2>
+                        <img src="src/assets/img/icons/linha-terra.webp" alt="" class="section-title-divider">
                         <p class="supporting-text">Nosso processo criativo é prático e focado no encantamento. Tudo
                             começa pelo
                             entendimento profundo do objetivo e o desenho da jornada, até a estruturação do universo
                             narrativo, planejamento operacional e implantação.</p>
-                                nosso método</span></a>
                     </div>
                     <div class="split-section__image-container">
                         <img src="src/assets/img/placeholder.webp" alt="Equipe planejando em um quadro"
@@ -229,6 +240,7 @@
                 <div class="split-section container">
                     <div class="split-section__content">
                         <h2 class="differentials__title">O que torna a Engenho Mágico diferente</h2>
+                        <img src="src/assets/img/icons/linha-ar.webp" alt="" class="section-title-divider">
                         <p class="supporting-text">Nós unimos criatividade a um método focado em resultados tangíveis.
                             Desenvolvemos experiências físicas com propósito genuíno, usando dinâmicas e gamificação
                             autênticas que engajam muito além de pontos e badges.</p>
@@ -255,6 +267,7 @@
                 <div class="audience-formats__container container">
                     <div class="audience-formats__content">
                         <h2 class="audience__title">Para quem e como criamos</h2>
+                        <img src="src/assets/img/icons/linha-agua.webp" alt="" class="section-title-divider center">
                         <p class="supporting-text">Ajudamos escolas, empresas, parques e eventos a transformar suas
                             mensagens
                             através de nossas ferramentas de encantamento.</p>
@@ -268,6 +281,7 @@
 
                     <div class="manifesto audience-formats__content" style="margin-top: var(--space-2xl);">
                         <h2 class="manifesto__title">Nossa Visão Educativa e Lúdica</h2>
+                        <img src="src/assets/img/icons/linha-fogo.webp" alt="" class="section-title-divider center">
                         <p class="manifesto__text">A Engenho Mágico acredita que as pessoas aprendem, se conectam e
                             lembram
                             muito mais quando participam ativamente de uma experiência significativa. Em um cenário
@@ -288,6 +302,7 @@
         <section class="proposal">
             <div class="proposal__container">
                 <h2 class="proposal__title">Da Ideia ao Encantamento Presencial</h2>
+                <img src="src/assets/img/icons/linha-terra.webp" alt="" class="section-title-divider center">
                 <p class="proposal__text">Você tem uma ideia inicial, um tema pedagógico, um evento iminente ou um
                     desafio corporativo? Nós transformamos esse ponto de partida em uma jornada estruturada, cobrindo
                     narrativa, materiais, cenografia e a operação completa.</p>
@@ -305,6 +320,7 @@
         <section class="steps">
             <div class="steps__container">
                 <h2 class="steps__title">As 5 Etapas do Processo</h2>
+                <img src="src/assets/img/icons/linha-ar.webp" alt="" class="section-title-divider">
                 <ol class="steps__list">
                     <li class="step">
                         <div class="step__number">1</div>
@@ -359,6 +375,7 @@
         <section class="catalog">
             <div class="catalog__container">
                 <h2 class="catalog__title">Catálogo de Formatos</h2>
+                <img src="src/assets/img/icons/linha-agua.webp" alt="" class="section-title-divider">
                 <p class="catalog__subtitle">Conheça as possibilidades visuais de entregas que podemos adaptar para o
                     seu projeto.</p>
                 <div class="catalog-interactive" id="catalogInteractive" tabindex="0">
@@ -489,7 +506,8 @@
                     <li class="footer__item"><a href="contato.html" class="footer__link">Contato</a></li>
                 </ul>
             </nav>
-            <div class="footer__legal">
+        </div>
+        <div class="footer__legal">
                 <p class="footer__rights">© 2026 Engenho Mágico. Todos os direitos reservados.</p>
                 <ul class="footer__terms-menu">
                     <li class="footer__terms-item"><a href="#" class="footer__terms-link">Termos de Uso</a></li>
@@ -497,8 +515,29 @@
                     </li>
                 </ul>
             </div>
-        </div>
     </footer>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__border">
+            <img src="src/assets/img/elements/mobile-menu-border-left.webp" alt="" aria-hidden="true">
+        </div>
+        <div class="mobile-menu__content">
+            <button class="mobile-menu__close" aria-label="Fechar menu" id="mobileMenuClose">
+                <img src="src/assets/img/icons/menu-fechar.webp" alt="Fechar">
+            </button>
+            <nav class="mobile-menu__nav">
+                <ul class="mobile-menu__list">
+                    <li class="mobile-menu__item"><a href="index.html" class="mobile-menu__link">Início</a></li>
+                    <li class="mobile-menu__item"><a href="sobre-nos.html" class="mobile-menu__link">Sobre Nós</a></li>
+                    <li class="mobile-menu__item"><a href="solucoes.html" class="mobile-menu__link">Soluções</a></li>
+                    <li class="mobile-menu__item"><a href="projetos.html" class="mobile-menu__link">Projetos</a></li>
+                    <li class="mobile-menu__item"><a href="contato.html" class="mobile-menu__link">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="contato.html" class="btn-cta mobile-menu__cta"><span class="btn-text">Vamos conversar</span></a>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="src/js/main.js"></script>

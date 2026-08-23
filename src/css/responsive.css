@@ -58,31 +58,21 @@
   }
 
   .header__container {
-    flex-direction: column;
-    gap: var(--space-sm);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .header__nav {
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 5px;
-  }
-
-  .header__nav::-webkit-scrollbar {
     display: none;
   }
 
-  .header__menu {
-    justify-content: center;
-    align-items: center;
-    min-width: max-content;
-    gap: var(--space-md);
+  .header__menu-btn {
+    display: block;
   }
 
   .header__cta {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    font-size: var(--font-size-sm);
+    display: none;
   }
 
   /* Page header padding for taller mobile header */
@@ -270,6 +260,7 @@
   }
 
   .footer__legal {
+    width: 100%;
     flex-direction: column;
     gap: var(--space-md);
   }

@@ -27,7 +27,12 @@
                     <li class="header__item"><a href="contato.html" class="header__link">Contato</a></li>
                 </ul>
             </nav>
-            <a href="contato.html" class="btn-cta header__cta"><span class="btn-text">Vamos conversar</span></a>
+            <div class="header__actions">
+                <a href="contato.html" class="btn-cta header__cta"><span class="btn-text">Vamos conversar</span></a>
+                <button class="header__menu-btn" aria-label="Abrir menu" id="mobileMenuOpen">
+                    <img src="src/assets/img/icons/menu-hamburguerl.webp" alt="Menu" class="header__menu-icon">
+                </button>
+            </div>
         </div>
     </header>
 
@@ -51,16 +56,18 @@
             </div>
         </section>
 
-        <section id="educativas" class="solution-detail">
+        <section id="educativas" class="solution-detail solution-detail--reversed">
             <div class="page-hero-masks">
                 <img src="src/assets/img/parallax-hero/parallax-mask-back-agua.webp" alt=""
                     class="page-hero-mask page-hero-mask--back">
                 <img src="src/assets/img/parallax-hero/parallax-mask-front-ar.webp" alt=""
                     class="page-hero-mask page-hero-mask--front">
             </div>
-            <div class="solution-detail__content">
-                <h2 class="solution-detail__title">Experiências Educativas Gamificadas</h2>
-                <div class="solution-detail__info">
+            <div class="container solution-detail__grid">
+                <div class="solution-detail__content">
+                    <h2 class="solution-detail__title">Experiências Educativas Gamificadas</h2>
+                    <img src="src/assets/img/icons/linha-terra.webp" alt="Divisor" class="section-title-divider">
+                    <div class="solution-detail__info">
                     <p class="solution-detail__description">O ensino tradicional muitas vezes esbarra na falta de
                         engajamento dos alunos frente às distrações modernas. Desenvolvemos projetos pedagógicos
                         gamificados para escolas e instituições de ensino. Transformamos o currículo em missões
@@ -76,12 +83,15 @@
             </div>
             <img src="src/assets/img/placeholder.webp" alt="Alunos resolvendo enigmas em uma experiência educativa"
                 class="solution-detail__image">
+            </div>
         </section>
 
-        <section id="corporativas" class="solution-detail solution-detail--reversed">
-            <div class="solution-detail__content">
-                <h2 class="solution-detail__title">Dinâmicas Corporativas Imersivas</h2>
-                <div class="solution-detail__info">
+        <section id="corporativas" class="solution-detail">
+            <div class="container solution-detail__grid">
+                <div class="solution-detail__content">
+                    <h2 class="solution-detail__title">Dinâmicas Corporativas Imersivas</h2>
+                    <img src="src/assets/img/icons/linha-ar.webp" alt="Divisor" class="section-title-divider">
+                    <div class="solution-detail__info">
                     <p class="solution-detail__description">Palestras tradicionais e treinamentos passivos raramente
                         promovem mudança real de comportamento ou cultura. Criamos gamificação corporativa onde os
                         colaboradores assumem papéis, enfrentam desafios e observam padrões sob pressão e colaboração.
@@ -96,12 +106,15 @@
             </div>
             <img src="src/assets/img/placeholder.webp" alt="Equipe corporativa participando de dinâmica"
                 class="solution-detail__image">
+            </div>
         </section>
 
-        <section id="eventos" class="solution-detail">
-            <div class="solution-detail__content">
-                <h2 class="solution-detail__title">Atrações Narrativas para Parques e Eventos</h2>
-                <div class="solution-detail__info">
+        <section id="eventos" class="solution-detail solution-detail--reversed">
+            <div class="container solution-detail__grid">
+                <div class="solution-detail__content">
+                    <h2 class="solution-detail__title">Atrações Narrativas para Parques e Eventos</h2>
+                    <img src="src/assets/img/icons/linha-agua.webp" alt="Divisor" class="section-title-divider">
+                    <div class="solution-detail__info">
                     <p class="solution-detail__description">Espaços de turismo e eventos precisam constantemente inovar
                         para aumentar o tempo de permanência e a satisfação do público. Projetamos arenas de missão,
                         labirintos temáticos, caças ao tesouro e circuitos de aventura guiados por storytelling
@@ -116,12 +129,15 @@
             </div>
             <img src="src/assets/img/placeholder.webp" alt="Crianças e famílias em uma caça ao tesouro no resort"
                 class="solution-detail__image">
+            </div>
         </section>
 
-        <section id="produtos" class="solution-detail solution-detail--reversed">
-            <div class="solution-detail__content">
-                <h2 class="solution-detail__title">Desenvolvimento de Produtos e IPs Originais</h2>
-                <div class="solution-detail__info">
+        <section id="produtos" class="solution-detail" style="padding-bottom: 0;">
+            <div class="container solution-detail__grid">
+                <div class="solution-detail__content">
+                    <h2 class="solution-detail__title">Desenvolvimento de Produtos e IPs Originais</h2>
+                    <img src="src/assets/img/icons/linha-fogo.webp" alt="Divisor" class="section-title-divider">
+                    <div class="solution-detail__info">
                     <p class="solution-detail__description">A necessidade de soluções escaláveis e licenciáveis no
                         mercado
                         de entretenimento educativo. A Engenho Mágico desenha universos próprios, caixas narrativas,
@@ -136,6 +152,7 @@
             </div>
             <img src="src/assets/img/placeholder.webp" alt="Kits interativos e caixas narrativas originais"
                 class="solution-detail__image">
+            </div>
         </section>
         <section class="cta-section">
             <div class="cta-section__container">
@@ -198,7 +215,8 @@
                     <li class="footer__item"><a href="contato.html" class="footer__link">Contato</a></li>
                 </ul>
             </nav>
-            <div class="footer__legal">
+        </div>
+        <div class="footer__legal">
                 <p class="footer__rights">© 2026 Engenho Mágico. Todos os direitos reservados.</p>
                 <ul class="footer__terms-menu">
                     <li class="footer__terms-item"><a href="#" class="footer__terms-link">Termos de Uso</a></li>
@@ -206,9 +224,52 @@
                     </li>
                 </ul>
             </div>
-        </div>
     </footer>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__border">
+            <img src="src/assets/img/elements/mobile-menu-border-left.webp" alt="" aria-hidden="true">
+        </div>
+        <div class="mobile-menu__content">
+            <button class="mobile-menu__close" aria-label="Fechar menu" id="mobileMenuClose">
+                <img src="src/assets/img/icons/menu-fechar.webp" alt="Fechar">
+            </button>
+            <nav class="mobile-menu__nav">
+                <ul class="mobile-menu__list">
+                    <li class="mobile-menu__item"><a href="index.html" class="mobile-menu__link">Início</a></li>
+                    <li class="mobile-menu__item"><a href="sobre-nos.html" class="mobile-menu__link">Sobre Nós</a></li>
+                    <li class="mobile-menu__item"><a href="solucoes.html" class="mobile-menu__link">Soluções</a></li>
+                    <li class="mobile-menu__item"><a href="projetos.html" class="mobile-menu__link">Projetos</a></li>
+                    <li class="mobile-menu__item"><a href="contato.html" class="mobile-menu__link">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="contato.html" class="btn-cta mobile-menu__cta"><span class="btn-text">Vamos conversar</span></a>
+        </div>
+    </div>
+
     <!-- Animation Libraries (GSAP) -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__border">
+            <img src="src/assets/img/elements/mobile-menu-border-left.webp" alt="" aria-hidden="true">
+        </div>
+        <div class="mobile-menu__content">
+            <button class="mobile-menu__close" aria-label="Fechar menu" id="mobileMenuClose">
+                <img src="src/assets/img/icons/menu-fechar.webp" alt="Fechar">
+            </button>
+            <nav class="mobile-menu__nav">
+                <ul class="mobile-menu__list">
+                    <li class="mobile-menu__item"><a href="index.html" class="mobile-menu__link">Início</a></li>
+                    <li class="mobile-menu__item"><a href="sobre-nos.html" class="mobile-menu__link">Sobre Nós</a></li>
+                    <li class="mobile-menu__item"><a href="solucoes.html" class="mobile-menu__link">Soluções</a></li>
+                    <li class="mobile-menu__item"><a href="projetos.html" class="mobile-menu__link">Projetos</a></li>
+                    <li class="mobile-menu__item"><a href="contato.html" class="mobile-menu__link">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="contato.html" class="btn-cta mobile-menu__cta"><span class="btn-text">Vamos conversar</span></a>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
