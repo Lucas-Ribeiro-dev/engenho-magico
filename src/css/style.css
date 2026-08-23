@@ -555,7 +555,7 @@ section {
 .header {
   background-color: var(--color-bg-base);
   border: 18px solid transparent;
-  border-image-source: url("../assets/img/elements/border-img-3.png");
+  border-image-source: url("../assets/img/elements/border-img-3.webp");
   border-image-slice: 110;
   border-image-width: 18px;
   border-image-repeat: round;
@@ -613,8 +613,8 @@ section {
   width: 100%;
   height: 10px;
   background-color: var(--color-text-primary);
-  -webkit-mask: url("../assets/img/elements/underline.png") center / 100% 100% no-repeat;
-  mask: url("../assets/img/elements/underline.png") center / 100% 100% no-repeat;
+  -webkit-mask: url("../assets/img/elements/underline.webp") center / 100% 100% no-repeat;
+  mask: url("../assets/img/elements/underline.webp") center / 100% 100% no-repeat;
   transform: scaleX(0);
   transform-origin: center;
   transition: transform var(--transition-fast);
@@ -660,7 +660,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--bg-imagem-cta, url("../assets/img/elements/cta-btn-1.png")) center / 100% 100% no-repeat;
+  background: var(--bg-imagem-cta, url("../assets/img/elements/cta-btn-1.webp")) center / 100% 100% no-repeat;
   border-radius: var(--radius-md);
   z-index: -1;
   transition: transform var(--transition-fast) ease, background-color var(--transition-fast) ease;
@@ -742,8 +742,8 @@ section {
   width: 100%;
   height: 10px;
   background-color: #000;
-  -webkit-mask: url("../assets/img/elements/underline-2.png") center / 100% 100% no-repeat;
-  mask: url("../assets/img/elements/underline-2.png") center / 100% 100% no-repeat;
+  -webkit-mask: url("../assets/img/elements/underline-2.webp") center / 100% 100% no-repeat;
+  mask: url("../assets/img/elements/underline-2.webp") center / 100% 100% no-repeat;
 }
 
 input,
@@ -852,9 +852,9 @@ select {
 
 .hero {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   margin-top: 80px;
-  background-color: var(--color-surface-dark);
+  background-color: var(--color-bg-base);
   overflow: visible;
   padding: 0;
   position: relative;
@@ -867,17 +867,22 @@ select {
 
 .hero-divider {
   width: 100%;
-  line-height: 0;
+  height: 20px;
+  padding: 0;
+  margin: 0;
   position: relative;
   z-index: 2;
-  margin-top: -1px;
-  /* Evita fresta subpixel */
+  overflow: hidden;
 }
 
 .hero-divider__image {
   width: 100%;
   height: auto;
   display: block;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  border: none;
 }
 
 .hero__card {
@@ -895,10 +900,9 @@ select {
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  object-position: left top;
+  object-position: center;
   z-index: 1;
 }
 
@@ -1022,7 +1026,7 @@ select {
   grid-template-areas: "stack";
   overflow: hidden;
   border: 20px solid transparent;
-  border-image: url('../assets/img/elements/border-img.png') 60 stretch;
+  border-image: url('../assets/img/elements/border-img.webp') 60 stretch;
 }
 
 .parallax-layer {
@@ -1067,7 +1071,7 @@ select {
   min-height: 400px;
   overflow: hidden;
   border: 20px solid transparent;
-  border-image: url('../assets/img/elements/border-img.png') 60 stretch;
+  border-image: url('../assets/img/elements/border-img.webp') 60 stretch;
 }
 
 .split-section__image {
@@ -1125,7 +1129,7 @@ select {
   right: -24px;
   bottom: -24px;
   border: 24px solid transparent;
-  border-image-source: url('../assets/img/elements/border-img-3.png');
+  border-image-source: url('../assets/img/elements/border-img-3.webp');
   border-image-slice: 110;
   border-image-width: 24px;
   border-image-repeat: round;
@@ -1141,7 +1145,7 @@ select {
   bottom: -24px;
   z-index: -1;
   overflow: hidden;
-  background-image: url('../assets/img/placeholder.png');
+  background-image: url('../assets/img/placeholder.webp');
   background-size: cover;
   background-position: center;
 }
@@ -1183,7 +1187,6 @@ select {
    ========================================================================== */
 
 .solutions-overview {
-  background-color: var(--color-bg-base);
   padding: var(--space-2xl) 0;
 }
 
@@ -1205,7 +1208,7 @@ select {
   flex-direction: row;
   align-items: stretch;
   border: 16px solid transparent;
-  border-image-source: url('../assets/img/elements/border-img.png');
+  border-image-source: url('../assets/img/elements/border-img.webp');
   border-image-slice: 85;
   border-image-width: 16px;
   border-image-repeat: stretch;
@@ -1216,7 +1219,7 @@ select {
 
 #card-fire,
 #card-earth {
-  border-image-source: url('../assets/img/elements/border-img-2.png');
+  border-image-source: url('../assets/img/elements/border-img-2.webp');
 }
 
 .solution-card__image {
@@ -1425,7 +1428,7 @@ select {
 
 .proposal {
   width: 100%;
-  padding-bottom: var(--space-section);
+  padding-bottom: 0;
 }
 
 .proposal__container {
@@ -1443,7 +1446,7 @@ select {
   margin: 0 auto;
   display: flex;
   border: 20px solid transparent;
-  border-image: url('../assets/img/elements/border-img.png') 60 stretch;
+  border-image: url('../assets/img/elements/border-img.webp') 60 stretch;
 }
 
 .proposal__image-wrapper picture {
@@ -1461,7 +1464,7 @@ select {
    ========================================================================== */
 
 .final-cta {
-  background-image: url('../assets/img/placeholder.png');
+  background-image: url('../assets/img/placeholder.webp');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -1525,7 +1528,7 @@ select {
   padding: 0;
   border-radius: 0;
   border: 16px solid transparent;
-  border-image-source: url('../assets/img/elements/border-img-2.png');
+  border-image-source: url('../assets/img/elements/border-img-2.webp');
   border-image-slice: 85;
   border-image-width: 16px;
   border-image-repeat: stretch;
@@ -1583,7 +1586,7 @@ select {
    ========================================================================== */
 
 .manifesto-full {
-  background-image: url('../assets/img/placeholder.png');
+  background-image: url('../assets/img/placeholder.webp');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -1592,7 +1595,7 @@ select {
   align-items: center;
   z-index: 1;
   border: 24px solid transparent;
-  border-image-source: url('../assets/img/elements/border-img-3.png');
+  border-image-source: url('../assets/img/elements/border-img-3.webp');
   border-image-slice: 110;
   border-image-width: 24px;
   border-image-repeat: round;
@@ -1644,7 +1647,7 @@ select {
   width: 100%;
   object-fit: cover;
   border: 24px solid transparent;
-  border-image-source: url('../assets/img/elements/border-img-2.png');
+  border-image-source: url('../assets/img/elements/border-img-2.webp');
   border-image-slice: 85;
   border-image-width: 24px;
   border-image-repeat: stretch;
@@ -1653,6 +1656,10 @@ select {
 /* ==========================================================================
    STEPS SECTION (Methodology page)
    ========================================================================== */
+
+.steps {
+  padding-bottom: 0;
+}
 
 .steps__list {
   display: flex;
@@ -1671,7 +1678,7 @@ select {
 .step__number {
   width: 80px;
   height: 80px;
-  background-image: url('../assets/img/elements/moldura-1.png');
+  background-image: url('../assets/img/elements/moldura-1.webp');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -1689,7 +1696,7 @@ select {
 .step__content {
   background: var(--color-bg-base);
   border: 24px solid transparent;
-  border-image-source: url('../assets/img/elements/border-img.png');
+  border-image-source: url('../assets/img/elements/border-img.webp');
   border-image-slice: 85;
   border-image-width: 24px;
   border-image-repeat: stretch;
@@ -1714,6 +1721,7 @@ select {
 
 .catalog {
   background-color: var(--color-bg-base);
+  padding-bottom: 0;
 }
 
 .catalog-interactive {
@@ -1737,7 +1745,7 @@ select {
   pointer-events: none;
   z-index: 10;
   border: 8px solid transparent;
-  border-image-source: url("../assets/img/elements/border-img-4.png");
+  border-image-source: url("../assets/img/elements/border-img-4.webp");
   border-image-slice: 40;
   border-image-width: 8px;
   border-image-repeat: round;
@@ -1924,10 +1932,10 @@ select {
 }
 
 .form-section {
-  background: url("../assets/img/elements/form-bg.png") center / calc(100% - -10px) calc(100% - -15px) no-repeat;
+  background: url("../assets/img/elements/form-bg.webp") center / calc(100% - -10px) calc(100% - -15px) no-repeat;
   padding: var(--space-xl);
   border: 18px solid transparent;
-  border-image-source: url("../assets/img/elements/border-img.png");
+  border-image-source: url("../assets/img/elements/border-img.webp");
   border-image-slice: 110;
   border-image-width: 18px;
   border-image-repeat: round;
@@ -1953,7 +1961,7 @@ select {
   padding: 10px 24px 10px 24px;
   background: transparent;
   border: 15px solid transparent;
-  border-image-source: url("../assets/img/elements/border-img-3.png");
+  border-image-source: url("../assets/img/elements/border-img-3.webp");
   border-image-slice: 110;
   border-image-width: 15px;
   border-image-repeat: round;
@@ -2023,8 +2031,8 @@ select {
   width: 100%;
   height: 12px;
   background-color: #000;
-  -webkit-mask: url("../assets/img/elements/underline.png") center / 100% 100% no-repeat;
-  mask: url("../assets/img/elements/underline.png") center / 100% 100% no-repeat;
+  -webkit-mask: url("../assets/img/elements/underline.webp") center / 100% 100% no-repeat;
+  mask: url("../assets/img/elements/underline.webp") center / 100% 100% no-repeat;
   transform: scaleX(1);
 }
 
@@ -2107,6 +2115,7 @@ select {
   padding: var(--space-section) 0 var(--space-md);
   margin-top: auto;
   position: relative;
+  z-index: 2;
   overflow: hidden;
 }
 
@@ -2191,7 +2200,6 @@ select {
 
 .journey-map-container {
   position: relative;
-  background-color: var(--color-bg-base);
   z-index: 1;
 }
 
@@ -2273,15 +2281,18 @@ select {
     z-index: 1;
   }
 
-  main>section,
-  .hero-divider {
+  .main-content {
     background-color: var(--color-bg-base);
     position: relative;
-    z-index: 2;
+    z-index: 10;
   }
 
-  main>.hero,
-  main>.page-hero {
-    z-index: 1;
+  main>section {
+    position: relative;
+    z-index: 3;
+  }
+
+  .hero-divider {
+    z-index: 2;
   }
 }

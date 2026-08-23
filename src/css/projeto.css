@@ -67,7 +67,7 @@ html {
 .projeto-visualizer__frame,
 .projeto-context {
     border: solid 16px transparent;
-    border-image: url('../assets/img/elements/border-img.png') 60 stretch;
+    border-image: url('../assets/img/elements/border-img.webp') 60 stretch;
     background-color: transparent;
     background-clip: padding-box;
 }
@@ -214,7 +214,7 @@ html {
 
 /* (Efeito de ancoragem sticky substituÃ­do por scroll-snap) */
 
-/* Pontos de fuga para o scroll snap (permite que o usuário saia do efeito) */
+/* Pontos de fuga para o scroll snap (permite que o usuï¿½rio saia do efeito) */
 .projeto-single-page > .container,
 .cta-section,
 .footer {
