@@ -2,48 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Lógica do Carrossel Hero removida (agora é um Hero estático único card)
 
     // ==========================================================================
-    // EFEITO PARALLAX 3D (Home)
-    // ==========================================================================
-    const imagensParallax = document.querySelectorAll('.who-we-are__image, .solution-detail__image');
-
-    if (imagensParallax.length > 0) {
-        document.addEventListener('mousemove', (e) => {
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
-            const windowWidth = window.innerWidth;
-            const windowHeight = window.innerHeight;
-
-            // Normalizando posicoes entre -1 e 1
-            const normalizedX = (mouseX / windowWidth) * 2 - 1;
-            const normalizedY = (mouseY / windowHeight) * 2 - 1;
-
-            imagensParallax.forEach(img => {
-                // Obter a posição da imagem na tela para calcular se está visível/próxima
-                const rect = img.getBoundingClientRect();
-
-                // Aplicar efeito apenas se a imagem estiver minimamente na tela
-                if (rect.top < windowHeight && rect.bottom > 0) {
-                    const moveX = normalizedX * 10; // graus de rotação maxima
-                    const moveY = normalizedY * -10;
-
-                    // Aplicar transform smooth
-                    img.style.transition = 'transform 0.1s ease-out';
-                    img.style.transform = `perspective(1000px) rotateX(${moveY}deg) rotateY(${moveX}deg) scale(1.02)`;
-                }
-            });
-        });
-
-        // Resetar ao sair da janela
-        document.addEventListener('mouseleave', () => {
-            imagensParallax.forEach(img => {
-                img.style.transition = 'transform 0.5s ease-out';
-                img.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
-            });
-        });
-    }
-
-
     // EFEITO PARALLAX CAMADAS (Seção Sobre)
+    // ==========================================================================
+
     const containerCamadas = document.querySelector('.about__image-wrapper');
     const camadas = document.querySelectorAll('.parallax-layer');
 
@@ -71,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // EFEITO PARALLAX SCROLL (Itens flutuantes da jornada)
     // ==========================================================================
-    const floatingElements = document.querySelectorAll('.floating-parallax-img');
+    const floatingElements = document.querySelectorAll('.floating-parallax-img, .hero-floating-item');
     
     if (floatingElements.length > 0) {
         let tickingFloating = false;
@@ -159,11 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateHeroParallax() {
         if (!hero || !layers) return;
 
-        const heroRect = hero.getBoundingClientRect();
         const heroHeight = hero.offsetHeight;
 
+        // O hero agora é sticky, então seu offsetTop (getBoundingClientRect().top) fica constante
+        // Usamos o window.scrollY para calcular o progresso da página
         const progress = Math.min(
-            Math.max(-heroRect.top / heroHeight, 0),
+            Math.max(window.scrollY / heroHeight, 0),
             1
         );
 
@@ -195,6 +157,30 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', requestParallaxUpdate);
 
     updateHeroParallax();
+
+    // ==========================================================================
+    // EFEITO SCALE HERO IMAGE (Home)
+    // ==========================================================================
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        const heroHomeImage = document.querySelector('.hero__image');
+        const heroHomeSection = document.querySelector('.hero');
+        
+        // Aplica o efeito apenas se os elementos existirem
+        if (heroHomeImage && heroHomeSection) {
+            gsap.to(heroHomeImage, {
+                scale: 0.85,
+                transformOrigin: 'center center',
+                borderRadius: '24px', // Adiciona um border-radius para ficar mais charmoso
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: heroHomeSection,
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            });
+        }
+    }
 
     // ==========================================================================
     // EFEITO PARALLAX MAPA DA JORNADA (Home)
@@ -239,6 +225,137 @@ document.addEventListener('DOMContentLoaded', () => {
             window.addEventListener('scroll', requestJourneyParallaxUpdate, { passive: true });
             window.addEventListener('resize', requestJourneyParallaxUpdate, { passive: true });
             updateJourneyParallax();
+        }
+    }
+    // ==========================================================================
+    // CATÁLOGO INTERATIVO (Metodologia)
+    // ==========================================================================
+    const catalogInteractive = document.getElementById('catalogInteractive');
+    if (catalogInteractive) {
+        const images = catalogInteractive.querySelectorAll('.catalog-interactive__img');
+        const navItems = catalogInteractive.querySelectorAll('.catalog-interactive__nav-item');
+        const descriptions = catalogInteractive.querySelectorAll('.catalog-interactive__desc');
+        const currentCounter = document.getElementById('catalogCurrent');
+        const currentCounterMob = document.getElementById('catalogCurrentMob');
+        const mobileTitle = document.getElementById('catalogMobileTitle');
+        const btnPrev = catalogInteractive.querySelector('.catalog-interactive__arrow--prev');
+        const btnNext = catalogInteractive.querySelector('.catalog-interactive__arrow--next');
+        const navContainer = document.getElementById('catalogNav');
+        
+        let currentIndex = 0;
+        const totalItems = images.length;
+
+        function updateCatalog(index) {
+            // Remove active classes
+            images.forEach(img => img.classList.remove('active'));
+            navItems.forEach(item => item.classList.remove('active'));
+            descriptions.forEach(desc => desc.classList.remove('active'));
+
+            // Add active to current
+            images[index].classList.add('active');
+            navItems[index].classList.add('active');
+            descriptions[index].classList.add('active');
+
+            // Update text elements
+            const newIndexStr = (index + 1).toString();
+            if (currentCounter) currentCounter.textContent = newIndexStr;
+            if (currentCounterMob) currentCounterMob.textContent = newIndexStr;
+            
+            if (mobileTitle) {
+                mobileTitle.textContent = navItems[index].textContent;
+            }
+
+            // Centralizar scroll do nav no desktop
+            if (window.innerWidth > 1024 && navContainer) {
+                const activeItem = navItems[index];
+                const containerHeight = navContainer.offsetHeight;
+                const itemOffsetTop = activeItem.offsetTop;
+                const itemHeight = activeItem.offsetHeight;
+                const scrollTo = itemOffsetTop - (containerHeight / 2) + (itemHeight / 2);
+                
+                navContainer.scrollTo({
+                    top: scrollTo,
+                    behavior: 'smooth'
+                });
+            }
+
+            currentIndex = index;
+        }
+
+        // Click nav items
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const index = parseInt(item.getAttribute('data-index'));
+                updateCatalog(index);
+            });
+        });
+
+        // Navigation functions
+        function goNext() {
+            let nextIndex = currentIndex + 1;
+            if (nextIndex >= totalItems) nextIndex = 0; // Cyclic
+            updateCatalog(nextIndex);
+        }
+
+        function goPrev() {
+            let prevIndex = currentIndex - 1;
+            if (prevIndex < 0) prevIndex = totalItems - 1; // Cyclic
+            updateCatalog(prevIndex);
+        }
+
+        // Button events
+        if (btnNext) btnNext.addEventListener('click', goNext);
+        if (btnPrev) btnPrev.addEventListener('click', goPrev);
+
+        // Keyboard events
+        catalogInteractive.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                e.preventDefault();
+                goNext();
+            } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                goPrev();
+            }
+        });
+
+        // Mouse wheel over the component
+        catalogInteractive.addEventListener('wheel', (e) => {
+            // Apenas intercepta o wheel se não estiver scrollando a navegação de fato
+            // Evitar bloqueio excessivo da página
+            const isScrollingNav = e.target.closest('#catalogNav');
+            
+            if (!isScrollingNav) {
+                // Throttle simples para evitar scroll super rápido
+                if (!catalogInteractive.isWheeling) {
+                    catalogInteractive.isWheeling = true;
+                    setTimeout(() => catalogInteractive.isWheeling = false, 800);
+
+                    if (e.deltaY > 0) goNext();
+                    else goPrev();
+                }
+            }
+        }, { passive: true });
+
+        // Swipe (mobile)
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        catalogInteractive.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        catalogInteractive.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                goNext();
+            } else if (touchEndX > touchStartX + swipeThreshold) {
+                goPrev();
+            }
         }
     }
 });

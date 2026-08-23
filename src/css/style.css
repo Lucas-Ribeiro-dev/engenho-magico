@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    FONTS
    ========================================================================== */
 
@@ -193,16 +193,17 @@ h2 {
   display: inline-block;
 }
 
-h2::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 20%;
-  height: 12px;
-  background-color: #000;
-  -webkit-mask: url("../assets/img/elements/underline-2.png") center / 100% 100% no-repeat;
-  mask: url("../assets/img/elements/underline-2.png") center / 100% 100% no-repeat;
+.section-title-divider {
+  display: block;
+  width: clamp(140px, 20vw, 240px);
+  height: auto;
+  margin-top: calc(var(--space-md) * -1);
+  margin-bottom: var(--space-lg);
+}
+
+.section-title-divider.center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h3 {
@@ -310,7 +311,8 @@ section {
    ========================================================================== */
 
 .page-hero {
-  position: relative;
+  position: sticky;
+  top: 80px;
   isolation: isolate;
   width: 100%;
   height: 60vh;
@@ -318,7 +320,45 @@ section {
   margin-top: 80px;
   overflow: hidden;
   background-color: #f4ede0;
+  z-index: 1;
 }
+
+.page-hero-masks {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.page-hero-mask {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.page-hero-mask--back {
+  z-index: 1;
+}
+
+.page-hero-mask--front {
+  z-index: 2;
+}
+
+.who-we-are,
+.solution-detail,
+.projetos-grid-section,
+.cta-section {
+  position: relative;
+  z-index: 5;
+  background-color: var(--color-bg-base);
+}
+
 
 /* Área que contém todo o cenário */
 
@@ -466,7 +506,9 @@ section {
 }
 
 @media (max-width: 768px) {
-  .page-hero {
+
+  .page-hero,
+  .page-hero-masks {
     height: 760px;
     min-height: 0;
   }
@@ -897,6 +939,51 @@ select {
 }
 
 /* ==========================================================================
+   MASKS & FLOATING ITEMS OVERLAY (Anchored Hero effect)
+   ========================================================================== */
+.hero-masks-overlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 60vh;
+  min-height: 400px;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .hero-masks-overlay {
+    height: 760px;
+    min-height: 0;
+  }
+}
+
+.hero-masks-overlay .parallax-layer-hero--mask-back {
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: bottom;
+}
+
+.hero-masks-overlay .parallax-layer-hero--mask-front {
+  z-index: 4;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: bottom;
+}
+
+/* ==========================================================================
    ABOUT SECTION (Home)
    ========================================================================== */
 
@@ -1020,7 +1107,7 @@ select {
 
 .expertise {
   position: relative;
-  z-index: 0;
+  z-index: 2;
   min-height: 80vh;
   display: flex;
   align-items: flex-end;
@@ -1028,10 +1115,22 @@ select {
   padding-top: var(--space-2xl);
   color: var(--color-text-light);
   border: 24px solid transparent;
+}
+
+.expertise::after {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: -24px;
+  right: -24px;
+  bottom: -24px;
+  border: 24px solid transparent;
   border-image-source: url('../assets/img/elements/border-img-3.png');
   border-image-slice: 110;
   border-image-width: 24px;
   border-image-repeat: round;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .expertise__background {
@@ -1403,14 +1502,15 @@ select {
    ========================================================================== */
 
 .who-we-are {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.who-we-are__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: var(--space-2xl);
-  padding-left: var(--container-padding-desktop);
-  padding-right: var(--container-padding-desktop);
-  max-width: var(--width-container-max);
-  margin: 0 auto;
 }
 
 /* ==========================================================================
@@ -1519,29 +1619,35 @@ select {
    ========================================================================== */
 
 .solution-detail {
+  position: relative;
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.solution-detail__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-2xl);
   align-items: center;
-  max-width: var(--width-container-max);
-  margin: 0 auto;
-  padding-left: var(--container-padding-desktop);
-  padding-right: var(--container-padding-desktop);
 }
 
-.solution-detail--reversed {
+.solution-detail--reversed .solution-detail__grid {
   direction: rtl;
 }
 
-.solution-detail--reversed>* {
+.solution-detail--reversed .solution-detail__grid>* {
   direction: ltr;
 }
 
 .solution-detail__image {
-  border-radius: var(--radius-sm);
   height: 400px;
   width: 100%;
   object-fit: cover;
+  border: 24px solid transparent;
+  border-image-source: url('../assets/img/elements/border-img-2.png');
+  border-image-slice: 85;
+  border-image-width: 24px;
+  border-image-repeat: stretch;
 }
 
 /* ==========================================================================
@@ -1608,6 +1714,203 @@ select {
 
 .catalog {
   background-color: var(--color-bg-base);
+}
+
+.catalog-interactive {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-surface-dark);
+  display: flex;
+  box-shadow: var(--shadow-strong);
+}
+
+.catalog-interactive::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 10;
+  border: 8px solid transparent;
+  border-image-source: url("../assets/img/elements/border-img-4.png");
+  border-image-slice: 40;
+  border-image-width: 8px;
+  border-image-repeat: round;
+}
+
+.catalog-interactive__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.catalog-interactive__images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.catalog-interactive__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  pointer-events: none;
+}
+
+.catalog-interactive__img.active {
+  opacity: 1;
+}
+
+.catalog-interactive__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.catalog-interactive__mobile-top {
+  display: none;
+}
+
+.catalog-interactive__content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+  width: 50%;
+  height: 100%;
+}
+
+.catalog-interactive__nav-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.catalog-interactive__nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-interactive__nav::-webkit-scrollbar {
+  display: none;
+}
+
+.catalog-interactive__nav-item {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  padding: 0.25rem 0;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  transform-origin: left center;
+  position: relative;
+}
+
+.catalog-interactive__nav-item:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.catalog-interactive__nav-item.active {
+  color: #F4EDE0;
+  font-size: 1.65rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.catalog-interactive__nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.2rem;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-brand-primary);
+  border-radius: 2px;
+}
+
+.catalog-interactive__details {
+  margin-top: 2rem;
+  color: #F4EDE0;
+}
+
+.catalog-interactive__counter {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-brand-primary);
+}
+
+.catalog-interactive__counter-divider {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.catalog-interactive__descriptions {
+  position: relative;
+  height: 80px;
+}
+
+.catalog-interactive__desc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
+  pointer-events: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(244, 237, 224, 0.9);
+}
+
+.catalog-interactive__desc.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.catalog-interactive__controls {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .catalog-interactive__img,
+  .catalog-interactive__nav-item,
+  .catalog-interactive__desc {
+    transition: none;
+  }
 }
 
 /* ==========================================================================
@@ -1733,7 +2036,7 @@ select {
   padding: var(--space-section) 0;
   background-color: var(--color-bg-base);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .cta-section__container {
@@ -1957,24 +2260,28 @@ select {
     will-change: auto;
   }
 }
+
 /* ==========================================================================
    STICKY HERO REVEAL EFFECT (Desktop & Tablet)
    ========================================================================== */
 @media (min-width: 993px) {
-  .hero, .page-hero {
+
+  .hero,
+  .page-hero {
     position: sticky;
     top: 80px;
     z-index: 1;
   }
-  
-  main > section, .hero-divider {
+
+  main>section,
+  .hero-divider {
     background-color: var(--color-bg-base);
     position: relative;
     z-index: 2;
   }
-  
-  main > .hero, main > .page-hero {
+
+  main>.hero,
+  main>.page-hero {
     z-index: 1;
   }
 }
-

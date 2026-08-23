@@ -9,8 +9,7 @@
     --container-padding-desktop: 2rem;
   }
 
-  .pillars__grid,
-  .catalog__grid {
+  .pillars__grid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 
@@ -134,6 +133,104 @@
 
   .step:hover .step__content {
     transform: none;
+  }
+
+  /* Catalog Interactive Mobile */
+  .catalog-interactive {
+    aspect-ratio: auto;
+    flex-direction: column;
+    border-width: 8px;
+    border-image-width: 8px;
+    display: flex;
+  }
+  
+  .catalog-interactive__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    z-index: 1;
+  }
+  
+  .catalog-interactive__overlay {
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0) 100%);
+  }
+
+  .catalog-interactive__mobile-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    z-index: 4;
+  }
+
+  .catalog-interactive__mobile-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #F4EDE0;
+    margin: 0;
+  }
+
+  .catalog-interactive__counter--desktop {
+    display: none;
+  }
+
+  .catalog-interactive__content {
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .catalog-interactive__nav-wrapper {
+    display: none; /* Hide vertical titles on mobile */
+  }
+  
+  .catalog-interactive__details {
+    margin-top: 0;
+  }
+  
+  .catalog-interactive__descriptions {
+    height: 120px;
+  }
+
+  .catalog-interactive__desc {
+    font-size: 0.95rem;
+  }
+
+  .catalog-interactive__controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .catalog-interactive__arrow {
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background 0.3s ease;
+  }
+
+  .catalog-interactive__arrow:hover {
+    background: rgba(0,0,0,0.8);
   }
 
   /* Solutions Overview (Mobile) */

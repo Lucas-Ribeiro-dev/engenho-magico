@@ -4,27 +4,6 @@
     background-color: #F4EDE0;
 }
 
-/* Hero */
-.projetos-hero {
-    padding: 120px 20px 60px;
-    text-align: center;
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.projetos-hero__title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    color: #1a1a1a;
-    font-family: var(--font-primary, serif); /* Fallback, usually style.css sets fonts but just in case */
-    margin-bottom: 20px;
-}
-
-.projetos-hero__text {
-    font-size: 1.125rem;
-    color: #1a1a1a;
-    line-height: 1.6;
-}
 
 /* Grid Section */
 .projetos-grid-section {
@@ -123,12 +102,3 @@
         gap: 40px;
     }
 }
-
-@media (min-width: 993px) {
-  .projetos-hero {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
-}
-
