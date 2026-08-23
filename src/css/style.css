@@ -1226,9 +1226,7 @@ select {
   transition: transform var(--transition-slow);
 }
 
-.split-section:hover .split-section__image {
-  transform: scale(1.03);
-}
+
 
 .split-section__btn {
   margin-top: var(--space-sm);
@@ -1290,7 +1288,7 @@ select {
   bottom: -24px;
   z-index: -1;
   overflow: hidden;
-  background-image: url('../assets/img/placeholder.webp');
+  background-image: url('../assets/img/pictures/index/nossa-especialidade.webp');
   background-size: cover;
   background-position: center;
 }
@@ -1699,9 +1697,7 @@ select {
   transition: transform var(--transition-slow);
 }
 
-.pillar:hover .pillar__image {
-  transform: scale(1.05);
-}
+
 
 .pillar__mask {
   position: absolute;
@@ -1731,7 +1727,7 @@ select {
    ========================================================================== */
 
 .manifesto-full {
-  background-image: url('../assets/img/placeholder.webp');
+  background-image: url('../assets/img/pictures/sobre-nos/nossa-filosofia-de-conexao.webp');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -1798,67 +1794,7 @@ select {
   border-image-repeat: stretch;
 }
 
-/* ==========================================================================
-   STEPS SECTION (Methodology page)
-   ========================================================================== */
 
-.steps {
-  padding-bottom: 0;
-}
-
-.steps__list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-  position: relative;
-}
-
-.step {
-  display: flex;
-  gap: var(--space-xl);
-  position: relative;
-  z-index: 1;
-}
-
-.step__number {
-  width: 80px;
-  height: 80px;
-  background-image: url('../assets/img/elements/moldura-1.webp');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  flex-shrink: 0;
-}
-
-.step__content {
-  background: var(--color-bg-base);
-  border: 24px solid transparent;
-  border-image-source: url('../assets/img/elements/border-img.webp');
-  border-image-slice: 85;
-  border-image-width: 24px;
-  border-image-repeat: stretch;
-  padding: 24px;
-  box-sizing: border-box;
-  flex-grow: 1;
-  transition: transform var(--transition-fast);
-}
-
-.step:hover .step__content {
-  transform: translateX(10px);
-}
-
-.step__content h3,
-.step__content p {
-  font-weight: var(--font-weight-bold, bold);
-}
 
 /* ==========================================================================
    CATALOG SECTION (Methodology page)
@@ -1867,6 +1803,10 @@ select {
 .catalog {
   background-color: var(--color-bg-base);
   padding-bottom: 0;
+}
+
+.catalog__subtitle {
+  margin-bottom: 48px;
 }
 
 .catalog-interactive {

@@ -106,24 +106,7 @@
     width: 100%;
   }
 
-  /* Steps */
-  .steps__list::before {
-    left: 20px;
-  }
 
-  .step {
-    gap: var(--space-md);
-  }
-
-  .step__number {
-    width: 60px;
-    height: 60px;
-    font-size: var(--font-size-2xl);
-  }
-
-  .step:hover .step__content {
-    transform: none;
-  }
 
   /* Catalog Interactive Mobile */
   .catalog-interactive {
