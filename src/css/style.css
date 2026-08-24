@@ -990,7 +990,7 @@ select {
   height: 100vh;
   margin-top: 0;
   background-color: var(--color-bg-base);
-  overflow: visible;
+  overflow: hidden;
   padding: 0;
   position: relative;
 }
