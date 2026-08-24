@@ -112,4 +112,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     init();
+
+    // ==========================================================================
+    // LIGHTBOX
+    // ==========================================================================
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImageObj = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    if (elements.image && lightbox && lightboxImageObj && lightboxClose) {
+        // Abrir o lightbox
+        elements.image.addEventListener('click', () => {
+            lightboxImageObj.src = elements.image.src;
+            lightbox.classList.add('active');
+        });
+
+        // Fechar pelo botão
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        // Fechar clicando fora da imagem
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // Fechar no ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+            }
+        });
+    }
 });

@@ -1051,7 +1051,18 @@ select {
   z-index: 1;
 }
 
-/* O dark gradient overlay do hero foi removido. */
+/* Dark gradient overlay do hero para melhorar legibilidade */
+.hero__card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
 
 .hero__content {
   position: absolute;
@@ -1542,13 +1553,13 @@ select {
 
 .floating-parallax-img--3 {
   /* methodology */
-  top: 15%;
+  top: 30%;
   right: 8%;
 }
 
 .floating-parallax-img--4 {
   /* differentials */
-  bottom: 20%;
+  bottom: 30%;
   left: 2%;
 }
 
@@ -2373,29 +2384,86 @@ select {
 }
 
 /* ==========================================================================
-   STICKY HERO REVEAL EFFECT (Desktop & Tablet)
+   STICKY HERO REVEAL EFFECT (Global)
    ========================================================================== */
-@media (min-width: 993px) {
 
-  .hero,
-  .page-hero {
-    position: sticky;
-    top: 80px;
-    z-index: 1;
-  }
+.hero,
+.page-hero {
+  position: sticky;
+  top: 80px;
+  z-index: 1;
+}
 
-  .main-content {
-    background-color: var(--color-bg-base);
-    position: relative;
-    z-index: 10;
-  }
+.main-content {
+  background-color: var(--color-bg-base);
+  position: relative;
+  z-index: 10;
+}
 
-  main>section {
-    position: relative;
-    z-index: 3;
-  }
+main>section {
+  position: relative;
+  z-index: 3;
+}
 
-  .hero-divider {
-    z-index: 2;
-  }
+.hero-divider {
+  z-index: 2;
+}
+
+/* ==========================================================================
+   LIGHTBOX
+   ========================================================================== */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+  padding: 8px;
+}
+
+.lightbox__close img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+}
+
+.lightbox__image {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  cursor: zoom-out;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.lightbox.active .lightbox__image {
+  transform: scale(1);
+}
+
+.projeto-visualizer__image {
+  cursor: zoom-in;
 }

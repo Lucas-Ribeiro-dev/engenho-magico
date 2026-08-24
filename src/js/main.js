@@ -145,9 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Aplica o efeito apenas se os elementos existirem
         if (heroHomeImage && heroHomeSection) {
             gsap.to(heroHomeImage, {
-                scale: 0.85,
+                scale: 1.15,
                 transformOrigin: 'center center',
-                borderRadius: '24px', // Adiciona um border-radius para ficar mais charmoso
                 ease: 'none',
                 scrollTrigger: {
                     trigger: heroHomeSection,
