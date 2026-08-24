@@ -683,7 +683,7 @@ section {
 .mobile-menu {
   position: fixed;
   top: 0;
-  right: -100%;
+  right: -400px;
   width: 100%;
   max-width: 320px;
   height: 100vh;
