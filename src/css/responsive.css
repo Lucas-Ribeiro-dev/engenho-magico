@@ -120,6 +120,23 @@
 
 
 
+  /* Transform Grid Mobile */
+  .transform-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .transform-col,
+  .transform-col--right {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .transform-arrow {
+    transform: rotate(90deg);
+    margin: 1rem auto;
+  }
+
   /* Catalog Interactive Mobile */
   .catalog-interactive {
     aspect-ratio: auto;

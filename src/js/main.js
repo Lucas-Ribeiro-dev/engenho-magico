@@ -334,4 +334,42 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    // ==========================================================================
+    // LIGHTBOX GLOBAL
+    // ==========================================================================
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImageObj = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    if (lightbox && lightboxImageObj && lightboxClose) {
+        // Encontra todas as imagens que podem abrir no lightbox
+        const galleryImages = document.querySelectorAll('.gallery-image, #projetoImage');
+        
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImageObj.src = img.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        // Fechar pelo botão
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        // Fechar clicando fora da imagem
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // Fechar no ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+            }
+        });
+    }
 });

@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engenho Mágico - Projeto</title>
     <link rel="icon" type="image/x-icon" href="src/assets/img/icons/favicon.ico">
-    <meta name="description"
-        content="Demonstração interativa de projeto desenvolvido pela Engenho Mágico.">
+    <meta name="description" content="Demonstração interativa de projeto desenvolvido pela Engenho Mágico.">
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/responsive.css">
     <link rel="stylesheet" href="src/css/projeto.css">
@@ -41,38 +40,176 @@
         <div class="container">
             <div class="projeto-header">
                 <h1 class="projeto-header__title" id="projetoTitle">O Mago das Letras</h1>
-                <img src="src/assets/img/elements/underline.webp" alt="" class="projeto-header__underline" aria-hidden="true">
+                <img src="src/assets/img/elements/underline.webp" alt="" class="projeto-header__underline"
+                    aria-hidden="true">
             </div>
 
             <div style="margin-bottom: 40px;">
-                <a href="projetos.html" class="btn-cta" style="padding: 0.8rem 1.5rem; font-size: 1rem;"><span class="btn-text">← Voltar para projetos</span></a>
+                <a href="projetos.html" class="btn-cta" style="padding: 0.8rem 1.5rem; font-size: 1rem;"><span
+                        class="btn-text">← Voltar para projetos</span></a>
             </div>
         </div>
 
         <section class="projeto-content">
             <section class="projeto-visualizer">
                 <div class="projeto-visualizer__frame">
-                    <img src="src/assets/img/placeholder.webp" alt="Página do projeto" id="projetoImage" class="projeto-visualizer__image">
+                    <img src="src/assets/img/placeholder.webp" alt="Página do projeto" id="projetoImage"
+                        class="projeto-visualizer__image">
                 </div>
                 <div class="projeto-controls">
-                    <button class="projeto-controls__btn projeto-controls__btn--prev" id="btnPrev" aria-label="Página anterior">
-                        <img src="src/assets/img/icons/seta.webp" alt="" aria-hidden="true" class="projeto-controls__arrow projeto-controls__arrow--prev">
+                    <button class="projeto-controls__btn projeto-controls__btn--prev" id="btnPrev"
+                        aria-label="Página anterior">
+                        <img src="src/assets/img/icons/seta.webp" alt="" aria-hidden="true"
+                            class="projeto-controls__arrow projeto-controls__arrow--prev">
                     </button>
                     <div class="projeto-controls__indicator" id="pageIndicator" aria-live="polite">
                         01 / 04
                     </div>
-                    <button class="projeto-controls__btn projeto-controls__btn--next" id="btnNext" aria-label="Próxima página">
-                        <img src="src/assets/img/icons/seta.webp" alt="" aria-hidden="true" class="projeto-controls__arrow">
+                    <button class="projeto-controls__btn projeto-controls__btn--next" id="btnNext"
+                        aria-label="Próxima página">
+                        <img src="src/assets/img/icons/seta.webp" alt="" aria-hidden="true"
+                            class="projeto-controls__arrow">
                     </button>
                 </div>
             </section>
 
-            <section class="projeto-context">
-                <h2 class="projeto-context__title">Contexto do projeto</h2>
-                <div class="projeto-context__text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>In hac habitasse platea dictumst. Curabitur vel metus dictum, faucibus eros non, iaculis erat. Aliquam non semper nisl. Aenean ullamcorper congue odio vitae commodo. Nam sed consequat nisi. Proin varius ex at pretium accumsan.</p>
-                    <p>Aliquam erat volutpat. Fusce ullamcorper interdum elit, eget posuere metus vehicula id. Proin vulputate sem vel congue pretium. Nulla facilisi. Sed non lorem eget est imperdiet placerat.</p>
+            <section class="projeto-context" style="display: flex; flex-direction: column; gap: 3rem;">
+
+                <!-- O Ponto de Partida -->
+                <div class="case-study-block">
+                    <h2 class="projeto-context__title"
+                        style="margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                        <img src="src/assets/img/icons/linha-terra.webp" alt="" aria-hidden="true"
+                            style="height: 2px; width: 40px;">
+                        O ponto de partida
+                    </h2>
+                    <div class="projeto-context__text">
+                        <p>Descrição do desafio inicial: Qual era o espaço, a necessidade ou a oportunidade que o
+                            cliente tinha em mãos antes da intervenção da Engenho Mágico.</p>
+                    </div>
+                </div>
+
+                <!-- O Universo Criado -->
+                <div class="case-study-block">
+                    <h2 class="projeto-context__title"
+                        style="margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                        <img src="src/assets/img/icons/linha-agua.webp" alt="" aria-hidden="true"
+                            style="height: 2px; width: 40px;">
+                        O universo criado
+                    </h2>
+                    <div class="projeto-context__text">
+                        <p>Detalhes sobre a narrativa e a atmosfera desenvolvidas. Como transformamos o espaço físico ou
+                            o tema em um mundo envolvente.</p>
+                    </div>
+                </div>
+
+                <!-- O que o participante faz -->
+                <div class="case-study-block">
+                    <h2 class="projeto-context__title"
+                        style="margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                        <img src="src/assets/img/icons/linha-fogo.webp" alt="" aria-hidden="true"
+                            style="height: 2px; width: 40px;">
+                        O que o participante faz
+                    </h2>
+                    <div class="projeto-context__text">
+                        <p>Quais decisões, desafios, pistas ou interações acontecem durante a jornada. O papel ativo de
+                            quem vive a experiência.</p>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <!-- O que a Engenho Mágico entrega -->
+                    <div class="case-study-block"
+                        style="background: var(--cor-areia-clara); padding: 2rem; border-radius: 8px;">
+                        <h3
+                            style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--cor-primaria); margin-bottom: 1rem;">
+                            O que entregamos</h3>
+                        <ul
+                            style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; color: var(--cor-texto);">
+                            <li>• Conceito</li>
+                            <li>• Storytelling</li>
+                            <li>• Game design</li>
+                            <li>• Projeto da experiência</li>
+                            <li>• Cenografia e artefatos</li>
+                            <li>• Tecnologia</li>
+                            <li>• Implantação</li>
+                            <li>• Treinamento operacional</li>
+                        </ul>
+                    </div>
+
+                    <!-- Para quem serve -->
+                    <div class="case-study-block"
+                        style="background: var(--cor-areia-clara); padding: 2rem; border-radius: 8px;">
+                        <h3
+                            style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--cor-primaria); margin-bottom: 1rem;">
+                            Para quem serve</h3>
+                        <ul
+                            style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; color: var(--cor-texto);">
+                            <li>• Escolas e Instituições</li>
+                            <li>• Famílias</li>
+                            <li>• Parques e Resorts</li>
+                            <li>• Empresas ou Eventos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Galeria -->
+                <div class="case-study-block" style="margin-top: 2rem;">
+                    <h2 class="projeto-context__title"
+                        style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                        <img src="src/assets/img/icons/linha-ar.webp" alt="" aria-hidden="true"
+                            style="height: 2px; width: 40px;">
+                        Galeria do Projeto
+                    </h2>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <!-- Imagens Conceituais -->
+                        <div style="position: relative;">
+                            <img src="src/assets/img/placeholder.webp" alt="Imagens conceituais"
+                                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+                            <span
+                                style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Imagens
+                                conceituais</span>
+                        </div>
+                        <!-- Plantas ou mapas -->
+                        <div style="position: relative;">
+                            <img src="src/assets/img/placeholder.webp" alt="Plantas ou mapas"
+                                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+                            <span
+                                style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Plantas
+                                ou mapas</span>
+                        </div>
+                        <!-- Artefatos -->
+                        <div style="position: relative;">
+                            <img src="src/assets/img/placeholder.webp" alt="Artefatos"
+                                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+                            <span
+                                style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Artefatos</span>
+                        </div>
+                        <!-- Participantes -->
+                        <div style="position: relative;">
+                            <img src="src/assets/img/placeholder.webp" alt="Participantes"
+                                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+                            <span
+                                style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Participantes</span>
+                        </div>
+                        <!-- Espaço implantado -->
+                        <div style="position: relative;">
+                            <img src="src/assets/img/placeholder.webp" alt="Espaço implantado"
+                                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+                            <span
+                                style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Espaço
+                                implantado</span>
+                        </div>
+                        <!-- Pequenos vídeos -->
+                        <div style="position: relative;">
+                            <img src="src/assets/img/placeholder.webp" alt="Vídeos da experiência"
+                                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+                            <span
+                                style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Pequenos
+                                vídeos</span>
+                        </div>
+                    </div>
                 </div>
             </section>
         </section>
@@ -140,13 +277,13 @@
             </nav>
         </div>
         <div class="footer__legal">
-                <p class="footer__rights">© 2026 Engenho Mágico. Todos os direitos reservados.</p>
-                <ul class="footer__terms-menu">
-                    <li class="footer__terms-item"><a href="#" class="footer__terms-link">Termos de Uso</a></li>
-                    <li class="footer__terms-item"><a href="#" class="footer__terms-link">Política de Privacidade</a>
-                    </li>
-                </ul>
-            </div>
+            <p class="footer__rights">© 2026 Engenho Mágico. Todos os direitos reservados.</p>
+            <ul class="footer__terms-menu">
+                <li class="footer__terms-item"><a href="#" class="footer__terms-link">Termos de Uso</a></li>
+                <li class="footer__terms-item"><a href="#" class="footer__terms-link">Política de Privacidade</a>
+                </li>
+            </ul>
+        </div>
     </footer>
     <div class="lightbox" id="lightbox">
         <button class="lightbox__close" aria-label="Fechar" id="lightboxClose">

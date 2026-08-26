@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Here we could use projectId to load specific data if available
         // Set initial texts
         elements.title.textContent = projectData.title;
-        
+
         // Render context paragraphs
         elements.contextContainer.innerHTML = projectData.context
             .map(p => `<p>${p}</p>`)
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isInitial) {
             // Add fade out
             elements.image.classList.add('fade-out');
-            
+
             // Wait for transition before changing source
             setTimeout(applyUpdate, 300); // 300ms matches css transition
         } else {
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyUpdate() {
         // Update image source
         elements.image.src = projectData.pages[currentPageIndex];
-        
+
         // Format indicator like "01 / 04"
         const currentFormatted = String(currentPageIndex + 1).padStart(2, '0');
         const totalFormatted = String(totalPages).padStart(2, '0');
@@ -112,38 +112,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     init();
-
-    // ==========================================================================
-    // LIGHTBOX
-    // ==========================================================================
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImageObj = document.getElementById('lightboxImage');
-    const lightboxClose = document.getElementById('lightboxClose');
-
-    if (elements.image && lightbox && lightboxImageObj && lightboxClose) {
-        // Abrir o lightbox
-        elements.image.addEventListener('click', () => {
-            lightboxImageObj.src = elements.image.src;
-            lightbox.classList.add('active');
-        });
-
-        // Fechar pelo botão
-        lightboxClose.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-        });
-
-        // Fechar clicando fora da imagem
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('active');
-            }
-        });
-
-        // Fechar no ESC
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                lightbox.classList.remove('active');
-            }
-        });
-    }
 });
