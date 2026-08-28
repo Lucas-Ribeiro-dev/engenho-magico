@@ -295,6 +295,21 @@
   .expertise__text {
     font-size: var(--font-size-md);
   }
+
+  /* Home Gallery Grid Mobile */
+  .home-gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+  .home-gallery-grid .gallery-item:first-child {
+    grid-column: 1 / 3;
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .home-gallery-grid .gallery-item:not(:first-child) {
+    aspect-ratio: 1 / 1;
+  }
 }
 
 /* SMALL SMARTPHONES (Up to 480px) */
