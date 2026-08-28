@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             // Array of pages (images) for the visualizer
             pages: [
-                "src/assets/projetos/projeto_mago-das-letras/capa.webp",
-                "src/assets/projetos/projeto_mago-das-letras/pagina-1.webp",
-                "src/assets/projetos/projeto_mago-das-letras/pagina-2.webp",
-                "src/assets/projetos/projeto_mago-das-letras/pagina-3.webp",
-                "src/assets/projetos/projeto_mago-das-letras/pagina-4.webp"
+                "src/assets/portifolio/projetos/projeto_mago-das-letras/capa.webp",
+                "src/assets/portifolio/projetos/projeto_mago-das-letras/pagina-1.webp",
+                "src/assets/portifolio/projetos/projeto_mago-das-letras/pagina-2.webp",
+                "src/assets/portifolio/projetos/projeto_mago-das-letras/pagina-3.webp",
+                "src/assets/portifolio/projetos/projeto_mago-das-letras/pagina-4.webp"
             ]
         }
     };

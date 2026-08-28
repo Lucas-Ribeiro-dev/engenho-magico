@@ -65,7 +65,9 @@
 .projeto-card__title-wrapper {
     position: absolute;
     bottom: 15px;
-    left: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
     padding: 8px 12px;
     background-color: #1a1a1a;
     background-clip: padding-box;
@@ -100,5 +102,91 @@
         grid-template-columns: 1fr;
         max-width: 400px;
         gap: 40px;
+    }
+}
+
+/* ==========================================================================
+   GALERIA EDITORIAL GRID
+   ========================================================================== */
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: #F4EDE0;
+    grid-auto-rows: 300px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery-item:hover .gallery-item__img {
+    transform: scale(1.03);
+    filter: contrast(1.1) brightness(0.95);
+}
+
+.gallery-item__border {
+    position: absolute;
+    inset: 0;
+    border: solid 16px transparent;
+    border-image-slice: 85;
+    border-image-width: 16px;
+    border-image-repeat: stretch;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Spans Editoriais */
+.gl-destaque { grid-column: span 6; grid-row: span 1; }
+.gl-larga { grid-column: span 5; grid-row: span 1; }
+.gl-media-larga, .gl-media-4 { grid-column: span 4; grid-row: span 1; }
+.gl-media, .gl-media-3 { grid-column: span 3; grid-row: span 1; }
+.gl-quadrada { grid-column: span 3; grid-row: span 1; }
+.gl-vertical { grid-column: span 3; grid-row: span 1; }
+.gl-vertical-estreita { grid-column: span 2; grid-row: span 1; }
+
+/* Incompletos (Fim de ciclo) */
+.gl-larga-full { grid-column: span 12; grid-row: span 1; }
+.gl-metade { grid-column: span 6; grid-row: span 1; }
+.gl-metade-altura { grid-column: span 6; grid-row: span 1; }
+.gl-terca-parte { grid-column: span 4; grid-row: span 1; }
+
+/* Responsive Grid Editorial */
+@media (max-width: 1200px) {
+    .galeria-grid {
+        grid-auto-rows: 250px;
+    }
+}
+
+@media (max-width: 992px) {
+    .galeria-grid {
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 220px;
+    }
+    .gl-destaque, .gl-larga, .gl-metade, .gl-metade-altura, .gl-larga-full { grid-column: span 6; }
+    .gl-media-larga, .gl-media-4, .gl-media, .gl-media-3, .gl-quadrada, .gl-vertical, .gl-vertical-estreita, .gl-terca-parte { grid-column: span 3; }
+}
+
+@media (max-width: 600px) {
+    .galeria-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 300px;
+    }
+    .gallery-item {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
     }
 }
