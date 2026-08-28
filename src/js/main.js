@@ -220,6 +220,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         let currentIndex = 0;
         const totalItems = images.length;
+        let autoPlayTimer;
+
+        function startAutoPlay() {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = setInterval(goNext, 5000); // 5 segundos
+        }
 
         function updateCatalog(index) {
             // Remove active classes
@@ -256,6 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             currentIndex = index;
+            startAutoPlay();
         }
 
         // Click nav items
@@ -294,23 +301,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Mouse wheel over the component
-        catalogInteractive.addEventListener('wheel', (e) => {
-            // Apenas intercepta o wheel se não estiver scrollando a navegação de fato
-            // Evitar bloqueio excessivo da página
-            const isScrollingNav = e.target.closest('#catalogNav');
-            
-            if (!isScrollingNav) {
-                // Throttle simples para evitar scroll super rápido
-                if (!catalogInteractive.isWheeling) {
-                    catalogInteractive.isWheeling = true;
-                    setTimeout(() => catalogInteractive.isWheeling = false, 800);
+        // Inicia o auto-play
+        startAutoPlay();
 
-                    if (e.deltaY > 0) goNext();
-                    else goPrev();
-                }
-            }
-        }, { passive: true });
+        // Pausa quando o mouse está sobre o catálogo
+        catalogInteractive.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+        catalogInteractive.addEventListener('mouseleave', startAutoPlay);
 
         // Swipe (mobile)
         let touchStartX = 0;

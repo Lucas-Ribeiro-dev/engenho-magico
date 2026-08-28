@@ -1345,7 +1345,7 @@ select {
 
 /* EXPERTISE HEADER & ADJUSTMENTS */
 .expertise-header {
-  padding-top: var(--space-section);
+  padding-top: 0;
 }
 
 .expertise-header__container {
@@ -1699,6 +1699,7 @@ select {
 
 .proposal {
   width: 100%;
+  padding-top: 0;
   padding-bottom: 0;
 }
 
@@ -1930,6 +1931,7 @@ select {
 
 .catalog {
   background-color: var(--color-bg-base);
+  padding-top: 0;
   padding-bottom: 0;
 }
 
