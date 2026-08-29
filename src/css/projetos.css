@@ -10,6 +10,31 @@
     padding: 60px 20px 120px;
 }
 
+.projetos-grid__title,
+.projetos-gallery__title {
+    font-size: 2.5rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.projetos-gallery__subtitle {
+    color: var(--color-text-primary);
+    margin-bottom: 3rem;
+    text-align: center;
+    width: 100%;
+}
+
+.projetos-gallery__container {
+    max-width: var(--width-container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding-desktop);
+    padding-right: var(--container-padding-desktop);
+    text-align: center;
+}
+
 .projetos-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -108,6 +133,10 @@
 /* ==========================================================================
    GALERIA EDITORIAL GRID
    ========================================================================== */
+
+.projetos-gallery {
+    padding: var(--space-section) 0;
+}
 
 .galeria-grid {
     display: grid;
