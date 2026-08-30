@@ -89,24 +89,17 @@
 
 .projeto-card__title-wrapper {
     position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 0;
+    left: 0;
+    width: 100%;
     text-align: center;
-    padding: 8px 12px;
-    background-color: #1a1a1a;
-    background-clip: padding-box;
-    border: solid 8px transparent;
-    border-image-source: url('../assets/img/elements/border-img-4.webp');
-    border-image-slice: 40;
-    border-image-width: 8px;
-    border-image-repeat: round;
-    /* Prevent wrapper from hiding if image scales */
+    padding: 15px 12px;
+    background-color: rgba(0, 0, 0, 0.75);
     z-index: 2;
 }
 
 .projeto-card__title {
-    color: #F4EDE0;
+    color: #FFFFFF;
     font-size: 1.25rem;
     font-family: var(--font-primary, serif);
     margin: 0;

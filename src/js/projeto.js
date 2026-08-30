@@ -25,6 +25,105 @@ document.addEventListener('DOMContentLoaded', () => {
                 "src/assets/portifolio/projetos/projeto_mago-das-letras/pagina-3.webp",
                 "src/assets/portifolio/projetos/projeto_mago-das-letras/pagina-4.webp"
             ]
+        },
+        'elara': {
+            title: "O Paradeiro de Elara",
+            context: ["Este projeto foi desenvolvido com foco em proporcionar uma experiência imersiva e engajadora.", "Utilizamos metodologias ativas e gamificação para criar uma narrativa única e memorável."],
+            pages: [
+                "src/assets/portifolio/projetos/projeto_paradeiroelaraapresentao/capa.webp",
+                "src/assets/portifolio/projetos/projeto_paradeiroelaraapresentao/pagina-1.webp",
+                "src/assets/portifolio/projetos/projeto_paradeiroelaraapresentao/pagina-2.webp",
+                "src/assets/portifolio/projetos/projeto_paradeiroelaraapresentao/pagina-3.webp",
+                "src/assets/portifolio/projetos/projeto_paradeiroelaraapresentao/pagina-4.webp"
+            ]
+        },
+        'arena-viva': {
+            title: "Arena Viva",
+            context: ["Este projeto foi desenvolvido com foco em proporcionar uma experiência imersiva e engajadora.", "Utilizamos metodologias ativas e gamificação para criar uma narrativa única e memorável."],
+            pages: [
+                "src/assets/portifolio/projetos/projeto_arena-imersiva/capa.webp",
+                "src/assets/portifolio/projetos/projeto_arena-imersiva/pagina-1.webp",
+                "src/assets/portifolio/projetos/projeto_arena-imersiva/pagina-2.webp",
+                "src/assets/portifolio/projetos/projeto_arena-imersiva/pagina-3.webp",
+                "src/assets/portifolio/projetos/projeto_arena-imersiva/pagina-4.webp"
+            ]
+        },
+        'caixa-magica': {
+            title: "Caixa Mágica",
+            context: ["Este projeto foi desenvolvido com foco em proporcionar uma experiência imersiva e engajadora.", "Utilizamos metodologias ativas e gamificação para criar uma narrativa única e memorável."],
+            pages: [
+                "src/assets/portifolio/projetos/projeto_engenho-mgico-aulas-imersivas-gamificadas/capa.webp",
+                "src/assets/portifolio/projetos/projeto_engenho-mgico-aulas-imersivas-gamificadas/pagina-1.webp",
+                "src/assets/portifolio/projetos/projeto_engenho-mgico-aulas-imersivas-gamificadas/pagina-2.webp",
+                "src/assets/portifolio/projetos/projeto_engenho-mgico-aulas-imersivas-gamificadas/pagina-3.webp",
+                "src/assets/portifolio/projetos/projeto_engenho-mgico-aulas-imersivas-gamificadas/pagina-4.webp"
+            ]
+        },
+        'labirinto-asteria': {
+            title: "Labirinto de Astéria",
+            context: ["Este projeto foi desenvolvido com foco em proporcionar uma experiência imersiva e engajadora.", "Utilizamos metodologias ativas e gamificação para criar uma narrativa única e memorável."],
+            pages: [
+                "src/assets/portifolio/projetos/projeto_catlogo-labirintoo-de-astria/capa.webp",
+                "src/assets/portifolio/projetos/projeto_catlogo-labirintoo-de-astria/pagina-1.webp",
+                "src/assets/portifolio/projetos/projeto_catlogo-labirintoo-de-astria/pagina-2.webp",
+                "src/assets/portifolio/projetos/projeto_catlogo-labirintoo-de-astria/pagina-3.webp",
+                "src/assets/portifolio/projetos/projeto_catlogo-labirintoo-de-astria/pagina-4.webp"
+            ]
+        },
+        'caminhantes-cosmos': {
+            title: "Caminhantes do Cosmos",
+            context: ["Este projeto foi desenvolvido com foco em proporcionar uma experiência imersiva e engajadora.", "Utilizamos metodologias ativas e gamificação para criar uma narrativa única e memorável."],
+            pages: [
+                "src/assets/portifolio/projetos/projeto_projeto-the-survival-challenger/capa.webp",
+                "src/assets/portifolio/projetos/projeto_projeto-the-survival-challenger/pagina-1.webp",
+                "src/assets/portifolio/projetos/projeto_projeto-the-survival-challenger/pagina-2.webp",
+                "src/assets/portifolio/projetos/projeto_projeto-the-survival-challenger/pagina-3.webp",
+                "src/assets/portifolio/projetos/projeto_projeto-the-survival-challenger/pagina-4.webp"
+            ]
+        },
+        'capitao-jk': {
+            title: "Capitão JK",
+            context: ["Este projeto foi desenvolvido com foco em proporcionar uma experiência imersiva e engajadora.", "Utilizamos metodologias ativas e gamificação para criar uma narrativa única e memorável."],
+            pages: [
+                "src/assets/portifolio/projetos/projeto_catlogo-capito-jk/capa.webp",
+                "src/assets/portifolio/projetos/projeto_catlogo-capito-jk/pagina-1.webp",
+                "src/assets/portifolio/projetos/projeto_catlogo-capito-jk/pagina-2.webp",
+                "src/assets/portifolio/projetos/projeto_catlogo-capito-jk/pagina-3.webp",
+                "src/assets/portifolio/projetos/projeto_catlogo-capito-jk/pagina-4.webp"
+            ]
+        },
+        'quatro-elementos': {
+            title: "Jornada dos Quatro Elementos",
+            context: ["Este projeto foi desenvolvido com foco em proporcionar uma experiência imersiva e engajadora.", "Utilizamos metodologias ativas e gamificação para criar uma narrativa única e memorável."],
+            pages: [
+                "src/assets/portifolio/projetos/projeto_jornada-magica-dos-4-elementos/capa.webp",
+                "src/assets/portifolio/projetos/projeto_jornada-magica-dos-4-elementos/pagina-1.webp",
+                "src/assets/portifolio/projetos/projeto_jornada-magica-dos-4-elementos/pagina-2.webp",
+                "src/assets/portifolio/projetos/projeto_jornada-magica-dos-4-elementos/pagina-3.webp",
+                "src/assets/portifolio/projetos/projeto_jornada-magica-dos-4-elementos/pagina-4.webp"
+            ]
+        },
+        'desafio-na-praia': {
+            title: "Desafio Na Praia 4 Elementos",
+            context: ["Este projeto foi desenvolvido com foco em proporcionar uma experiência imersiva e engajadora.", "Utilizamos metodologias ativas e gamificação para criar uma narrativa única e memorável."],
+            pages: [
+                "src/assets/portifolio/projetos/projeto_desafio-na-praia-4-elementos/capa.webp",
+                "src/assets/portifolio/projetos/projeto_desafio-na-praia-4-elementos/pagina-1.webp",
+                "src/assets/portifolio/projetos/projeto_desafio-na-praia-4-elementos/pagina-2.webp",
+                "src/assets/portifolio/projetos/projeto_desafio-na-praia-4-elementos/pagina-3.webp",
+                "src/assets/portifolio/projetos/projeto_desafio-na-praia-4-elementos/pagina-4.webp"
+            ]
+        },
+        'escola-parque': {
+            title: "Escola Parque Na Praia",
+            context: ["Este projeto foi desenvolvido com foco em proporcionar uma experiência imersiva e engajadora.", "Utilizamos metodologias ativas e gamificação para criar uma narrativa única e memorável."],
+            pages: [
+                "src/assets/portifolio/projetos/projeto_escola-parque-na-praia/capa.webp",
+                "src/assets/portifolio/projetos/projeto_escola-parque-na-praia/pagina-1.webp",
+                "src/assets/portifolio/projetos/projeto_escola-parque-na-praia/pagina-2.webp",
+                "src/assets/portifolio/projetos/projeto_escola-parque-na-praia/pagina-3.webp",
+                "src/assets/portifolio/projetos/projeto_escola-parque-na-praia/pagina-4.webp"
+            ]
         }
     };
 
