@@ -25,6 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuOverlay.addEventListener('click', () => toggleMenu(false));
     }
 
+    // ==========================================================================
+    // STICKY HEADER SCROLL (Shrink logo)
+    // ==========================================================================
+    const header = document.querySelector('.header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header--scrolled');
+            } else {
+                header.classList.remove('header--scrolled');
+            }
+        }, { passive: true });
+    }
+
     // Lógica do Carrossel Hero removida (agora é um Hero estático único card)
 
     // ==========================================================================
@@ -367,5 +381,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 lightbox.classList.remove('active');
             }
         });
+    }
+
+    // ==========================================================================
+    // FLOATING WHATSAPP BUTTON LOGIC
+    // ==========================================================================
+    const floatingWpp = document.getElementById('floatingWpp');
+    const ctaSection = document.querySelector('.cta-section');
+
+    if (floatingWpp && ctaSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    floatingWpp.classList.add('is-hidden');
+                } else {
+                    floatingWpp.classList.remove('is-hidden');
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.1 // Esconde quando 10% da seção de CTA estiver visível
+        });
+
+        observer.observe(ctaSection);
     }
 });

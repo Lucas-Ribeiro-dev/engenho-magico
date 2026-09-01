@@ -240,6 +240,10 @@
     grid-template-columns: 1fr;
   }
 
+  .solutions-overview__grid > :last-child:nth-child(odd) {
+    width: 100%;
+  }
+
   .solution-card {
     flex-direction: column;
     align-items: center;

@@ -136,6 +136,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 20vh; /* Ajuste para o conteúdo não ficar escondido sob o header fixo e ficar mais ao centro da tela */
 }
 
 body {
@@ -333,6 +334,10 @@ section {
   position: relative;
 }
 
+.page-hero+.main-content>section:first-of-type {
+  padding-top: var(--space-sm);
+}
+
 /* ==========================================================================
    PAGE HEADER (Internal pages hero)
    ========================================================================== */
@@ -342,9 +347,9 @@ section {
   top: 80px;
   isolation: isolate;
   width: 100%;
-  height: 60vh;
-  min-height: 400px;
-  margin-top: 80px;
+  height: 80vh;
+  min-height: 600px;
+  margin-top: 136px;
   overflow: hidden;
   background-color: #f4ede0;
   z-index: 1;
@@ -355,8 +360,8 @@ section {
   bottom: 100%;
   left: 0;
   width: 100%;
-  height: 60vh;
-  min-height: 400px;
+  height: 80vh;
+  min-height: 600px;
   pointer-events: none;
   z-index: 2;
 }
@@ -604,9 +609,14 @@ section {
 }
 
 .header__logo-img {
-  height: 40px;
+  height: 100px;
   width: auto;
   object-fit: contain;
+  transition: height 0.3s ease;
+}
+
+.header.header--scrolled .header__logo-img {
+  height: 40px;
 }
 
 .header__menu {
@@ -812,11 +822,20 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--bg-imagem-cta, url("../assets/img/elements/cta-btn-1.webp")) center / 100% 100% no-repeat;
+  background: var(--bg-imagem-cta, url("../assets/img/elements/cta-btn-2.webp")) center / 100% 100% no-repeat;
   border-radius: var(--radius-md);
   z-index: -1;
   transition: transform var(--transition-fast) ease, background-color var(--transition-fast) ease;
   transform: scale(1);
+}
+
+/* Variações de botões CTA */
+.btn-cta--3 {
+  --bg-imagem-cta: url("../assets/img/elements/cta-btn-3.webp");
+}
+
+.btn-cta--4 {
+  --bg-imagem-cta: url("../assets/img/elements/cta-btn-4.webp");
 }
 
 .btn-cta .btn-text {
@@ -1676,7 +1695,7 @@ select {
 /* Posições individuais nas seções */
 .floating-parallax-img--1 {
   /* audience top-left */
-  top: -40%;
+  top: -20%;
   left: 5%;
 }
 
@@ -1707,7 +1726,27 @@ select {
 @media (max-width: 768px) {
   .floating-parallax-img {
     width: clamp(90px, 15vw, 130px);
-    opacity: 0.5;
+    opacity: 0.4;
+  }
+
+  /* Ajustes para mobile para evitar que os elementos se atropelem */
+  .floating-parallax-img--1 {
+    top: 5%;
+    /* Traz para dentro da section em vez de -40% */
+  }
+
+  .floating-parallax-img--2 {
+    bottom: 5%;
+  }
+
+  .floating-parallax-img--4 {
+    bottom: 5%;
+    /* Evita colidir com o topo da proxima section */
+  }
+
+  .floating-parallax-img--5 {
+    bottom: 15%;
+    /* Mantém espaçamento da img--2 */
   }
 }
 
@@ -2365,7 +2404,7 @@ select {
 
 .footer__container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: var(--space-2xl);
   margin-bottom: var(--space-2xl);
 }
@@ -2654,9 +2693,7 @@ main>section {
   cursor: zoom-in;
 }
 
-/* ==========================================================================
-   EDITORIAL GALLERY
-   ========================================================================== */
+/* EDITORIAL GALLERY */
 
 .editorial-gallery {
   display: grid;
@@ -3006,21 +3043,109 @@ main>section {
 }
 
 .methodology-preview__list li:nth-child(1) .methodology-preview__highlight {
-  background-image: url('../assets/img/elements/destaque-azul-2.webp');
+  background-image: url('../assets/img/elements/destaque-bg-1.webp');
 }
 
 .methodology-preview__list li:nth-child(2) .methodology-preview__highlight {
-  background-image: url('../assets/img/elements/destaque-marrom-2.webp');
+  background-image: url('../assets/img/elements/destaque-bg-2.webp');
 }
 
 .methodology-preview__list li:nth-child(3) .methodology-preview__highlight {
-  background-image: url('../assets/img/elements/destaque-laranja.webp');
+  background-image: url('../assets/img/elements/destaque-bg-3.webp');
 }
 
 .methodology-preview__list li:nth-child(4) .methodology-preview__highlight {
-  background-image: url('../assets/img/elements/destaque-marrom.webp');
+  background-image: url('../assets/img/elements/destaque-bg-4.webp');
 }
 
 .methodology-preview__list li:nth-child(5) .methodology-preview__highlight {
-  background-image: url('../assets/img/elements/destaque-zaul-1.webp');
+  background-image: url('../assets/img/elements/destaque-bg-5.webp');
+}
+
+/* PROJETO CARD (Grid Items)*/
+.projeto-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-text);
+  gap: var(--space-md);
+  transition: transform var(--transition-normal);
+}
+
+.projeto-card:hover,
+.projeto-card:focus {
+  transform: translateY(-5px);
+}
+
+.projeto-card__image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: solid 16px transparent;
+  border-image: url('../assets/img/elements/border-img-2.webp') 60 stretch;
+  background-clip: padding-box;
+}
+
+.projeto-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.projeto-card:hover .projeto-card__image {
+  transform: scale(1.05);
+}
+
+.projeto-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-md);
+  text-align: center;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* FLOATING WHATSAPP BUTTON */
+.floating-wpp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  z-index: 999;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  text-decoration: none;
+}
+
+.floating-wpp:hover,
+.floating-wpp:focus {
+  transform: scale(1.1);
+}
+
+.floating-wpp__icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Esconde quando atingir a seção CTA */
+.floating-wpp.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.9);
+}
+
+@media (max-width: 768px) {
+  .floating-wpp {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+  }
 }
