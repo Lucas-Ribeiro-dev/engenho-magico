@@ -1,5 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<<<<<<< HEAD
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Projeto | Engenho Mágico</title>
+  <meta name="description" content="Demonstração interativa e estudo de caso de projeto desenvolvido pela Engenho Mágico.">
+  <link rel="icon" type="image/x-icon" href="src/assets/img/icons/favicon.ico">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Engenho Mágico - Projeto">
+  <meta property="og:description" content="Estudo de caso e galeria interativa de experiência presencial da Engenho Mágico.">
+  <meta property="og:type" content="website">
+
+  <!-- Folha de Estilos Principal Consolidada -->
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body class="projeto-single-page">
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Engenho Mágico - Início">
+        <img src="src/assets/img/pictures/logo-4.webp" alt="Logo Engenho Mágico">
+      </a>
+
+      <nav aria-label="Navegação Principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre-nos.html">Sobre Nós</a></li>
+          <li><a href="solucoes.html">Experiências</a></li>
+          <li><a href="projetos.html" class="active">Projetos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" title="Selecionar Idioma">
+          <span class="active">PT</span> | <span>EN</span> | <span>ES</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= TOPO / VOLTAR ================= -->
+  <div class="dossier-top-bar">
+    <div class="container">
+      <a href="projetos.html" class="btn-voltar">
+        <span>← Voltar para projetos</span>
+      </a>
+      <h1 id="projetoTitle" class="sr-only">Detalhes do Projeto</h1>
+    </div>
+  </div>
+
+  <!-- ================= LAYOUT DOSSIÊ (2 CAIXAS LADO A LADO) ================= -->
+  <main class="dossier-main-section">
+    <div class="container dossier-grid">
+
+      <!-- COLUNA DA ESQUERDA: VISUALIZADOR DE LÂMINAS -->
+      <div class="dossier-left-col">
+        <div class="dossier-frame">
+          <img 
+            src="src/assets/img/placeholder.webp" 
+            alt="Lâmina do Projeto" 
+            id="projetoImage" 
+            class="dossier-image">
+        </div>
+
+        <!-- Controles minimalistas fiéis ao original: ← 01 / 05 → -->
+        <div class="dossier-controls">
+          <button class="dossier-nav-btn" id="btnPrev" aria-label="Página anterior">
+            <span>&larr;</span>
+          </button>
+          <div class="dossier-page-indicator" id="pageIndicator" aria-live="polite">
+            01 / 05
+          </div>
+          <button class="dossier-nav-btn" id="btnNext" aria-label="Próxima página">
+            <span>&rarr;</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- COLUNA DA DIREITA: ESTUDO DE CASO ROLÁVEL PREENCHIDO PELO JS -->
+      <div class="dossier-right-col">
+        <div class="dossier-text-box" id="dossierTextBox">
+          <!-- O conteúdo Ipsis Litteris é injetado dinamicamente pelo projeto.js -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER PADRONIZADO ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" aria-label="Engenho Mágico - Início">
+            <img src="src/assets/img/pictures/logo-4.webp" alt="Logo Engenho Mágico" style="height: 42px; display: block;">
+          </a>
+          <p class="footer-slogan">Experiências imersivas, educativas e gamificadas.</p>
+          <p class="footer-desc">
+            Transformamos mensagens pedagógicas, histórias e desafios em jornadas presenciais inesquecíveis.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="solucoes.html">Experiências</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Canais Oficiais</h4>
+          <ul class="footer-links" style="margin-bottom: 1.25rem;">
+            <li><span>WhatsApp: (61) 99194-7972</span></li>
+            <li><span>E-mail: engenhomagico2025@gmail.com</span></li>
+          </ul>
+          <div class="social-links">
+            <a href="https://instagram.com/engenhomagico" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <span>Instagram Oficial</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Engenho Mágico. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="src/js/main.js"></script>
+  <script src="src/js/projeto.js"></script>
+
+  <!-- ================= WHATSAPP FLUTUANTE ================= -->
+  <a href="https://wa.me/5561991947972" target="_blank" rel="noopener noreferrer" class="whatsapp-floating" aria-label="Fale conosco no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.301-.15-1.781-.879-2.056-.98-.275-.1-.475-.15-.675.15-.2.301-.775.98-.95 1.18-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.414-1.49-1.026-.913-1.719-2.04-1.92-2.385-.2-.345-.02-.531.13-.68.136-.135.301-.35.451-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.584-.492-.505-.675-.514-.175-.009-.375-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.027-1.05 2.505 0 1.478 1.075 2.903 1.225 3.103.15.2 2.115 3.23 5.124 4.53 3.01 1.3 3.01.867 3.56.812.55-.055 1.78-.727 2.03-1.43.25-.703.25-1.305.175-1.43-.075-.125-.275-.2-.575-.35zM12.004 2c-5.523 0-10 4.477-10 10 0 1.77.46 3.434 1.264 4.885L2 22l5.244-1.376A9.957 9.957 0 0 0 12.004 22c5.523 0 10-4.477 10-10s-4.477-10-10-10zm0 18.25c-1.57 0-3.042-.435-4.309-1.192l-.309-.185-3.208.842.856-3.127-.203-.323A8.204 8.204 0 0 1 3.754 12c0-4.555 3.699-8.25 8.25-8.25 4.551 0 8.25 3.695 8.25 8.25 0 4.555-3.699 8.25-8.25 8.25z"/>
+    </svg>
+  </a>
+
+</body>
+</html>
+=======
 
 <head>
     <meta charset="UTF-8">
@@ -247,11 +397,21 @@
             </ul>
         </div>
     </footer>
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox__close" aria-label="Fechar" id="lightboxClose">
-            <img src="src/assets/img/icons/menu-fechar.webp" alt="Fechar">
+    <div class="lightbox" id="lightbox" tabindex="-1" role="dialog" aria-modal="true"
+        aria-label="Visualizador das páginas do projeto">
+        <div class="lightbox__top-bar">
+            <span class="lightbox__counter" id="lightboxCounter" aria-live="polite">1 / 1</span>
+            <button class="lightbox__close" aria-label="Fechar visualização" id="lightboxClose">
+                <img src="src/assets/img/icons/menu-fechar.webp" alt="" aria-hidden="true">
+            </button>
+        </div>
+        <button class="lightbox__nav lightbox__nav--prev" aria-label="Página anterior" id="lightboxPrev">
+            <img src="src/assets/img/icons/seta.webp" alt="" aria-hidden="true">
         </button>
         <img src="" alt="" class="lightbox__image" id="lightboxImage">
+        <button class="lightbox__nav lightbox__nav--next" aria-label="Próxima página" id="lightboxNext">
+            <img src="src/assets/img/icons/seta.webp" alt="" aria-hidden="true">
+        </button>
     </div>
 
     <script src="src/js/main.js"></script>
@@ -265,3 +425,4 @@
 
 
 </html>
+>>>>>>> 7c05806c20a36165f683a0af85a59d4ff2803fb7

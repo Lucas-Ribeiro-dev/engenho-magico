@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: `${basePath}/labirinto-de-astreia/5.jpeg`, alt: 'Labirinto de Astreia - Cenário', objectPosition: 'center' },
         { src: `${basePath}/labirinto-de-astreia/6.jpeg`, alt: 'Labirinto de Astreia - Artefatos', objectPosition: 'center' },
         
-        // Fim Incompleto (4 imagens)
+        // Fim (4 imagens)
         { src: `${basePath}/didaticos/1.jpeg`, alt: 'Materiais Didáticos', objectPosition: 'center' },
         { src: `${basePath}/didaticos/2.jpeg`, alt: 'Materiais Didáticos', objectPosition: 'center' },
         { src: `${basePath}/didaticos/3.jpeg`, alt: 'Materiais Didáticos', objectPosition: 'center' },
@@ -36,42 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const galeriaContainer = document.getElementById('galeria-editorial-grid');
     if (!galeriaContainer) return;
 
-    // Lógica para definir os papéis
+    // Papéis do Grid Editorial
     function getPapel(index, total) {
-        // Se houver tamanho manual nos dados, ele sobrepõe
-        if (galeriaDados[index].size) {
-            return galeriaDados[index].size;
-        }
+        if (galeriaDados[index].size) return galeriaDados[index].size;
 
-        const cycleIndex = index % 12; // Um macro-ciclo de 12 imagens (2 sub-ciclos de 6)
-        const inCycleRemaining = total - (Math.floor(index / 6) * 6);
+        const cycleIndex = index % 12;
         const inLastGroup = index >= Math.floor(total / 6) * 6;
 
-        // Se estamos no último grupo e ele é incompleto
-        if (inLastGroup && inCycleRemaining < 6) {
-            if (inCycleRemaining === 1) return 'larga-full'; // 12 colunas
-            if (inCycleRemaining === 2) return 'metade'; // 6 colunas cada
-            if (inCycleRemaining === 3) {
-                // uma maior e duas menores (6x2, 3x2, 3x2)
-                const relativeIndex = index % 6;
-                if (relativeIndex === 0) return 'destaque';
-                return 'vertical';
-            }
-            if (inCycleRemaining === 4) {
-                // duas imagens por linha (6x2, 6x2)
-                return 'metade-altura'; 
-            }
-            if (inCycleRemaining === 5) {
-                // três na primeira (4x2, 4x2, 4x2) e duas na segunda (6x2, 6x2)
-                const relativeIndex = index % 6;
-                if (relativeIndex < 3) return 'terca-parte';
-                return 'metade-altura';
-            }
+        if (inLastGroup) {
+            return 'metade-altura'; // 6 colunas equilibradas para fechar o grid perfeitamente
         }
 
-        // Padrão Normal Cíclico
         if (cycleIndex < 6) {
-            // Ciclo 1 (Destaque Esquerda)
             switch (cycleIndex) {
                 case 0: return 'destaque';
                 case 1: return 'vertical';
@@ -81,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 5: return 'media-larga';
             }
         } else {
-            // Ciclo 2 (Destaque Direita)
             switch (cycleIndex) {
                 case 6: return 'vertical';
                 case 7: return 'vertical';
@@ -107,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         galeriaContainer.insertAdjacentHTML('beforeend', itemHtml);
     });
 
-    // --- Lightbox Lógica ---
+    // --- Lightbox Lógica Blindada ---
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImage');
     const lightboxClose = document.getElementById('lightboxClose');
@@ -122,12 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
         updateLightbox();
         lightbox.classList.add('active');
         document.body.classList.add('no-scroll');
+        document.body.style.overflow = 'hidden';
         lightbox.focus();
     }
 
     function closeLightbox() {
         lightbox.classList.remove('active');
+        // Destrava a barra de rolagem lateral imediatamente
         document.body.classList.remove('no-scroll');
+        document.body.style.overflow = '';
     }
 
     function updateLightbox() {
@@ -149,10 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
         updateLightbox();
     }
 
-    // Eventos do Grid
+    // Eventos nos itens da galeria
     const items = document.querySelectorAll('.gallery-item');
     items.forEach(item => {
-        item.addEventListener('click', (e) => {
+        item.addEventListener('click', () => {
             const index = parseInt(item.getAttribute('data-index'));
             openLightbox(index);
         });
@@ -169,6 +147,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if(lightboxNext) lightboxNext.addEventListener('click', showNext);
     if(lightboxPrev) lightboxPrev.addEventListener('click', showPrev);
 
+    // Fechar ao clicar fora da foto (no fundo escuro)
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Teclado
     document.addEventListener('keydown', (e) => {
         if (!lightbox.classList.contains('active')) return;
         if (e.key === 'Escape') closeLightbox();

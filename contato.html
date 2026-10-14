@@ -1,5 +1,223 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<<<<<<< HEAD
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | Engenho Mágico</title>
+  <meta name="description" content="Entre em contato com a Engenho Mágico. Desenvolvemos experiências imersivas e narrativas sob medida para escolas, resorts e empresas.">
+  <link rel="icon" type="image/x-icon" href="src/assets/img/icons/favicon.ico">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contato | Engenho Mágico">
+  <meta property="og:description" content="Vamos tirar sua história do papel e transformá-la em uma experiência real. Fale conosco!">
+  <meta property="og:type" content="website">
+
+  <!-- Folha de Estilos Principal -->
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Engenho Mágico - Início">
+        <img src="src/assets/img/pictures/logo-4.webp" alt="Logo Engenho Mágico">
+      </a>
+
+      <nav aria-label="Navegação Principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre-nos.html">Sobre Nós</a></li>
+          <li><a href="solucoes.html">Experiências</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="contato.html" class="active">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" title="Selecionar Idioma">
+          <span class="active">PT</span> | <span>EN</span> | <span>ES</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= BANNER / HERO ================= -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Vamos Conversar</h1>
+      <img src="src/assets/img/elements/ornamento-titulo.webp" alt="" class="title-underline" aria-hidden="true">
+      <p>
+        Seja para transformar uma escola, resort, parque ou evento corporativo, 
+        estamos prontos para desenhar uma experiência imersiva inesquecível.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= SEÇÃO DE CONTATO PRINCIPAL ================= -->
+  <main class="contact-section">
+    <div class="container contact-grid">
+      
+      <!-- CANAIS DIRETOS -->
+      <div class="contact-info-col">
+        <h2>Fale Diretamente com Nossos Criadores</h2>
+        <p class="lead">
+          Prefere um atendimento rápido e sem burocracia? Escolha o canal de sua preferência:
+        </p>
+
+        <div class="channels-stack">
+          <!-- WhatsApp Oficial -->
+          <div class="channel-card channel-whatsapp">
+            <div class="channel-meta">
+              <span class="label">Conversa Imediata</span>
+              <strong class="value">(61) 99194-7972</strong>
+            </div>
+            <a href="https://wa.me/5561991947972" target="_blank" rel="noopener noreferrer" class="btn-channel whatsapp">
+              <span>Abrir WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- E-mail -->
+          <div class="channel-card">
+            <div class="channel-meta">
+              <span class="label">E-mail Institucional</span>
+              <strong class="value">engenhomagico2025@gmail.com</strong>
+            </div>
+            <a href="mailto:engenhomagico2025@gmail.com" class="btn-channel secondary">
+              <span>Enviar E-mail</span>
+            </a>
+          </div>
+
+          <!-- Instagram -->
+          <div class="channel-card">
+            <div class="channel-meta">
+              <span class="label">Rede Social</span>
+              <strong class="value">@engenhomagico</strong>
+            </div>
+            <a href="https://instagram.com/engenhomagico" target="_blank" rel="noopener noreferrer" class="btn-channel secondary">
+              <span>Ver Instagram</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="operation-details">
+          <h4>Atendimento Nacional</h4>
+          <p>
+            Com base em Brasília/DF, desenvolvemos e operamos expedições, caixas misteriosas 
+            e arenas imersivas em todo o território nacional.
+          </p>
+        </div>
+      </div>
+
+      <!-- FORMULÁRIO DE BRIEFING -->
+      <div class="contact-form-box">
+        <h3>Conte-nos sobre a sua ideia</h3>
+        <p class="form-desc">Preencha o formulário e retornaremos com uma proposta ou agendamento de conversa.</p>
+
+        <form action="mailto:engenhomagico2025@gmail.com" method="POST" enctype="text/plain">
+          <div class="form-group">
+            <label for="nome">Seu Nome / Responsável</label>
+            <input type="text" id="nome" name="Nome" class="form-control" placeholder="Ex.: Lucas Ribeiro" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Seu E-mail Corporativo ou Pessoal</label>
+            <input type="email" id="email" name="Email" class="form-control" placeholder="seuemail@exemplo.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="organizacao">Tipo de Organização ou Espaço</label>
+            <select id="organizacao" name="Tipo" class="form-control" required>
+              <option value="" disabled selected>Selecione uma opção...</option>
+              <option value="Escola / Instituição de Ensino">Escola / Colégio / Museu</option>
+              <option value="Parque / Resort / Hotelaria">Parque / Resort / Hotel</option>
+              <option value="Empresa / Corporativo">Empresa / Corporativo</option>
+              <option value="Evento / Instalação">Evento / Shopping / Arena</option>
+              <option value="Outro">Outro formato</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">O que você gostaria de criar?</label>
+            <textarea id="mensagem" name="Mensagem" class="form-control" placeholder="Conte brevemente sobre o público, o espaço disponível e o objetivo da experiência..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <span>Enviar Mensagem</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= PONTE COM PROJETOS ================= -->
+  <section class="projects-bridge">
+    <div class="container">
+      <h3>Quer ver o que já colocamos em prática?</h3>
+      <p>Conheça nossos cases reais, fotos das expedições e os mundos que já transformamos.</p>
+      <a href="projetos.html" class="btn-outline">
+        <span>Explorar Nossos Projetos</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER PADRONIZADO ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" aria-label="Engenho Mágico - Início">
+            <img src="src/assets/img/pictures/logo-4.webp" alt="Logo Engenho Mágico" style="height: 42px; display: block;">
+          </a>
+          <p class="footer-slogan">Experiências imersivas, educativas e gamificadas.</p>
+          <p class="footer-desc">
+            Transformamos mensagens pedagógicas, histórias e desafios em jornadas presenciais inesquecíveis.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="solucoes.html">Experiências</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Canais Oficiais</h4>
+          <ul class="footer-links" style="margin-bottom: 1.25rem;">
+            <li><span>WhatsApp: (61) 99194-7972</span></li>
+            <li><span>E-mail: engenhomagico2025@gmail.com</span></li>
+          </ul>
+          <div class="social-links">
+            <a href="https://instagram.com/engenhomagico" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <span>Instagram Oficial</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Engenho Mágico. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= WHATSAPP FLUTUANTE ================= -->
+  <a href="https://wa.me/5561991947972" target="_blank" rel="noopener noreferrer" class="whatsapp-floating" aria-label="Fale conosco no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.301-.15-1.781-.879-2.056-.98-.275-.1-.475-.15-.675.15-.2.301-.775.98-.95 1.18-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.414-1.49-1.026-.913-1.719-2.04-1.92-2.385-.2-.345-.02-.531.13-.68.136-.135.301-.35.451-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.584-.492-.505-.675-.514-.175-.009-.375-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.027-1.05 2.505 0 1.478 1.075 2.903 1.225 3.103.15.2 2.115 3.23 5.124 4.53 3.01 1.3 3.01.867 3.56.812.55-.055 1.78-.727 2.03-1.43.25-.703.25-1.305.175-1.43-.075-.125-.275-.2-.575-.35zM12.004 2c-5.523 0-10 4.477-10 10 0 1.77.46 3.434 1.264 4.885L2 22l5.244-1.376A9.957 9.957 0 0 0 12.004 22c5.523 0 10-4.477 10-10s-4.477-10-10-10zm0 18.25c-1.57 0-3.042-.435-4.309-1.192l-.309-.185-3.208.842.856-3.127-.203-.323A8.204 8.204 0 0 1 3.754 12c0-4.555 3.699-8.25 8.25-8.25 4.551 0 8.25 3.695 8.25 8.25 0 4.555-3.699 8.25-8.25 8.25z"/>
+    </svg>
+  </a>
+  
+</body>
+</html>
+=======
 
 <head>
     <meta charset="UTF-8">
@@ -50,8 +268,6 @@
                 <!-- INÍCIO: Elementos Flutuantes (Fogo) -->
                 <img src="src/assets/img/parallax-hero/hero-float-fogo-2.webp" alt=""
                     class="parallax-layer-hero parallax-layer-hero--float-2-fogo" data-speed="0.2">
-                <img src="src/assets/img/parallax-hero/hero-float-fogo-1.webp" alt=""
-                    class="parallax-layer-hero parallax-layer-hero--float-1-fogo" data-speed="0.35">
                 <!-- FIM: Elementos Flutuantes -->
             </div>
         </section>
@@ -200,3 +416,4 @@
 
 
 </html>
+>>>>>>> 7c05806c20a36165f683a0af85a59d4ff2803fb7

@@ -346,20 +346,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
+<<<<<<< HEAD
+    // LIGHTBOX GLOBAL (SEGURO E COM DESTRAVAMENTO DE SCROLL)
+=======
     // LIGHTBOX GLOBAL
+>>>>>>> 7c05806c20a36165f683a0af85a59d4ff2803fb7
     // ==========================================================================
     const lightbox = document.getElementById('lightbox');
     const lightboxImageObj = document.getElementById('lightboxImage');
     const lightboxClose = document.getElementById('lightboxClose');
 
     if (lightbox && lightboxImageObj && lightboxClose) {
+<<<<<<< HEAD
+        const galleryImages = document.querySelectorAll('.gallery-image, #projetoImage');
+        
+        const closeGlobalLightbox = () => {
+            lightbox.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+            document.body.style.overflow = '';
+        };
+
+=======
         // Encontra todas as imagens que podem abrir no lightbox
         const galleryImages = document.querySelectorAll('.gallery-image, #projetoImage');
         
+>>>>>>> 7c05806c20a36165f683a0af85a59d4ff2803fb7
         galleryImages.forEach(img => {
             img.addEventListener('click', () => {
                 lightboxImageObj.src = img.src;
                 lightbox.classList.add('active');
+<<<<<<< HEAD
+                document.body.classList.add('no-scroll');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeGlobalLightbox);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeGlobalLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeGlobalLightbox();
+=======
             });
         });
 
@@ -379,6 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && lightbox.classList.contains('active')) {
                 lightbox.classList.remove('active');
+>>>>>>> 7c05806c20a36165f683a0af85a59d4ff2803fb7
             }
         });
     }
